@@ -1,0 +1,232 @@
+[
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/GLAD.dir/src/glad.c.o -c /Users/cameron/winter/src/glad.c",
+  "file": "/Users/cameron/winter/src/glad.c"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/bindings/imgui_impl_glfw.cpp.o -c /Users/cameron/winter/lib/imgui/bindings/imgui_impl_glfw.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/bindings/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/bindings/imgui_impl_opengl3.cpp.o -c /Users/cameron/winter/lib/imgui/bindings/imgui_impl_opengl3.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/bindings/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/imgui.cpp.o -c /Users/cameron/winter/lib/imgui/imgui.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/imgui.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/imgui_demo.cpp.o -c /Users/cameron/winter/lib/imgui/imgui_demo.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/imgui_draw.cpp.o -c /Users/cameron/winter/lib/imgui/imgui_draw.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/imgui/imgui_widgets.cpp.o -c /Users/cameron/winter/lib/imgui/imgui_widgets.cpp",
+  "file": "/Users/cameron/winter/lib/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/lib/stb_image.cpp.o -c /Users/cameron/winter/lib/stb_image.cpp",
+  "file": "/Users/cameron/winter/lib/stb_image.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/context/demo_context.cpp.o -c /Users/cameron/winter/src/context/demo_context.cpp",
+  "file": "/Users/cameron/winter/src/context/demo_context.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/engine.cpp.o -c /Users/cameron/winter/src/engine.cpp",
+  "file": "/Users/cameron/winter/src/engine.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/glad.c.o -c /Users/cameron/winter/src/glad.c",
+  "file": "/Users/cameron/winter/src/glad.c"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/input/input_processor.cpp.o -c /Users/cameron/winter/src/input/input_processor.cpp",
+  "file": "/Users/cameron/winter/src/input/input_processor.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/main.cpp.o -c /Users/cameron/winter/src/main.cpp",
+  "file": "/Users/cameron/winter/src/main.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o -c /Users/cameron/winter/src/rendering/cube_map.cpp",
+  "file": "/Users/cameron/winter/src/rendering/cube_map.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o -c /Users/cameron/winter/src/rendering/directional_light.cpp",
+  "file": "/Users/cameron/winter/src/rendering/directional_light.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o -c /Users/cameron/winter/src/rendering/framebuffer.cpp",
+  "file": "/Users/cameron/winter/src/rendering/framebuffer.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/material.cpp.o -c /Users/cameron/winter/src/rendering/material.cpp",
+  "file": "/Users/cameron/winter/src/rendering/material.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/mesh.cpp.o -c /Users/cameron/winter/src/rendering/mesh.cpp",
+  "file": "/Users/cameron/winter/src/rendering/mesh.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o -c /Users/cameron/winter/src/rendering/opengl_renderer.cpp",
+  "file": "/Users/cameron/winter/src/rendering/opengl_renderer.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/point_light.cpp.o -c /Users/cameron/winter/src/rendering/point_light.cpp",
+  "file": "/Users/cameron/winter/src/rendering/point_light.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o -c /Users/cameron/winter/src/rendering/post_processing/ssao.cpp",
+  "file": "/Users/cameron/winter/src/rendering/post_processing/ssao.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o -c /Users/cameron/winter/src/rendering/render_queue.cpp",
+  "file": "/Users/cameron/winter/src/rendering/render_queue.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o -c /Users/cameron/winter/src/rendering/renderbuffer.cpp",
+  "file": "/Users/cameron/winter/src/rendering/renderbuffer.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/shader.cpp.o -c /Users/cameron/winter/src/rendering/shader.cpp",
+  "file": "/Users/cameron/winter/src/rendering/shader.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o -c /Users/cameron/winter/src/rendering/spot_light.cpp",
+  "file": "/Users/cameron/winter/src/rendering/spot_light.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/texture.cpp.o -c /Users/cameron/winter/src/rendering/texture.cpp",
+  "file": "/Users/cameron/winter/src/rendering/texture.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/rendering/vertex.cpp.o -c /Users/cameron/winter/src/rendering/vertex.cpp",
+  "file": "/Users/cameron/winter/src/rendering/vertex.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o -c /Users/cameron/winter/src/resources/cube_map_repository.cpp",
+  "file": "/Users/cameron/winter/src/resources/cube_map_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/material_repository.cpp.o -c /Users/cameron/winter/src/resources/material_repository.cpp",
+  "file": "/Users/cameron/winter/src/resources/material_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o -c /Users/cameron/winter/src/resources/mesh_repository.cpp",
+  "file": "/Users/cameron/winter/src/resources/mesh_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o -c /Users/cameron/winter/src/resources/resource_loader.cpp",
+  "file": "/Users/cameron/winter/src/resources/resource_loader.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o -c /Users/cameron/winter/src/resources/shader_repository.cpp",
+  "file": "/Users/cameron/winter/src/resources/shader_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o -c /Users/cameron/winter/src/resources/texture_repository.cpp",
+  "file": "/Users/cameron/winter/src/resources/texture_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o -c /Users/cameron/winter/src/scene/scene_builder.cpp",
+  "file": "/Users/cameron/winter/src/scene/scene_builder.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o -c /Users/cameron/winter/src/scene/scene_graph.cpp",
+  "file": "/Users/cameron/winter/src/scene/scene_graph.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o -c /Users/cameron/winter/src/scene/scene_manager.cpp",
+  "file": "/Users/cameron/winter/src/scene/scene_manager.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o -c /Users/cameron/winter/src/scripts/components/rotating_cube.cpp",
+  "file": "/Users/cameron/winter/src/scripts/components/rotating_cube.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o -c /Users/cameron/winter/src/scripts/scenes/first_scene.cpp",
+  "file": "/Users/cameron/winter/src/scripts/scenes/first_scene.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o -c /Users/cameron/winter/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp",
+  "file": "/Users/cameron/winter/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/event_repository.cpp.o -c /Users/cameron/winter/src/ui/event_repository.cpp",
+  "file": "/Users/cameron/winter/src/ui/event_repository.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/material_editor.cpp.o -c /Users/cameron/winter/src/ui/material_editor.cpp",
+  "file": "/Users/cameron/winter/src/ui/material_editor.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o -c /Users/cameron/winter/src/ui/menu_bar.cpp",
+  "file": "/Users/cameron/winter/src/ui/menu_bar.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o -c /Users/cameron/winter/src/ui/scene_hierarchy_viewer.cpp",
+  "file": "/Users/cameron/winter/src/ui/scene_hierarchy_viewer.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/ui/ui_root.cpp.o -c /Users/cameron/winter/src/ui/ui_root.cpp",
+  "file": "/Users/cameron/winter/src/ui/ui_root.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/utils/bitmask.cpp.o -c /Users/cameron/winter/src/utils/bitmask.cpp",
+  "file": "/Users/cameron/winter/src/utils/bitmask.cpp"
+},
+{
+  "directory": "/Users/cameron/winter/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/cameron/winter/winter -I/Users/cameron/winter/include -I/Users/cameron/winter/src -I/System/Library/Frameworks  -Wall -Wno-deprecated-declarations -std=c++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -o CMakeFiles/winter.dir/src/window.cpp.o -c /Users/cameron/winter/src/window.cpp",
+  "file": "/Users/cameron/winter/src/window.cpp"
+}
+]
