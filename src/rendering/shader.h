@@ -1,10 +1,8 @@
-#ifndef DEMO_SHADER_HPP
-#define DEMO_SHADER_HPP
+#ifndef WINTER_SHADER_HPP
+#define WINTER_SHADER_HPP
 
 #include <glad/glad.h>
-#include <glm/glm.hpp>
 
-#include <ecs/world.h>
 #include <fstream>
 #include <maths/float3.h>
 #include <maths/float4.h>
@@ -13,15 +11,6 @@
 #include <utility>
 
 using ShaderID = uint32_t;
-
-struct ShaderComponent
-{
-    ShaderID id;
-    explicit ShaderComponent() = default;
-    explicit ShaderComponent(ShaderID id) : id(id) {};
-};
-
-REGISTER_COMPONENT(Shader, ShaderComponent)
 
 // TODO: refactor so this doesn't use streams or strings
 class Shader
@@ -83,21 +72,6 @@ public:
     void set_float4(const std::string& name, float x, float y, float z, float w)
     {
         glUniform4f(glGetUniformLocation(id_, name.c_str()), x, y, z, w);
-    }
-
-    void set_mat2(const std::string& name, const glm::mat2& mat) const
-    {
-        glUniformMatrix2fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
-    }
-
-    void set_mat3(const std::string& name, const glm::mat3& mat) const
-    {
-        glUniformMatrix3fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
-    }
-
-    void set_mat4(const std::string& name, const glm::mat4& mat) const
-    {
-        glUniformMatrix4fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
 
 private:

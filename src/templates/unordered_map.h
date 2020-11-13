@@ -1,5 +1,5 @@
-#ifndef DEMO_UNORDERED_MAP_H
-#define DEMO_UNORDERED_MAP_H
+#ifndef WINTER_UNORDERED_MAP_H
+#define WINTER_UNORDERED_MAP_H
 
 namespace dtl
 {
@@ -217,4 +217,4 @@ private:
 };
 
 }
-#endif // DEMO_UNORDERED_MAP_H
+#endif // WINTER_UNORDERED_MAP_H

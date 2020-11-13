@@ -1,8 +1,6 @@
-#ifndef DEMO_TRANSFORM_H
-#define DEMO_TRANSFORM_H
+#ifndef WINTER_TRANSFORM_H
+#define WINTER_TRANSFORM_H
 
-#include <ecs/world.h>
-#include <glm/glm.hpp>
 #include <maths/float3.h>
 #include <maths/quaternion.h>
 
@@ -12,17 +10,13 @@ struct Transform
     quaternion rotation = quaternion::identity();
     float3 scale = float3::one();
 
-    glm::mat4 get_model_matrix()
+    Matrix4x4 get_model_matrix()
     {
-        glm::vec3 glm_position = position.to_glm();
-        glm::quat glm_rotation = rotation.to_glm();
-        glm::vec3 glm_scale = scale.to_glm();
+        Matrix4x4 model_matrix = Matrix4x4::diagonal(1.0f);
 
-        glm::mat4 model_matrix = glm::mat4(1.0f);
-
-        model_matrix = glm::scale(model_matrix, glm_scale);
-        model_matrix = glm::toMat4(glm_rotation) * model_matrix;
-        model_matrix = glm::translate(model_matrix, glm_position);
+        model_matrix = Matrix4x4::scale(scale) * model_matrix;
+        model_matrix = Matrix4x4::rotation(rotation) * model_matrix;
+        model_matrix = Matrix4x4::translate(position) * model_matrix;
         return model_matrix;
     }
 
@@ -34,4 +28,4 @@ struct Transform
 
 REGISTER_COMPONENT(Transform, Transform)
 
-#endif // DEMO_TRANSFORM_H
+#endif // WINTER_TRANSFORM_H

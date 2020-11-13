@@ -1,8 +1,3 @@
-#include <ecs/components/hierarchy_component.h>
-#include <ecs/components/name_component.h>
-#include <ecs/components/wren_script_component.h>
-#include <ecs/systems/first_person_camera_system.h>
-#include <ecs/systems/wren_scripting_system.h>
 #include <engine.h>
 #include <maths/transform.h>
 #include <rendering/directional_light.h>
@@ -28,7 +23,7 @@ Engine::Engine()
     world->init(world);
 
     // Build context
-    context = std::make_shared<DemoContext>(world);
+    context = std::make_shared<WinterContext>(world);
 
     // Init shaders
     std::shared_ptr<ShaderRepository> shader_repository = context->get_shader_repository();
@@ -132,14 +127,12 @@ void Engine::update(Time time)
 {
     window->update(time, input.get());
     scene_manager->update(time, input.get());
-    world->update_systems(time, input.get());
     ui_root->update();
 }
 
 void Engine::late_update(Time time)
 {
     scene_manager->late_update(time, input.get());
-    world->late_update_systems(time, input.get());
     ui_root->late_update();
 }
 

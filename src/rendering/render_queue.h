@@ -1,11 +1,11 @@
-#ifndef DEMO_RENDER_QUEUE_H
-#define DEMO_RENDER_QUEUE_H
+#ifndef WINTER_RENDER_QUEUE_H
+#define WINTER_RENDER_QUEUE_H
 
 #include "material.h"
 #include "mesh.h"
 #include "shader.h"
 #include "texture.h"
-#include <glm/mat4x4.hpp>
+#include <maths/matrix4x4.h>
 
 struct RenderCommand
 {
@@ -18,7 +18,7 @@ struct RenderCommand
 
     MaterialID material_id;
 
-    glm::mat4 transform;
+    Matrix4x4 transform;
 };
 
 class RenderQueue

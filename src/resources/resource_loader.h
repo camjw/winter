@@ -1,5 +1,5 @@
-#ifndef DEMO_RESOURCE_LOADER_H
-#define DEMO_RESOURCE_LOADER_H
+#ifndef WINTER_RESOURCE_LOADER_H
+#define WINTER_RESOURCE_LOADER_H
 
 #include "cube_map_repository.h"
 #include <memory>
@@ -37,4 +37,4 @@ private:
     std::shared_ptr<CubeMapRepository> cube_map_repository;
 };
 
-#endif // DEMO_RESOURCE_LOADER_H
+#endif // WINTER_RESOURCE_LOADER_H

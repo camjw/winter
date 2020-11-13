@@ -1,8 +1,8 @@
-#ifndef DEMO_MATHS_FLOAT_4_HPP
-#define DEMO_MATHS_FLOAT_4_HPP
+#ifndef WINTER_MATHS_FLOAT_4_HPP
+#define WINTER_MATHS_FLOAT_4_HPP
 
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 #include <maths/float2.h>
 #include <maths/float3.h>
 
@@ -10,12 +10,26 @@ struct float4
 {
 
 public:
-    float4(): x(0.0f), y(0.0f), z(0.0f), w(0.0f) {}
+    float4()
+        : x(0.0f)
+        , y(0.0f)
+        , z(0.0f)
+        , w(0.0f)
+    {
+    }
     float4(float x, float y, float z, float w)
         : x(x)
         , y(y)
         , z(z)
         , w(w)
+    {
+    }
+
+    float4(float* data)
+        : x(data[0])
+        , y(data[1])
+        , z(data[2])
+        , w(data[3])
     {
     }
 
@@ -44,47 +58,47 @@ public:
 
     static float4 zero()
     {
-        return {0.0f, 0.0f, 0.0f, 0.0f};
+        return { 0.0f, 0.0f, 0.0f, 0.0f };
     }
 
     static float4 one()
     {
-        return {1.0f, 1.0f, 1.0f, 1.0f};
+        return { 1.0f, 1.0f, 1.0f, 1.0f };
     }
 
     float4 operator+(float4 const& other) const
     {
-        return {x + other.x, y + other.y, z + other.z, w + other.w};
+        return { x + other.x, y + other.y, z + other.z, w + other.w };
     }
 
     float4 operator-(float4 const& other) const
     {
-        return {x - other.x, y - other.y, z - other.z, w - other.w};
+        return { x - other.x, y - other.y, z - other.z, w - other.w };
     }
 
     float4 operator*(float4 const& other) const
     {
-        return {x * other.x, y * other.y, z * other.z, w * other.w};
+        return { x * other.x, y * other.y, z * other.z, w * other.w };
     }
 
     float4 operator*(const float scale) const
     {
-        return {x * scale, y * scale, z * scale, w * scale};
+        return { x * scale, y * scale, z * scale, w * scale };
     }
 
     float4 operator/(float4 const& other) const
     {
-        return {x / other.x, y / other.y, z / other.z, w / other.w};
+        return { x / other.x, y / other.y, z / other.z, w / other.w };
     }
 
     float4 operator/(const float scale) const
     {
-        return {x / scale, y / scale, z / scale, w / scale};
+        return { x / scale, y / scale, z / scale, w / scale };
     }
 
     float4 operator-() const
     {
-        return {-x, -y, -z, -w};
+        return { -x, -y, -z, -w };
     }
 
     float4 operator+=(float4 const& other)
@@ -173,9 +187,9 @@ public:
         return *this;
     }
 
-    float const& operator[](int index) const
+    float const& operator[](const int index) const
     {
-        switch(index)
+        switch (index)
         {
         case 0:
             return x;
@@ -188,7 +202,22 @@ public:
         }
     }
 
-    operator float * () { return reinterpret_cast<float *>(this); }
+    float& operator[](const int index)
+    {
+        switch (index)
+        {
+        case 0:
+            return x;
+        case 1:
+            return y;
+        case 2:
+            return z;
+        default:
+            return w;
+        }
+    }
+
+    operator float*() { return reinterpret_cast<float*>(this); }
 
     float x, y, z, w;
 };

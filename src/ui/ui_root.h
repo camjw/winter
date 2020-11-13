@@ -1,11 +1,11 @@
-#ifndef DEMO_UI_ROOT_H
-#define DEMO_UI_ROOT_H
+#ifndef WINTER_UI_ROOT_H
+#define WINTER_UI_ROOT_H
 
 #include "event_repository.h"
 #include "material_editor.h"
 #include "menu_bar.h"
 #include "scene_hierarchy_viewer.h"
-#include <context/demo_context.h>
+#include <context/winter_context.h>
 #include <ecs/world.h>
 #include <imgui/bindings/imgui_impl_glfw.h>
 #include <imgui/bindings/imgui_impl_opengl3.h>
@@ -16,7 +16,7 @@ class UIRoot
 {
 public:
     UIRoot(std::shared_ptr<World> world, std::shared_ptr<Window> window,
-        std::shared_ptr<DemoContext> context, std::shared_ptr<SceneManager> scene_manager,
+        std::shared_ptr<WinterContext> context, std::shared_ptr<SceneManager> scene_manager,
         ImGuiContext* imgui_context);
     inline void update()
     {
@@ -34,7 +34,7 @@ public:
 private:
     ImGuiIO& imgui_io;
     std::shared_ptr<World> world;
-    std::shared_ptr<DemoContext> context;
+    std::shared_ptr<WinterContext> context;
     std::shared_ptr<SceneManager> scene_manager;
     ImGuiContext* imgui_context;
 

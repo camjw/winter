@@ -1,5 +1,5 @@
-#ifndef DEMO_UUID_H
-#define DEMO_UUID_H
+#ifndef WINTER_UUID_H
+#define WINTER_UUID_H
 
 #include <random>
 #include <sstream>

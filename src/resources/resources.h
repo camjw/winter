@@ -1,5 +1,5 @@
-#ifndef DEMO_RESOURCES_HPP
-#define DEMO_RESOURCES_HPP
+#ifndef WINTER_RESOURCES_HPP
+#define WINTER_RESOURCES_HPP
 
 class Resources
 {

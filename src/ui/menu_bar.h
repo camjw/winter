@@ -1,5 +1,5 @@
-#ifndef DEMO_MENU_BAR_H
-#define DEMO_MENU_BAR_H
+#ifndef WINTER_MENU_BAR_H
+#define WINTER_MENU_BAR_H
 
 #include "event_repository.h"
 #include "ui_widget.h"

@@ -1,5 +1,5 @@
-#ifndef DEMO_SHADER_CONSTANTS_H
-#define DEMO_SHADER_CONSTANTS_H
+#ifndef WINTER_SHADER_CONSTANTS_H
+#define WINTER_SHADER_CONSTANTS_H
 
 #include <string>
 
@@ -24,4 +24,4 @@ static const int MAX_NUM_DIRECTIONAL_LIGHTS = 4;
 static const int MAX_NUM_POINT_LIGHTS = 32;
 static const int MAX_NUM_SPOT_LIGHTS = 32;
 
-#endif // DEMO_SHADER_CONSTANTS_H
+#endif // WINTER_SHADER_CONSTANTS_H

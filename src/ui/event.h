@@ -1,5 +1,5 @@
-#ifndef DEMO_EVENT_H
-#define DEMO_EVENT_H
+#ifndef WINTER_EVENT_H
+#define WINTER_EVENT_H
 
 class Event
 {
@@ -8,4 +8,4 @@ public:
     virtual const char* get_type() const = 0;
 };
 
-#endif // DEMO_EVENT_H
+#endif // WINTER_EVENT_H

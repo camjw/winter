@@ -1,5 +1,5 @@
-#ifndef DEMO_MATHS_FLOAT_2_HPP
-#define DEMO_MATHS_FLOAT_2_HPP
+#ifndef WINTER_MATHS_FLOAT_2_HPP
+#define WINTER_MATHS_FLOAT_2_HPP
 
 #include <cmath>
 #include <cstdio>

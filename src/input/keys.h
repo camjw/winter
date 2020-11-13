@@ -1,5 +1,5 @@
-#ifndef DEMO_KEYS_HPP
-#define DEMO_KEYS_HPP
+#ifndef WINTER_KEYS_HPP
+#define WINTER_KEYS_HPP
 
 enum class Key
 {

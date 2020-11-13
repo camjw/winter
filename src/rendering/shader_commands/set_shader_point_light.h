@@ -1,5 +1,5 @@
-#ifndef DEMO_SET_SHADER_POINT_LIGHT_H
-#define DEMO_SET_SHADER_POINT_LIGHT_H
+#ifndef WINTER_SET_SHADER_POINT_LIGHT_H
+#define WINTER_SET_SHADER_POINT_LIGHT_H
 
 class SetShaderPointLight
 {
@@ -24,4 +24,4 @@ private:
     PointLight point_light;
     int light_index;
 };
-#endif // DEMO_SET_SHADER_POINT_LIGHT_H
+#endif // WINTER_SET_SHADER_POINT_LIGHT_H

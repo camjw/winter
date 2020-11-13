@@ -1,7 +1,7 @@
 #include "spot_light.h"
 #include <rendering/opengl_renderer.h>
 
-OpenGLRenderer::OpenGLRenderer(std::shared_ptr<DemoContext> context,
+OpenGLRenderer::OpenGLRenderer(std::shared_ptr<WinterContext> context,
     std::shared_ptr<Window> window, std::shared_ptr<World> world, std::shared_ptr<UIRoot> ui_root)
     : window(window)
     , world(world)

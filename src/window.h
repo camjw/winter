@@ -1,26 +1,21 @@
-#ifndef DEMO_WINDOW_HPP
-#define DEMO_WINDOW_HPP
+#ifndef WINTER_WINDOW_HPP
+#define WINTER_WINDOW_HPP
 
 #include <glad/glad.h>
+
 #include <GLFW/glfw3.h>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <stb_image.h>
-
 #include <cstdio>
-#include <string>
-
 #include <maths/float2.h>
 #include <maths/int2.h>
+#include <stb_image.h>
+#include <string>
 #include <timer.h>
 
 class InputState;
-
 class Window
 {
 public:
-    Window(const std::string& window_name);
+    explicit Window(const std::string& window_name);
 
     ~Window();
 
@@ -34,9 +29,9 @@ public:
         return glfwWindowShouldClose(glfw_window) || close_window;
     }
 
-    inline float get_aspect_ratio()
+    inline float get_aspect_ratio() const
     {
-        return (float) width_ / height_;
+        return (float)width_ / height_;
     }
 
     inline void set_window_dimensions(int width, int height)

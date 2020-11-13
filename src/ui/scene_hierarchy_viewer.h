@@ -1,5 +1,5 @@
-#ifndef DEMO_SCENE_HIERARCHY_VIEWER_H
-#define DEMO_SCENE_HIERARCHY_VIEWER_H
+#ifndef WINTER_SCENE_HIERARCHY_VIEWER_H
+#define WINTER_SCENE_HIERARCHY_VIEWER_H
 
 #include "ui_widget.h"
 #include <scene/scene_manager.h>

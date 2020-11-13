@@ -1,5 +1,5 @@
-#ifndef DEMO_MATHS_MATHS_HPP
-#define DEMO_MATHS_MATHS_HPP
+#ifndef WINTER_MATHS_MATHS_HPP
+#define WINTER_MATHS_MATHS_HPP
 
 #include <maths/float2.h>
 #include <maths/float3.h>

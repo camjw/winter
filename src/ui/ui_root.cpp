@@ -1,7 +1,7 @@
 #include "ui_root.h"
 #include <ui/event_processors/set_scene_hierarchy_viewer_visible.h>
 
-UIRoot::UIRoot(std::shared_ptr<World> world, std::shared_ptr<Window> window, std::shared_ptr<DemoContext> context,
+UIRoot::UIRoot(std::shared_ptr<World> world, std::shared_ptr<Window> window, std::shared_ptr<WinterContext> context,
     std::shared_ptr<SceneManager> scene_manager, ImGuiContext* imgui_context)
     : imgui_io(ImGui::GetIO())
     , world(world)

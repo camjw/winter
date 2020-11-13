@@ -1,19 +1,12 @@
-#ifndef DEMO_OPENGL_RENDERER_HPP
-#define DEMO_OPENGL_RENDERER_HPP
+#ifndef WINTER_OPENGL_RENDERER_HPP
+#define WINTER_OPENGL_RENDERER_HPP
 
 #include "render_queue.h"
-#include <context/demo_context.h>
-#include <ecs/components/camera_component.h>
-#include <ecs/ecs.h>
-#include <ecs/signature_builder.h>
-#include <ecs/system.h>
-#include <ecs/world.h>
+#include <context/winter_context.h>
 #include <imgui/bindings/imgui_impl_glfw.h>
 #include <imgui/bindings/imgui_impl_opengl3.h>
 #include <imgui/imgui.h>
 #include <maths/transform.h>
-#include <rendering/cube_map.h>
-#include <rendering/directional_light.h>
 #include <rendering/framebuffer.h>
 #include <rendering/material.h>
 #include <rendering/point_light.h>
@@ -33,7 +26,7 @@
 class OpenGLRenderer
 {
 public:
-    OpenGLRenderer(std::shared_ptr<DemoContext> context, std::shared_ptr<Window> window,
+    OpenGLRenderer(std::shared_ptr<WinterContext> context, std::shared_ptr<Window> window,
         std::shared_ptr<World> world, std::shared_ptr<UIRoot> ui_root);
     void draw_scene(const Time time, const Scene* scene);
 

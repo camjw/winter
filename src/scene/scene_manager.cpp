@@ -1,12 +1,10 @@
-#include "ecs/components/hierarchy_component.h"
 #include <scene/scene_manager.h>
 #include <scripts/scenes/first_scene.h>
 
-SceneManager::SceneManager(std::shared_ptr<DemoContext> context, std::shared_ptr<World> world)
+SceneManager::SceneManager(std::shared_ptr<WinterContext> context)
     : context(context)
-    , world(world)
 {
-    Scene* first_scene = new FirstScene(context, world, next_scene_id);
+    Scene* first_scene = new FirstScene(context, next_scene_id);
     first_scene->on_create();
 
     scenes.insert(std::pair<SceneID, Scene*>(next_scene_id++, first_scene));

@@ -1,5 +1,5 @@
-#ifndef DEMO_RENDERBUFFER_H
-#define DEMO_RENDERBUFFER_H
+#ifndef WINTER_RENDERBUFFER_H
+#define WINTER_RENDERBUFFER_H
 
 #include <algorithm>
 #include <glad/glad.h>

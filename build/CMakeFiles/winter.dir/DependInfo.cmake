@@ -26,6 +26,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/cameron/winter/lib/stb_image.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/lib/stb_image.cpp.o"
   "/Users/cameron/winter/src/context/demo_context.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/context/demo_context.cpp.o"
   "/Users/cameron/winter/src/engine.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/engine.cpp.o"
+  "/Users/cameron/winter/src/entity/entity.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/entity/entity.cpp.o"
   "/Users/cameron/winter/src/input/input_processor.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/input/input_processor.cpp.o"
   "/Users/cameron/winter/src/main.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/main.cpp.o"
   "/Users/cameron/winter/src/rendering/cube_map.cpp" "/Users/cameron/winter/build/CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o"

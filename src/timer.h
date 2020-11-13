@@ -1,5 +1,5 @@
-#ifndef DEMO_TIMER_HPP
-#define DEMO_TIMER_HPP
+#ifndef WINTER_TIMER_HPP
+#define WINTER_TIMER_HPP
 
 #include <chrono>
 #include <iostream>

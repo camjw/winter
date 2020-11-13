@@ -1,5 +1,5 @@
-#ifndef DEMO_MATERIAL_REPOSITORY_H
-#define DEMO_MATERIAL_REPOSITORY_H
+#ifndef WINTER_MATERIAL_REPOSITORY_H
+#define WINTER_MATERIAL_REPOSITORY_H
 
 #include <rendering/material.h>
 #include <unordered_map>

@@ -1,5 +1,5 @@
-#ifndef DEMO_MATERIAL_EDITOR_H
-#define DEMO_MATERIAL_EDITOR_H
+#ifndef WINTER_MATERIAL_EDITOR_H
+#define WINTER_MATERIAL_EDITOR_H
 
 #include "ui_widget.h"
 #include <ecs/world.h>

@@ -411,6 +411,33 @@ src/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/engine.cpp.s
 .PHONY : src/engine.cpp.s
 
+src/entity/entity.o: src/entity/entity.cpp.o
+
+.PHONY : src/entity/entity.o
+
+# target to build an object file
+src/entity/entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/entity/entity.cpp.o
+.PHONY : src/entity/entity.cpp.o
+
+src/entity/entity.i: src/entity/entity.cpp.i
+
+.PHONY : src/entity/entity.i
+
+# target to preprocess a source file
+src/entity/entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/entity/entity.cpp.i
+.PHONY : src/entity/entity.cpp.i
+
+src/entity/entity.s: src/entity/entity.cpp.s
+
+.PHONY : src/entity/entity.s
+
+# target to generate assembly for a file
+src/entity/entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/entity/entity.cpp.s
+.PHONY : src/entity/entity.cpp.s
+
 src/glad.o: src/glad.c.o
 
 .PHONY : src/glad.o
@@ -1424,6 +1451,9 @@ help:
 	@echo "... src/engine.o"
 	@echo "... src/engine.i"
 	@echo "... src/engine.s"
+	@echo "... src/entity/entity.o"
+	@echo "... src/entity/entity.i"
+	@echo "... src/entity/entity.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

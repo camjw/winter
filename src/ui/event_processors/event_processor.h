@@ -1,5 +1,5 @@
-#ifndef DEMO_EVENT_PROCESSOR_H
-#define DEMO_EVENT_PROCESSOR_H
+#ifndef WINTER_EVENT_PROCESSOR_H
+#define WINTER_EVENT_PROCESSOR_H
 
 #include <ui/event.h>
 
@@ -9,4 +9,4 @@ public:
     virtual void process_event(const Event* event) = 0;
 };
 
-#endif // DEMO_EVENT_PROCESSOR_H
+#endif // WINTER_EVENT_PROCESSOR_H

@@ -1,5 +1,5 @@
-#ifndef DEMO_SPOT_LIGHT_HPP
-#define DEMO_SPOT_LIGHT_HPP
+#ifndef WINTER_SPOT_LIGHT_HPP
+#define WINTER_SPOT_LIGHT_HPP
 
 #include "shader.h"
 #include <ecs/world.h>

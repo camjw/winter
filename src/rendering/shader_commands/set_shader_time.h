@@ -1,5 +1,5 @@
-#ifndef DEMO_SET_SHADER_TIME_H
-#define DEMO_SET_SHADER_TIME_H
+#ifndef WINTER_SET_SHADER_TIME_H
+#define WINTER_SET_SHADER_TIME_H
 
 #include <constants/shader_constants.h>
 #include <rendering/shader.h>
@@ -23,4 +23,4 @@ private:
     Time time;
 };
 
-#endif // DEMO_SET_SHADER_TIME_H
+#endif // WINTER_SET_SHADER_TIME_H

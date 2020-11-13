@@ -1,5 +1,5 @@
-#ifndef DEMO_INPUT_PROCESSOR_HPP
-#define DEMO_INPUT_PROCESSOR_HPP
+#ifndef WINTER_INPUT_PROCESSOR_HPP
+#define WINTER_INPUT_PROCESSOR_HPP
 
 #include <input/keys.h>
 #include <maths/float2.h>

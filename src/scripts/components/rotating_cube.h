@@ -1,5 +1,5 @@
-#ifndef DEMO_ROTATING_CUBE_COMPONENT_H
-#define DEMO_ROTATING_CUBE_COMPONENT_H
+#ifndef WINTER_ROTATING_CUBE_COMPONENT_H
+#define WINTER_ROTATING_CUBE_COMPONENT_H
 
 #include <ecs/system.h>
 #include <input/input_processor.h>
@@ -27,4 +27,4 @@ public:
     void update(Time time, InputState* input) override;
 };
 
-#endif // DEMO_ROTATING_CUBE_COMPONENT_H
+#endif // WINTER_ROTATING_CUBE_COMPONENT_H

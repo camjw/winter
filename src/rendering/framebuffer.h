@@ -1,5 +1,5 @@
-#ifndef DEMO_FRAMEBUFFER_H
-#define DEMO_FRAMEBUFFER_H
+#ifndef WINTER_FRAMEBUFFER_H
+#define WINTER_FRAMEBUFFER_H
 
 #include "renderbuffer.h"
 #include "texture.h"

@@ -1,5 +1,5 @@
-#ifndef DEMO_RENDERING_TEXTURE_REPOSITORY_HPP
-#define DEMO_RENDERING_TEXTURE_REPOSITORY_HPP
+#ifndef WINTER_RENDERING_TEXTURE_REPOSITORY_HPP
+#define WINTER_RENDERING_TEXTURE_REPOSITORY_HPP
 
 #include <rendering/texture.h>
 
@@ -11,9 +11,7 @@ public:
     explicit TextureRepository();
 
     std::shared_ptr<Texture> get_texture(TextureID texture_id);
-    TextureID get_texture_id(const std::string& texture_name);
     TextureID create_texture(const std::string& texture_name, const std::string& filename);
-    TextureID create_texture(const std::string& texture_name, const aiTexture* assimp_texture);
 
     void delete_texture(TextureID texture_id);
     void clear();

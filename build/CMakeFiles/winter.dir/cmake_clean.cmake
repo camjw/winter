@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/winter.dir/lib/stb_image.cpp.o"
   "CMakeFiles/winter.dir/src/context/demo_context.cpp.o"
   "CMakeFiles/winter.dir/src/engine.cpp.o"
+  "CMakeFiles/winter.dir/src/entity/entity.cpp.o"
   "CMakeFiles/winter.dir/src/glad.c.o"
   "CMakeFiles/winter.dir/src/input/input_processor.cpp.o"
   "CMakeFiles/winter.dir/src/main.cpp.o"

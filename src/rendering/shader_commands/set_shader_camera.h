@@ -1,5 +1,5 @@
-#ifndef DEMO_SET_SHADER_CAMERA_H
-#define DEMO_SET_SHADER_CAMERA_H
+#ifndef WINTER_SET_SHADER_CAMERA_H
+#define WINTER_SET_SHADER_CAMERA_H
 
 #include <constants/shader_constants.h>
 #include <maths/float3.h>
@@ -29,4 +29,4 @@ private:
     glm::mat4 view;
 };
 
-#endif // DEMO_SET_SHADER_CAMERA_H
+#endif // WINTER_SET_SHADER_CAMERA_H

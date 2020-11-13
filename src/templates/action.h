@@ -1,5 +1,5 @@
-#ifndef DEMO_ACTION_H
-#define DEMO_ACTION_H
+#ifndef WINTER_ACTION_H
+#define WINTER_ACTION_H
 
 #include <memory>
 
@@ -10,4 +10,4 @@ public:
     virtual void run(std::shared_ptr<T> entity) = 0;
 };
 
-#endif // DEMO_ACTION_H
+#endif // WINTER_ACTION_H

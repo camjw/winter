@@ -1,5 +1,5 @@
-#ifndef DEMO_OPEN_SCENE_HIERARCHY_EVENT_H
-#define DEMO_OPEN_SCENE_HIERARCHY_EVENT_H
+#ifndef WINTER_OPEN_SCENE_HIERARCHY_EVENT_H
+#define WINTER_OPEN_SCENE_HIERARCHY_EVENT_H
 
 #include <ui/event.h>
 #include <ui/event_processors/event_processor.h>
@@ -39,4 +39,4 @@ public:
 private:
     SceneHierarchyViewer* scene_hierarchy_viewer;
 };
-#endif // DEMO_OPEN_SCENE_HIERARCHY_EVENT_H
+#endif // WINTER_OPEN_SCENE_HIERARCHY_EVENT_H

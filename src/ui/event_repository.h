@@ -1,5 +1,5 @@
-#ifndef DEMO_EVENT_REPOSITORY_H
-#define DEMO_EVENT_REPOSITORY_H
+#ifndef WINTER_EVENT_REPOSITORY_H
+#define WINTER_EVENT_REPOSITORY_H
 
 #include <queue>
 #include <ui/event.h>

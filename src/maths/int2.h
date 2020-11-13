@@ -1,5 +1,5 @@
-#ifndef DEMO_INT2_H
-#define DEMO_INT2_H
+#ifndef WINTER_INT2_H
+#define WINTER_INT2_H
 
 #include <cmath>
 #include <cstdio>
@@ -143,4 +143,4 @@ public:
     int x, y;
 };
 
-#endif // DEMO_INT2_H
+#endif // WINTER_INT2_H

@@ -1,8 +1,8 @@
-#ifndef DEMO_SCENE_ID_H
-#define DEMO_SCENE_ID_H
+#ifndef WINTER_SCENE_ID_H
+#define WINTER_SCENE_ID_H
 
 #include <cstdint>
 
 using SceneID = uint32_t;
 
-#endif // DEMO_SCENE_ID_H
+#endif // WINTER_SCENE_ID_H

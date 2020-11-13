@@ -1,5 +1,5 @@
-#ifndef DEMO_UI_WIDGET_H
-#define DEMO_UI_WIDGET_H
+#ifndef WINTER_UI_WIDGET_H
+#define WINTER_UI_WIDGET_H
 
 #include <imgui/imgui.h>
 
@@ -20,4 +20,4 @@ private:
     virtual void draw() = 0;
 };
 
-#endif // DEMO_UI_WIDGET_H
+#endif // WINTER_UI_WIDGET_H

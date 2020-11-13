@@ -1,5 +1,5 @@
-#ifndef DEMO_OPENGL_HELPERS_H
-#define DEMO_OPENGL_HELPERS_H
+#ifndef WINTER_OPENGL_HELPERS_H
+#define WINTER_OPENGL_HELPERS_H
 
 #include "suppress_warning.h"
 #include <glad/glad.h>
@@ -49,4 +49,4 @@ static inline GLenum glCheckError_(const char* file, int line)
 
 #define glCheckError() glCheckError_(__FILE__, __LINE__)
 
-#endif // DEMO_OPENGL_HELPERS_H
+#endif // WINTER_OPENGL_HELPERS_H

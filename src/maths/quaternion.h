@@ -1,12 +1,11 @@
-#ifndef DEMO_MATHS_QUATERNION_HPP
-#define DEMO_MATHS_QUATERNION_HPP
+#ifndef WINTER_MATHS_QUATERNION_HPP
+#define WINTER_MATHS_QUATERNION_HPP
 
 #include <cstdio>
 #include <math.h>
 
 #include <cmath>
 #define GLM_ENABLE_EXPERIMENTAL
-#include <glm/gtx/quaternion.hpp>
 #include <maths/float3.h>
 #include <sstream>
 
@@ -152,11 +151,6 @@ public:
     void print()
     {
         printf("%s", to_string().c_str());
-    }
-
-    glm::quat to_glm() const
-    {
-        return glm::quat(w, x, y, z);
     }
 
     float w, x, y, z;

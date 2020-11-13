@@ -1,13 +1,10 @@
-#ifndef DEMO_TEXTURE_HPP
-#define DEMO_TEXTURE_HPP
+#ifndef WINTER_TEXTURE_HPP
+#define WINTER_TEXTURE_HPP
 
 #include <glad/glad.h>
 #include <stb_image.h>
 
-#include <assimp/texture.h>
 #include <cstdint>
-#include <ecs/ecs.h>
-#include <ecs/world.h>
 #include <string>
 
 using TextureID = uint32_t;
@@ -23,14 +20,11 @@ struct TextureComponent
         , binding_index(binding_index) {};
 };
 
-REGISTER_COMPONENT(Texture, TextureComponent)
-
 struct Texture
 {
     explicit Texture(int width, int height);
     explicit Texture(int width, int height, GLuint internal_format, GLuint image_format);
     explicit Texture(const std::string& filename);
-    explicit Texture(const aiTexture* assimp_texture);
 
     Texture(const Texture&) = delete;
     Texture& operator=(const Texture&) = delete;

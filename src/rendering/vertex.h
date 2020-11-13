@@ -1,5 +1,5 @@
-#ifndef DEMO_VERTEX_H
-#define DEMO_VERTEX_H
+#ifndef WINTER_VERTEX_H
+#define WINTER_VERTEX_H
 
 #include <maths/float3.h>
 
