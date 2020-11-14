@@ -13,8 +13,7 @@ struct RenderCommand
 
     ShaderID shader_id;
 
-    TextureID diffuse_texture_id = 0;
-    TextureID specular_texture_id = 0;
+    TextureID texture_id = 0;
 
     MaterialID material_id;
 

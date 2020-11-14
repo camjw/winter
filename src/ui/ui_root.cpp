@@ -1,10 +1,9 @@
 #include "ui_root.h"
 #include <ui/event_processors/set_scene_hierarchy_viewer_visible.h>
 
-UIRoot::UIRoot(std::shared_ptr<World> world, std::shared_ptr<Window> window, std::shared_ptr<WinterContext> context,
+UIRoot::UIRoot(std::shared_ptr<Window> window, std::shared_ptr<WinterContext> context,
     std::shared_ptr<SceneManager> scene_manager, ImGuiContext* imgui_context)
     : imgui_io(ImGui::GetIO())
-    , world(world)
     , context(context)
     , scene_manager(scene_manager)
     , imgui_context(imgui_context)
@@ -16,7 +15,7 @@ UIRoot::UIRoot(std::shared_ptr<World> world, std::shared_ptr<Window> window, std
     ImGui::StyleColorsClassic();
     event_repository = std::make_unique<EventRepository>();
 
-    scene_hierarchy_viewer = std::make_unique<SceneHierarchyViewer>(scene_manager, world);
+    scene_hierarchy_viewer = std::make_unique<SceneHierarchyViewer>(scene_manager);
     menu_bar = std::make_unique<MenuBar>(event_repository.get());
 
     event_repository->add_event_repository(SetSceneHierarchyViewerVisibleEvent::type, new SetSceneHierarchyViewerVisibleEventProcessor(scene_hierarchy_viewer.get()));

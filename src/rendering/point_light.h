@@ -2,7 +2,6 @@
 #define WINTER_POINT_LIGHT_H
 
 #include "shader.h"
-#include <ecs/world.h>
 #include <maths/float3.h>
 
 struct PointLight
@@ -30,6 +29,4 @@ struct PointLight
     }
 };
 
-REGISTER_COMPONENT(PointLight, PointLight)
-
-#endif //DEMO_POINT_LIGHT_H
+#endif //WINTER_POINT_LIGHT_H

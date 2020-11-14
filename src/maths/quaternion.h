@@ -3,10 +3,8 @@
 
 #include <cstdio>
 #include <math.h>
-
 #include <cmath>
-#define GLM_ENABLE_EXPERIMENTAL
-#include <maths/float3.h>
+#include "float3.h"
 #include <sstream>
 
 struct EulerAngles

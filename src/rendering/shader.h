@@ -6,6 +6,7 @@
 #include <fstream>
 #include <maths/float3.h>
 #include <maths/float4.h>
+#include <maths/matrix4x4.h>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -72,6 +73,21 @@ public:
     void set_float4(const std::string& name, float x, float y, float z, float w)
     {
         glUniform4f(glGetUniformLocation(id_, name.c_str()), x, y, z, w);
+    }
+
+//    void set_mat2(const std::string& name, const glm::mat2& mat) const
+//    {
+//        glUniformMatrix2fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+//    }
+//
+//    void set_mat3(const std::string& name, const glm::mat3& mat) const
+//    {
+//        glUniformMatrix3fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+//    }
+
+    void set_mat4(const std::string& name, const Matrix4x4& mat) const
+    {
+        glUniformMatrix4fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
 
 private:

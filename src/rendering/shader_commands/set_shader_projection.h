@@ -8,17 +8,17 @@
 class SetShaderProjection
 {
 public:
-    SetShaderProjection(glm::mat4 projection)
+    SetShaderProjection(const Matrix4x4& projection)
         : projection(projection) {};
 
     inline void operator()(Shader* shader)
     {
         shader->bind();
-        shader->set_mat4(DEMO_CONSTANTS_PROJECTION, projection);
+        shader->set_mat4(WINTER_CONSTANTS_PROJECTION, projection);
     }
 
 private:
-    glm::mat4 projection;
+    Matrix4x4 projection;
 };
 
 #endif // WINTER_SET_SHADER_PROJECTION_H

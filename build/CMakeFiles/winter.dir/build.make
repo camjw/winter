@@ -167,18 +167,18 @@ CMakeFiles/winter.dir/lib/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/lib/stb_image.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/lib/stb_image.cpp -o CMakeFiles/winter.dir/lib/stb_image.cpp.s
 
-CMakeFiles/winter.dir/src/context/demo_context.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/context/demo_context.cpp.o: ../src/context/demo_context.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/winter.dir/src/context/demo_context.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/context/demo_context.cpp.o -c /Users/cameron/winter/src/context/demo_context.cpp
+CMakeFiles/winter.dir/src/context/winter_context.cpp.o: CMakeFiles/winter.dir/flags.make
+CMakeFiles/winter.dir/src/context/winter_context.cpp.o: ../src/context/winter_context.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/winter.dir/src/context/winter_context.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/context/winter_context.cpp.o -c /Users/cameron/winter/src/context/winter_context.cpp
 
-CMakeFiles/winter.dir/src/context/demo_context.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/context/demo_context.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/context/demo_context.cpp > CMakeFiles/winter.dir/src/context/demo_context.cpp.i
+CMakeFiles/winter.dir/src/context/winter_context.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/context/winter_context.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/context/winter_context.cpp > CMakeFiles/winter.dir/src/context/winter_context.cpp.i
 
-CMakeFiles/winter.dir/src/context/demo_context.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/context/demo_context.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/context/demo_context.cpp -o CMakeFiles/winter.dir/src/context/demo_context.cpp.s
+CMakeFiles/winter.dir/src/context/winter_context.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/context/winter_context.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/context/winter_context.cpp -o CMakeFiles/winter.dir/src/context/winter_context.cpp.s
 
 CMakeFiles/winter.dir/src/engine.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/engine.cpp.o: ../src/engine.cpp
@@ -245,48 +245,9 @@ CMakeFiles/winter.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/main.cpp -o CMakeFiles/winter.dir/src/main.cpp.s
 
-CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o: ../src/rendering/cube_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o -c /Users/cameron/winter/src/rendering/cube_map.cpp
-
-CMakeFiles/winter.dir/src/rendering/cube_map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/rendering/cube_map.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/rendering/cube_map.cpp > CMakeFiles/winter.dir/src/rendering/cube_map.cpp.i
-
-CMakeFiles/winter.dir/src/rendering/cube_map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/rendering/cube_map.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/rendering/cube_map.cpp -o CMakeFiles/winter.dir/src/rendering/cube_map.cpp.s
-
-CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o: ../src/rendering/directional_light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o -c /Users/cameron/winter/src/rendering/directional_light.cpp
-
-CMakeFiles/winter.dir/src/rendering/directional_light.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/rendering/directional_light.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/rendering/directional_light.cpp > CMakeFiles/winter.dir/src/rendering/directional_light.cpp.i
-
-CMakeFiles/winter.dir/src/rendering/directional_light.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/rendering/directional_light.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/rendering/directional_light.cpp -o CMakeFiles/winter.dir/src/rendering/directional_light.cpp.s
-
-CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o: ../src/rendering/framebuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o -c /Users/cameron/winter/src/rendering/framebuffer.cpp
-
-CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/rendering/framebuffer.cpp > CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.i
-
-CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/rendering/framebuffer.cpp -o CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.s
-
 CMakeFiles/winter.dir/src/rendering/material.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/material.cpp.o: ../src/rendering/material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/winter.dir/src/rendering/material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/winter.dir/src/rendering/material.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/material.cpp.o -c /Users/cameron/winter/src/rendering/material.cpp
 
 CMakeFiles/winter.dir/src/rendering/material.cpp.i: cmake_force
@@ -299,7 +260,7 @@ CMakeFiles/winter.dir/src/rendering/material.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/mesh.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/mesh.cpp.o: ../src/rendering/mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/winter.dir/src/rendering/mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/winter.dir/src/rendering/mesh.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/mesh.cpp.o -c /Users/cameron/winter/src/rendering/mesh.cpp
 
 CMakeFiles/winter.dir/src/rendering/mesh.cpp.i: cmake_force
@@ -312,7 +273,7 @@ CMakeFiles/winter.dir/src/rendering/mesh.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o: ../src/rendering/opengl_renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o -c /Users/cameron/winter/src/rendering/opengl_renderer.cpp
 
 CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.i: cmake_force
@@ -325,7 +286,7 @@ CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/point_light.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/point_light.cpp.o: ../src/rendering/point_light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/winter.dir/src/rendering/point_light.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/winter.dir/src/rendering/point_light.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/point_light.cpp.o -c /Users/cameron/winter/src/rendering/point_light.cpp
 
 CMakeFiles/winter.dir/src/rendering/point_light.cpp.i: cmake_force
@@ -338,7 +299,7 @@ CMakeFiles/winter.dir/src/rendering/point_light.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o: ../src/rendering/post_processing/ssao.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.o -c /Users/cameron/winter/src/rendering/post_processing/ssao.cpp
 
 CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.i: cmake_force
@@ -351,7 +312,7 @@ CMakeFiles/winter.dir/src/rendering/post_processing/ssao.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o: ../src/rendering/render_queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/render_queue.cpp.o -c /Users/cameron/winter/src/rendering/render_queue.cpp
 
 CMakeFiles/winter.dir/src/rendering/render_queue.cpp.i: cmake_force
@@ -364,7 +325,7 @@ CMakeFiles/winter.dir/src/rendering/render_queue.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o: ../src/rendering/renderbuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.o -c /Users/cameron/winter/src/rendering/renderbuffer.cpp
 
 CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.i: cmake_force
@@ -377,7 +338,7 @@ CMakeFiles/winter.dir/src/rendering/renderbuffer.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/shader.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/shader.cpp.o: ../src/rendering/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/winter.dir/src/rendering/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/winter.dir/src/rendering/shader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/shader.cpp.o -c /Users/cameron/winter/src/rendering/shader.cpp
 
 CMakeFiles/winter.dir/src/rendering/shader.cpp.i: cmake_force
@@ -390,7 +351,7 @@ CMakeFiles/winter.dir/src/rendering/shader.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o: ../src/rendering/spot_light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o -c /Users/cameron/winter/src/rendering/spot_light.cpp
 
 CMakeFiles/winter.dir/src/rendering/spot_light.cpp.i: cmake_force
@@ -403,7 +364,7 @@ CMakeFiles/winter.dir/src/rendering/spot_light.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/texture.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/texture.cpp.o: ../src/rendering/texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/winter.dir/src/rendering/texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/winter.dir/src/rendering/texture.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/texture.cpp.o -c /Users/cameron/winter/src/rendering/texture.cpp
 
 CMakeFiles/winter.dir/src/rendering/texture.cpp.i: cmake_force
@@ -416,7 +377,7 @@ CMakeFiles/winter.dir/src/rendering/texture.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/rendering/vertex.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/rendering/vertex.cpp.o: ../src/rendering/vertex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/winter.dir/src/rendering/vertex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/winter.dir/src/rendering/vertex.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/rendering/vertex.cpp.o -c /Users/cameron/winter/src/rendering/vertex.cpp
 
 CMakeFiles/winter.dir/src/rendering/vertex.cpp.i: cmake_force
@@ -427,22 +388,9 @@ CMakeFiles/winter.dir/src/rendering/vertex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/rendering/vertex.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/rendering/vertex.cpp -o CMakeFiles/winter.dir/src/rendering/vertex.cpp.s
 
-CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o: ../src/resources/cube_map_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o -c /Users/cameron/winter/src/resources/cube_map_repository.cpp
-
-CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/resources/cube_map_repository.cpp > CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.i
-
-CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/resources/cube_map_repository.cpp -o CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.s
-
 CMakeFiles/winter.dir/src/resources/material_repository.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/resources/material_repository.cpp.o: ../src/resources/material_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/winter.dir/src/resources/material_repository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/winter.dir/src/resources/material_repository.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/material_repository.cpp.o -c /Users/cameron/winter/src/resources/material_repository.cpp
 
 CMakeFiles/winter.dir/src/resources/material_repository.cpp.i: cmake_force
@@ -455,7 +403,7 @@ CMakeFiles/winter.dir/src/resources/material_repository.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o: ../src/resources/mesh_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o -c /Users/cameron/winter/src/resources/mesh_repository.cpp
 
 CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.i: cmake_force
@@ -468,7 +416,7 @@ CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o: ../src/resources/resource_loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o -c /Users/cameron/winter/src/resources/resource_loader.cpp
 
 CMakeFiles/winter.dir/src/resources/resource_loader.cpp.i: cmake_force
@@ -481,7 +429,7 @@ CMakeFiles/winter.dir/src/resources/resource_loader.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o: ../src/resources/shader_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o -c /Users/cameron/winter/src/resources/shader_repository.cpp
 
 CMakeFiles/winter.dir/src/resources/shader_repository.cpp.i: cmake_force
@@ -494,7 +442,7 @@ CMakeFiles/winter.dir/src/resources/shader_repository.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o: ../src/resources/texture_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o -c /Users/cameron/winter/src/resources/texture_repository.cpp
 
 CMakeFiles/winter.dir/src/resources/texture_repository.cpp.i: cmake_force
@@ -505,35 +453,9 @@ CMakeFiles/winter.dir/src/resources/texture_repository.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/resources/texture_repository.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/resources/texture_repository.cpp -o CMakeFiles/winter.dir/src/resources/texture_repository.cpp.s
 
-CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o: ../src/scene/scene_builder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o -c /Users/cameron/winter/src/scene/scene_builder.cpp
-
-CMakeFiles/winter.dir/src/scene/scene_builder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/scene/scene_builder.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/scene/scene_builder.cpp > CMakeFiles/winter.dir/src/scene/scene_builder.cpp.i
-
-CMakeFiles/winter.dir/src/scene/scene_builder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/scene/scene_builder.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/scene/scene_builder.cpp -o CMakeFiles/winter.dir/src/scene/scene_builder.cpp.s
-
-CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o: ../src/scene/scene_graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o -c /Users/cameron/winter/src/scene/scene_graph.cpp
-
-CMakeFiles/winter.dir/src/scene/scene_graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/scene/scene_graph.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/scene/scene_graph.cpp > CMakeFiles/winter.dir/src/scene/scene_graph.cpp.i
-
-CMakeFiles/winter.dir/src/scene/scene_graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/scene/scene_graph.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/scene/scene_graph.cpp -o CMakeFiles/winter.dir/src/scene/scene_graph.cpp.s
-
 CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o: ../src/scene/scene_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o -c /Users/cameron/winter/src/scene/scene_manager.cpp
 
 CMakeFiles/winter.dir/src/scene/scene_manager.cpp.i: cmake_force
@@ -546,7 +468,7 @@ CMakeFiles/winter.dir/src/scene/scene_manager.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o: ../src/scripts/components/rotating_cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o -c /Users/cameron/winter/src/scripts/components/rotating_cube.cpp
 
 CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.i: cmake_force
@@ -559,7 +481,7 @@ CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o: ../src/scripts/scenes/first_scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o -c /Users/cameron/winter/src/scripts/scenes/first_scene.cpp
 
 CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.i: cmake_force
@@ -572,7 +494,7 @@ CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o: ../src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o -c /Users/cameron/winter/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp
 
 CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.i: cmake_force
@@ -585,7 +507,7 @@ CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible
 
 CMakeFiles/winter.dir/src/ui/event_repository.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/ui/event_repository.cpp.o: ../src/ui/event_repository.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/winter.dir/src/ui/event_repository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/winter.dir/src/ui/event_repository.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/event_repository.cpp.o -c /Users/cameron/winter/src/ui/event_repository.cpp
 
 CMakeFiles/winter.dir/src/ui/event_repository.cpp.i: cmake_force
@@ -596,22 +518,9 @@ CMakeFiles/winter.dir/src/ui/event_repository.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/ui/event_repository.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/ui/event_repository.cpp -o CMakeFiles/winter.dir/src/ui/event_repository.cpp.s
 
-CMakeFiles/winter.dir/src/ui/material_editor.cpp.o: CMakeFiles/winter.dir/flags.make
-CMakeFiles/winter.dir/src/ui/material_editor.cpp.o: ../src/ui/material_editor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/winter.dir/src/ui/material_editor.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/material_editor.cpp.o -c /Users/cameron/winter/src/ui/material_editor.cpp
-
-CMakeFiles/winter.dir/src/ui/material_editor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/winter.dir/src/ui/material_editor.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cameron/winter/src/ui/material_editor.cpp > CMakeFiles/winter.dir/src/ui/material_editor.cpp.i
-
-CMakeFiles/winter.dir/src/ui/material_editor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/winter.dir/src/ui/material_editor.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cameron/winter/src/ui/material_editor.cpp -o CMakeFiles/winter.dir/src/ui/material_editor.cpp.s
-
 CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o: ../src/ui/menu_bar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o -c /Users/cameron/winter/src/ui/menu_bar.cpp
 
 CMakeFiles/winter.dir/src/ui/menu_bar.cpp.i: cmake_force
@@ -624,7 +533,7 @@ CMakeFiles/winter.dir/src/ui/menu_bar.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o: ../src/ui/scene_hierarchy_viewer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o -c /Users/cameron/winter/src/ui/scene_hierarchy_viewer.cpp
 
 CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.i: cmake_force
@@ -637,7 +546,7 @@ CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/ui/ui_root.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/ui/ui_root.cpp.o: ../src/ui/ui_root.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/winter.dir/src/ui/ui_root.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/winter.dir/src/ui/ui_root.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/ui/ui_root.cpp.o -c /Users/cameron/winter/src/ui/ui_root.cpp
 
 CMakeFiles/winter.dir/src/ui/ui_root.cpp.i: cmake_force
@@ -650,7 +559,7 @@ CMakeFiles/winter.dir/src/ui/ui_root.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/utils/bitmask.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/utils/bitmask.cpp.o: ../src/utils/bitmask.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/winter.dir/src/utils/bitmask.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/winter.dir/src/utils/bitmask.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/utils/bitmask.cpp.o -c /Users/cameron/winter/src/utils/bitmask.cpp
 
 CMakeFiles/winter.dir/src/utils/bitmask.cpp.i: cmake_force
@@ -663,7 +572,7 @@ CMakeFiles/winter.dir/src/utils/bitmask.cpp.s: cmake_force
 
 CMakeFiles/winter.dir/src/window.cpp.o: CMakeFiles/winter.dir/flags.make
 CMakeFiles/winter.dir/src/window.cpp.o: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/winter.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/winter.dir/src/window.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/winter.dir/src/window.cpp.o -c /Users/cameron/winter/src/window.cpp
 
 CMakeFiles/winter.dir/src/window.cpp.i: cmake_force
@@ -683,15 +592,12 @@ winter_OBJECTS = \
 "CMakeFiles/winter.dir/lib/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/winter.dir/lib/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/winter.dir/lib/stb_image.cpp.o" \
-"CMakeFiles/winter.dir/src/context/demo_context.cpp.o" \
+"CMakeFiles/winter.dir/src/context/winter_context.cpp.o" \
 "CMakeFiles/winter.dir/src/engine.cpp.o" \
 "CMakeFiles/winter.dir/src/entity/entity.cpp.o" \
 "CMakeFiles/winter.dir/src/glad.c.o" \
 "CMakeFiles/winter.dir/src/input/input_processor.cpp.o" \
 "CMakeFiles/winter.dir/src/main.cpp.o" \
-"CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o" \
-"CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o" \
-"CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o" \
 "CMakeFiles/winter.dir/src/rendering/material.cpp.o" \
 "CMakeFiles/winter.dir/src/rendering/mesh.cpp.o" \
 "CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o" \
@@ -703,20 +609,16 @@ winter_OBJECTS = \
 "CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o" \
 "CMakeFiles/winter.dir/src/rendering/texture.cpp.o" \
 "CMakeFiles/winter.dir/src/rendering/vertex.cpp.o" \
-"CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o" \
 "CMakeFiles/winter.dir/src/resources/material_repository.cpp.o" \
 "CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o" \
 "CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o" \
 "CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o" \
 "CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o" \
-"CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o" \
-"CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o" \
 "CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o" \
 "CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o" \
 "CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o" \
 "CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o" \
 "CMakeFiles/winter.dir/src/ui/event_repository.cpp.o" \
-"CMakeFiles/winter.dir/src/ui/material_editor.cpp.o" \
 "CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o" \
 "CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o" \
 "CMakeFiles/winter.dir/src/ui/ui_root.cpp.o" \
@@ -733,15 +635,12 @@ winter: CMakeFiles/winter.dir/lib/imgui/imgui_demo.cpp.o
 winter: CMakeFiles/winter.dir/lib/imgui/imgui_draw.cpp.o
 winter: CMakeFiles/winter.dir/lib/imgui/imgui_widgets.cpp.o
 winter: CMakeFiles/winter.dir/lib/stb_image.cpp.o
-winter: CMakeFiles/winter.dir/src/context/demo_context.cpp.o
+winter: CMakeFiles/winter.dir/src/context/winter_context.cpp.o
 winter: CMakeFiles/winter.dir/src/engine.cpp.o
 winter: CMakeFiles/winter.dir/src/entity/entity.cpp.o
 winter: CMakeFiles/winter.dir/src/glad.c.o
 winter: CMakeFiles/winter.dir/src/input/input_processor.cpp.o
 winter: CMakeFiles/winter.dir/src/main.cpp.o
-winter: CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o
-winter: CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o
-winter: CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/material.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/mesh.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/opengl_renderer.cpp.o
@@ -753,20 +652,16 @@ winter: CMakeFiles/winter.dir/src/rendering/shader.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/spot_light.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/texture.cpp.o
 winter: CMakeFiles/winter.dir/src/rendering/vertex.cpp.o
-winter: CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o
 winter: CMakeFiles/winter.dir/src/resources/material_repository.cpp.o
 winter: CMakeFiles/winter.dir/src/resources/mesh_repository.cpp.o
 winter: CMakeFiles/winter.dir/src/resources/resource_loader.cpp.o
 winter: CMakeFiles/winter.dir/src/resources/shader_repository.cpp.o
 winter: CMakeFiles/winter.dir/src/resources/texture_repository.cpp.o
-winter: CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o
-winter: CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o
 winter: CMakeFiles/winter.dir/src/scene/scene_manager.cpp.o
 winter: CMakeFiles/winter.dir/src/scripts/components/rotating_cube.cpp.o
 winter: CMakeFiles/winter.dir/src/scripts/scenes/first_scene.cpp.o
 winter: CMakeFiles/winter.dir/src/ui/event_processors/set_scene_hierarchy_viewer_visible.cpp.o
 winter: CMakeFiles/winter.dir/src/ui/event_repository.cpp.o
-winter: CMakeFiles/winter.dir/src/ui/material_editor.cpp.o
 winter: CMakeFiles/winter.dir/src/ui/menu_bar.cpp.o
 winter: CMakeFiles/winter.dir/src/ui/scene_hierarchy_viewer.cpp.o
 winter: CMakeFiles/winter.dir/src/ui/ui_root.cpp.o
@@ -775,7 +670,7 @@ winter: CMakeFiles/winter.dir/src/window.cpp.o
 winter: CMakeFiles/winter.dir/build.make
 winter: /usr/local/lib/libglfw.dylib
 winter: CMakeFiles/winter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX executable winter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cameron/winter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX executable winter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/winter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

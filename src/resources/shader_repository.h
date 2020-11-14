@@ -29,6 +29,8 @@ private:
     std::unordered_map<ShaderID, std::string> shader_id_to_shader_name;
     std::unordered_map<ShaderID, std::unique_ptr<Shader>> shaders;
     ShaderID current_shader_id = 0;
+    ShaderID get_shader_id(const std::string& shader_name);
+    const std::string& get_shader_name(ShaderID shader_id);
 };
 
 #endif //DEMO_SHADER_REPOSITORY_H

@@ -9,14 +9,14 @@ Shader* ShaderRepository::get_shader(ShaderID shader_id)
 {
     assert(shaders.find(shader_id) != shaders.end() && "No such shader.");
 
-    return shaders[shader_id];
+    return shaders[shader_id].get();
 }
 
 Shader* ShaderRepository::get_shader(const std::string& shader_name)
 {
     assert(shader_name_to_shader_id.find(shader_name) != shader_name_to_shader_id.end() && "No such shader.");
 
-    return shaders[shader_name_to_shader_id[shader_name]];
+    return shaders[shader_name_to_shader_id[shader_name]].get();
 }
 
 ShaderID ShaderRepository::get_shader_id(const std::string& shader_name)
@@ -61,9 +61,9 @@ void ShaderRepository::delete_shader(ShaderID shader_id)
 {
     assert(shaders.find(shader_id) != shaders.end() && "Removing non-existent shader.");
 
-    Shader* shader_to_delete = shaders[shader_id];
+    std::unique_ptr<Shader> shader_to_delete = std::move(shaders[shader_id]);
     shader_to_delete->destroy();
-    delete shader_to_delete;
+    shader_to_delete.release();
 
     shaders.erase(shader_id);
     std::string shader_name = shader_id_to_shader_name[shader_id];
@@ -83,15 +83,8 @@ void ShaderRepository::for_each(std::function<void(Shader*)> action)
 {
     for (const auto& shader : shaders)
     {
-        action(shader.second);
+        action(shader.second.get());
     }
-}
-
-ShaderComponent ShaderRepository::get_shader_component(const std::string& shader_name)
-{
-    assert(shader_name_to_shader_id.find(shader_name) != shader_name_to_shader_id.end() && "No shader with that name");
-
-    return ShaderComponent(shader_name_to_shader_id[shader_name]);
 }
 
 std::vector<Shader*> ShaderRepository::get_all()
@@ -100,7 +93,7 @@ std::vector<Shader*> ShaderRepository::get_all()
 
     for (const auto& shader : shaders)
     {
-        output.push_back(shader.second);
+        output.push_back(shader.second.get());
     }
 
     return output;

@@ -1,6 +1,10 @@
 #ifndef WINTER_MATRIX4X4_H
 #define WINTER_MATRIX4X4_H
 
+#include "quaternion.h"
+#include "float4.h"
+#include "float3.h"
+
 struct Matrix4x4
 {
     explicit Matrix4x4()
@@ -14,6 +18,11 @@ struct Matrix4x4
     }
 
     float* values;
+
+    Matrix4x4 static identity()
+    {
+        return diagonal(1.0f);
+    }
 
     Matrix4x4 static diagonal(float diagonal_value)
     {
@@ -88,7 +97,7 @@ struct Matrix4x4
         return values[4 * i + j];
     }
 
-    Matrix4x4 operator*(const Matrix4x4& right)
+    Matrix4x4 operator*(const Matrix4x4& right) const
     {
         Matrix4x4* output = new Matrix4x4();
 
@@ -110,11 +119,8 @@ struct Matrix4x4
     }
 
     operator float*() { return reinterpret_cast<float*>(this); }
-};
 
-inline Matrix4x4 operator*(const Matrix4x4& left, const Matrix4x4& right)
-{
-    return left * right;
-}
+    operator const float*() const { return reinterpret_cast<const float*>(this); }
+};
 
 #endif // WINTER_MATRIX4X4_H

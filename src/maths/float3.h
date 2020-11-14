@@ -3,7 +3,7 @@
 
 #include <cmath>
 #include <cstdio>
-#include <maths/float2.h>
+#include "float2.h"
 
 struct float3
 {

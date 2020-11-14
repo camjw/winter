@@ -357,32 +357,32 @@ lib/stb_image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/lib/stb_image.cpp.s
 .PHONY : lib/stb_image.cpp.s
 
-src/context/demo_context.o: src/context/demo_context.cpp.o
+src/context/winter_context.o: src/context/winter_context.cpp.o
 
-.PHONY : src/context/demo_context.o
+.PHONY : src/context/winter_context.o
 
 # target to build an object file
-src/context/demo_context.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/demo_context.cpp.o
-.PHONY : src/context/demo_context.cpp.o
+src/context/winter_context.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/winter_context.cpp.o
+.PHONY : src/context/winter_context.cpp.o
 
-src/context/demo_context.i: src/context/demo_context.cpp.i
+src/context/winter_context.i: src/context/winter_context.cpp.i
 
-.PHONY : src/context/demo_context.i
+.PHONY : src/context/winter_context.i
 
 # target to preprocess a source file
-src/context/demo_context.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/demo_context.cpp.i
-.PHONY : src/context/demo_context.cpp.i
+src/context/winter_context.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/winter_context.cpp.i
+.PHONY : src/context/winter_context.cpp.i
 
-src/context/demo_context.s: src/context/demo_context.cpp.s
+src/context/winter_context.s: src/context/winter_context.cpp.s
 
-.PHONY : src/context/demo_context.s
+.PHONY : src/context/winter_context.s
 
 # target to generate assembly for a file
-src/context/demo_context.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/demo_context.cpp.s
-.PHONY : src/context/demo_context.cpp.s
+src/context/winter_context.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/context/winter_context.cpp.s
+.PHONY : src/context/winter_context.cpp.s
 
 src/engine.o: src/engine.cpp.o
 
@@ -521,87 +521,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/rendering/cube_map.o: src/rendering/cube_map.cpp.o
-
-.PHONY : src/rendering/cube_map.o
-
-# target to build an object file
-src/rendering/cube_map.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/cube_map.cpp.o
-.PHONY : src/rendering/cube_map.cpp.o
-
-src/rendering/cube_map.i: src/rendering/cube_map.cpp.i
-
-.PHONY : src/rendering/cube_map.i
-
-# target to preprocess a source file
-src/rendering/cube_map.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/cube_map.cpp.i
-.PHONY : src/rendering/cube_map.cpp.i
-
-src/rendering/cube_map.s: src/rendering/cube_map.cpp.s
-
-.PHONY : src/rendering/cube_map.s
-
-# target to generate assembly for a file
-src/rendering/cube_map.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/cube_map.cpp.s
-.PHONY : src/rendering/cube_map.cpp.s
-
-src/rendering/directional_light.o: src/rendering/directional_light.cpp.o
-
-.PHONY : src/rendering/directional_light.o
-
-# target to build an object file
-src/rendering/directional_light.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/directional_light.cpp.o
-.PHONY : src/rendering/directional_light.cpp.o
-
-src/rendering/directional_light.i: src/rendering/directional_light.cpp.i
-
-.PHONY : src/rendering/directional_light.i
-
-# target to preprocess a source file
-src/rendering/directional_light.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/directional_light.cpp.i
-.PHONY : src/rendering/directional_light.cpp.i
-
-src/rendering/directional_light.s: src/rendering/directional_light.cpp.s
-
-.PHONY : src/rendering/directional_light.s
-
-# target to generate assembly for a file
-src/rendering/directional_light.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/directional_light.cpp.s
-.PHONY : src/rendering/directional_light.cpp.s
-
-src/rendering/framebuffer.o: src/rendering/framebuffer.cpp.o
-
-.PHONY : src/rendering/framebuffer.o
-
-# target to build an object file
-src/rendering/framebuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.o
-.PHONY : src/rendering/framebuffer.cpp.o
-
-src/rendering/framebuffer.i: src/rendering/framebuffer.cpp.i
-
-.PHONY : src/rendering/framebuffer.i
-
-# target to preprocess a source file
-src/rendering/framebuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.i
-.PHONY : src/rendering/framebuffer.cpp.i
-
-src/rendering/framebuffer.s: src/rendering/framebuffer.cpp.s
-
-.PHONY : src/rendering/framebuffer.s
-
-# target to generate assembly for a file
-src/rendering/framebuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/framebuffer.cpp.s
-.PHONY : src/rendering/framebuffer.cpp.s
 
 src/rendering/material.o: src/rendering/material.cpp.o
 
@@ -900,33 +819,6 @@ src/rendering/vertex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/rendering/vertex.cpp.s
 .PHONY : src/rendering/vertex.cpp.s
 
-src/resources/cube_map_repository.o: src/resources/cube_map_repository.cpp.o
-
-.PHONY : src/resources/cube_map_repository.o
-
-# target to build an object file
-src/resources/cube_map_repository.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.o
-.PHONY : src/resources/cube_map_repository.cpp.o
-
-src/resources/cube_map_repository.i: src/resources/cube_map_repository.cpp.i
-
-.PHONY : src/resources/cube_map_repository.i
-
-# target to preprocess a source file
-src/resources/cube_map_repository.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.i
-.PHONY : src/resources/cube_map_repository.cpp.i
-
-src/resources/cube_map_repository.s: src/resources/cube_map_repository.cpp.s
-
-.PHONY : src/resources/cube_map_repository.s
-
-# target to generate assembly for a file
-src/resources/cube_map_repository.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/resources/cube_map_repository.cpp.s
-.PHONY : src/resources/cube_map_repository.cpp.s
-
 src/resources/material_repository.o: src/resources/material_repository.cpp.o
 
 .PHONY : src/resources/material_repository.o
@@ -1062,60 +954,6 @@ src/resources/texture_repository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/resources/texture_repository.cpp.s
 .PHONY : src/resources/texture_repository.cpp.s
 
-src/scene/scene_builder.o: src/scene/scene_builder.cpp.o
-
-.PHONY : src/scene/scene_builder.o
-
-# target to build an object file
-src/scene/scene_builder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_builder.cpp.o
-.PHONY : src/scene/scene_builder.cpp.o
-
-src/scene/scene_builder.i: src/scene/scene_builder.cpp.i
-
-.PHONY : src/scene/scene_builder.i
-
-# target to preprocess a source file
-src/scene/scene_builder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_builder.cpp.i
-.PHONY : src/scene/scene_builder.cpp.i
-
-src/scene/scene_builder.s: src/scene/scene_builder.cpp.s
-
-.PHONY : src/scene/scene_builder.s
-
-# target to generate assembly for a file
-src/scene/scene_builder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_builder.cpp.s
-.PHONY : src/scene/scene_builder.cpp.s
-
-src/scene/scene_graph.o: src/scene/scene_graph.cpp.o
-
-.PHONY : src/scene/scene_graph.o
-
-# target to build an object file
-src/scene/scene_graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_graph.cpp.o
-.PHONY : src/scene/scene_graph.cpp.o
-
-src/scene/scene_graph.i: src/scene/scene_graph.cpp.i
-
-.PHONY : src/scene/scene_graph.i
-
-# target to preprocess a source file
-src/scene/scene_graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_graph.cpp.i
-.PHONY : src/scene/scene_graph.cpp.i
-
-src/scene/scene_graph.s: src/scene/scene_graph.cpp.s
-
-.PHONY : src/scene/scene_graph.s
-
-# target to generate assembly for a file
-src/scene/scene_graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/scene/scene_graph.cpp.s
-.PHONY : src/scene/scene_graph.cpp.s
-
 src/scene/scene_manager.o: src/scene/scene_manager.cpp.o
 
 .PHONY : src/scene/scene_manager.o
@@ -1250,33 +1088,6 @@ src/ui/event_repository.s: src/ui/event_repository.cpp.s
 src/ui/event_repository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/ui/event_repository.cpp.s
 .PHONY : src/ui/event_repository.cpp.s
-
-src/ui/material_editor.o: src/ui/material_editor.cpp.o
-
-.PHONY : src/ui/material_editor.o
-
-# target to build an object file
-src/ui/material_editor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/ui/material_editor.cpp.o
-.PHONY : src/ui/material_editor.cpp.o
-
-src/ui/material_editor.i: src/ui/material_editor.cpp.i
-
-.PHONY : src/ui/material_editor.i
-
-# target to preprocess a source file
-src/ui/material_editor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/ui/material_editor.cpp.i
-.PHONY : src/ui/material_editor.cpp.i
-
-src/ui/material_editor.s: src/ui/material_editor.cpp.s
-
-.PHONY : src/ui/material_editor.s
-
-# target to generate assembly for a file
-src/ui/material_editor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/winter.dir/build.make CMakeFiles/winter.dir/src/ui/material_editor.cpp.s
-.PHONY : src/ui/material_editor.cpp.s
 
 src/ui/menu_bar.o: src/ui/menu_bar.cpp.o
 
@@ -1445,9 +1256,9 @@ help:
 	@echo "... lib/stb_image.o"
 	@echo "... lib/stb_image.i"
 	@echo "... lib/stb_image.s"
-	@echo "... src/context/demo_context.o"
-	@echo "... src/context/demo_context.i"
-	@echo "... src/context/demo_context.s"
+	@echo "... src/context/winter_context.o"
+	@echo "... src/context/winter_context.i"
+	@echo "... src/context/winter_context.s"
 	@echo "... src/engine.o"
 	@echo "... src/engine.i"
 	@echo "... src/engine.s"
@@ -1463,15 +1274,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/rendering/cube_map.o"
-	@echo "... src/rendering/cube_map.i"
-	@echo "... src/rendering/cube_map.s"
-	@echo "... src/rendering/directional_light.o"
-	@echo "... src/rendering/directional_light.i"
-	@echo "... src/rendering/directional_light.s"
-	@echo "... src/rendering/framebuffer.o"
-	@echo "... src/rendering/framebuffer.i"
-	@echo "... src/rendering/framebuffer.s"
 	@echo "... src/rendering/material.o"
 	@echo "... src/rendering/material.i"
 	@echo "... src/rendering/material.s"
@@ -1505,9 +1307,6 @@ help:
 	@echo "... src/rendering/vertex.o"
 	@echo "... src/rendering/vertex.i"
 	@echo "... src/rendering/vertex.s"
-	@echo "... src/resources/cube_map_repository.o"
-	@echo "... src/resources/cube_map_repository.i"
-	@echo "... src/resources/cube_map_repository.s"
 	@echo "... src/resources/material_repository.o"
 	@echo "... src/resources/material_repository.i"
 	@echo "... src/resources/material_repository.s"
@@ -1523,12 +1322,6 @@ help:
 	@echo "... src/resources/texture_repository.o"
 	@echo "... src/resources/texture_repository.i"
 	@echo "... src/resources/texture_repository.s"
-	@echo "... src/scene/scene_builder.o"
-	@echo "... src/scene/scene_builder.i"
-	@echo "... src/scene/scene_builder.s"
-	@echo "... src/scene/scene_graph.o"
-	@echo "... src/scene/scene_graph.i"
-	@echo "... src/scene/scene_graph.s"
 	@echo "... src/scene/scene_manager.o"
 	@echo "... src/scene/scene_manager.i"
 	@echo "... src/scene/scene_manager.s"
@@ -1544,9 +1337,6 @@ help:
 	@echo "... src/ui/event_repository.o"
 	@echo "... src/ui/event_repository.i"
 	@echo "... src/ui/event_repository.s"
-	@echo "... src/ui/material_editor.o"
-	@echo "... src/ui/material_editor.i"
-	@echo "... src/ui/material_editor.s"
 	@echo "... src/ui/menu_bar.o"
 	@echo "... src/ui/menu_bar.i"
 	@echo "... src/ui/menu_bar.s"

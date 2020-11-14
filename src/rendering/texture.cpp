@@ -38,30 +38,6 @@ Texture::Texture(const std::string& filename)
     load_from_data(image_data);
 }
 
-Texture::Texture(const aiTexture* assimp_texture)
-{
-    unsigned char* image_data;
-    int num_channels;
-
-    if (assimp_texture->mHeight == 0)
-    {
-        image_data = stbi_load_from_memory(reinterpret_cast<unsigned char*>(assimp_texture->pcData), assimp_texture->mWidth, &width, &height, &num_channels, 0);
-    }
-    else
-    {
-        image_data = stbi_load_from_memory(reinterpret_cast<unsigned char*>(assimp_texture->pcData), assimp_texture->mWidth * assimp_texture->mHeight, &width, &height, &num_channels, 0);
-    }
-
-    if (image_data == nullptr)
-    {
-        printf("Failed to load texture\n");
-        return;
-    }
-
-    set_image_format(num_channels);
-    load_from_data(image_data);
-}
-
 void Texture::set_image_format(int num_channels)
 {
     switch (num_channels)

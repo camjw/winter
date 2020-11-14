@@ -2,7 +2,6 @@
 #define WINTER_RENDERING_MESH_HPP
 
 #include <GLFW/glfw3.h>
-#include <glad/glad.h>
 
 #include <maths/maths.h>
 #include <string>
@@ -49,16 +48,13 @@ public:
 
         Mesh(
         std::vector<float3> positions,
-        std::vector<float3> normals,
         std::vector<float2> uvs,
         std::vector<uint32_t> indices)
         : positions(std::move(positions))
-        , normals(std::move(normals))
         , uvs(std::move(uvs))
         , indices(std::move(indices)) {};
 
     std::vector<float3> positions;
-    std::vector<float3> normals;
     std::vector<float2> uvs;
 
     std::vector<uint32_t> indices;

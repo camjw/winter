@@ -9,24 +9,17 @@
 class SetShaderCamera
 {
 public:
-    SetShaderCamera(float3 position, float3 forward, glm::mat4 view)
-        : position(position)
-        , forward(forward)
-        , view(view) {};
+    SetShaderCamera(Matrix4x4 view)
+        : view(view) {};
 
     inline void operator()(Shader* shader)
     {
         shader->bind();
-
-        shader->set_float3(DEMO_CONSTANTS_CAMERA_POSITION, position);
-        shader->set_float3(DEMO_CONSTANTS_CAMERA_FORWARD, forward);
-        shader->set_mat4(DEMO_CONSTANTS_VIEW, view);
+        shader->set_mat4(WINTER_CONSTANTS_VIEW, view);
     }
 
 private:
-    float3 position;
-    float3 forward;
-    glm::mat4 view;
+    Matrix4x4 view;
 };
 
 #endif // WINTER_SET_SHADER_CAMERA_H

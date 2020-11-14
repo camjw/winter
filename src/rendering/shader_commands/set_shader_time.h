@@ -15,8 +15,8 @@ public:
     inline void operator()(Shader* shader)
     {
         shader->bind();
-        shader->set_float(DEMO_CONSTANTS_TOTAL_TIME, time.total_time);
-        shader->set_float(DEMO_CONSTANTS_DELTA_TIME, time.delta_time);
+        shader->set_float(WINTER_CONSTANTS_TOTAL_TIME, time.total_time);
+        shader->set_float(WINTER_CONSTANTS_DELTA_TIME, time.delta_time);
     }
 
 private:

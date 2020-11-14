@@ -2,6 +2,7 @@
 #define WINTER_SCENE_H
 
 #include "scene_id.h"
+#include <entity/camera.h>
 #include <entity/entity.h>
 #include <memory>
 #include <utility>
@@ -30,6 +31,11 @@ public:
     inline Entity* get_root_node() const
     {
         return root;
+    }
+
+    Camera* get_camera() const
+    {
+        return nullptr;
     }
 
 protected:
