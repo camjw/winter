@@ -61,9 +61,8 @@ void ShaderRepository::delete_shader(ShaderID shader_id)
 {
     assert(shaders.find(shader_id) != shaders.end() && "Removing non-existent shader.");
 
-    std::unique_ptr<Shader> shader_to_delete = std::move(shaders[shader_id]);
+    std::shared_ptr<Shader> shader_to_delete = shaders[shader_id];
     shader_to_delete->destroy();
-    shader_to_delete.release();
 
     shaders.erase(shader_id);
     std::string shader_name = shader_id_to_shader_name[shader_id];

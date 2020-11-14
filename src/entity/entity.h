@@ -13,7 +13,7 @@ public:
     Entity();
     Entity(const std::string& name);
 
-    std::shared_ptr<Transform> transform;
+    std::shared_ptr<Transform> transform = nullptr;
 
     void awake();
     void start();

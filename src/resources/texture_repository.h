@@ -18,7 +18,7 @@ public:
 
 private:
     std::unordered_map<std::string, TextureID> texture_names_to_ids;
-    std::unordered_map<TextureID, std::unique_ptr<Texture>> textures;
+    std::unordered_map<TextureID, std::shared_ptr<Texture>> textures;
     TextureID current_texture_id = 0;
     TextureID get_texture_id(const std::string& texture_name);
 };

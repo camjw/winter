@@ -31,7 +31,7 @@ class Mesh
 {
 public:
     Mesh() = default;
-    static std::unique_ptr<Mesh> build_primitive(PrimitiveType primitive_type)
+    static std::shared_ptr<Mesh> build_primitive(PrimitiveType primitive_type)
     {
         switch (primitive_type)
         {
@@ -46,7 +46,7 @@ public:
         }
     }
 
-        Mesh(
+    Mesh(
         std::vector<float3> positions,
         std::vector<float2> uvs,
         std::vector<uint32_t> indices)
@@ -96,7 +96,7 @@ public:
     unsigned int VBO = 0;
 
 private:
-    static std::unique_ptr<Mesh> primitive_mesh(int sides, bool rotate_by_half_segment);
+    static std::shared_ptr<Mesh> primitive_mesh(int sides, bool rotate_by_half_segment);
 };
 
 #endif

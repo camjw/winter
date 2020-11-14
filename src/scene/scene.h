@@ -11,10 +11,17 @@ class WinterContext;
 class Scene
 {
 public:
-    Scene(std::shared_ptr<WinterContext> context, SceneID scene_id)
+    Scene(std::shared_ptr<WinterContext> context, SceneID scene_id, const std::string& scene_name)
         : context(std::move(context))
         , scene_id(scene_id)
+    , scene_name(scene_name)
     {
+        root = new Entity(scene_name);
+    }
+
+    ~Scene()
+    {
+        delete root;
     }
 
     virtual void on_create() = 0;
@@ -43,6 +50,8 @@ protected:
 
     Entity* root;
     SceneID scene_id;
+
+    const std::string& scene_name;
 };
 
 #endif // WINTER_SCENE_H

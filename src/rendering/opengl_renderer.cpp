@@ -29,8 +29,6 @@ void OpenGLRenderer::begin_draw(const Time time, const Scene* scene)
 {
     glfwPollEvents();
 
-    // Set common variables for shaders
-    // TODO: set uniform struct rather than individual params
     shader_repository->for_each(SetShaderTime(time));
 
     if (window->has_dirty_size)
@@ -61,8 +59,9 @@ void OpenGLRenderer::draw_scene_graph(const Scene* scene)
 void OpenGLRenderer::draw_node(const Entity* entity, const Matrix4x4& parent_transform)
 {
     Matrix4x4 node_transform = Matrix4x4::identity();
-    // Draw child nodes
-    for (Transform* const& child : entity->transform->get_children())
+
+    std::shared_ptr<Transform> entity_transform = entity->transform;
+    for (Transform* const& child : entity_transform->get_children())
     {
         draw_node(child->entity(), parent_transform * node_transform);
     }
@@ -77,7 +76,7 @@ void OpenGLRenderer::process_render_commands(const Scene* scene) const
 {
     framebuffer->bind();
 
-    float3 clear_colour = current_camera->get_clear_colour();
+    float3 clear_colour = current_camera->clear_colour;
     glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);

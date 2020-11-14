@@ -23,6 +23,7 @@ Engine::Engine()
     // Init shaders
     std::shared_ptr<ShaderRepository> shader_repository = context->get_shader_repository();
     shader_repository->create_shader("pixel");
+    shader_repository->create_shader("deferred_lighting");
 
     // Init default materials
     std::shared_ptr<MaterialRepository> material_repository = context->get_material_repository();

@@ -9,8 +9,3 @@ const Matrix4x4 Camera::get_projection_matrix() const
 {
     return Matrix4x4::identity();
 }
-
-const float3 Camera::get_clear_colour()
-{
-    return float3();
-}

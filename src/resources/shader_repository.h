@@ -27,7 +27,7 @@ public:
 private:
     std::unordered_map<std::string, ShaderID> shader_name_to_shader_id;
     std::unordered_map<ShaderID, std::string> shader_id_to_shader_name;
-    std::unordered_map<ShaderID, std::unique_ptr<Shader>> shaders;
+    std::unordered_map<ShaderID, std::shared_ptr<Shader>> shaders;
     ShaderID current_shader_id = 0;
     ShaderID get_shader_id(const std::string& shader_name);
     const std::string& get_shader_name(ShaderID shader_id);

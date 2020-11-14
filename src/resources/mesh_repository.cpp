@@ -26,10 +26,10 @@ Mesh* MeshRepository::get_or_create_square()
         return square_mesh;
     }
 
-    std::unique_ptr<Mesh> mesh = Mesh::build_primitive(PrimitiveType::SQUARE);
+    std::shared_ptr<Mesh> mesh = Mesh::build_primitive(PrimitiveType::SQUARE);
     mesh->init();
 
-    meshes.insert(std::make_pair(++current_mesh_id, std::move(mesh)));
+    meshes.insert(std::make_pair(++current_mesh_id, mesh));
 
     square_mesh = mesh.get();
     square_mesh_id = current_mesh_id;
@@ -51,9 +51,8 @@ void MeshRepository::delete_mesh(MeshID mesh_id)
 {
     assert(meshes.find(mesh_id) != meshes.end() && "Removing non-existent mesh.");
 
-    std::unique_ptr<Mesh> mesh_to_delete = std::move(meshes[mesh_id]);
+    std::shared_ptr<Mesh> mesh_to_delete = meshes[mesh_id];
     mesh_to_delete->destroy();
-    mesh_to_delete.release();
     meshes.erase(mesh_id);
 }
 

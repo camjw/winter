@@ -1,23 +1,16 @@
 #ifndef WINTER_MATRIX4X4_H
 #define WINTER_MATRIX4X4_H
 
-#include "quaternion.h"
-#include "float4.h"
 #include "float3.h"
+#include "float4.h"
+#include "quaternion.h"
 
 struct Matrix4x4
 {
-    explicit Matrix4x4()
-    {
-        values = new float[16];
-    }
-
-    ~Matrix4x4()
-    {
-        delete (values);
-    }
-
-    float* values;
+    float m00 = 0.0f, m01 = 0.0f, m02 = 0.0f, m03 = 0.0f;
+    float m10 = 0.0f, m11 = 0.0f, m12 = 0.0f, m13 = 0.0f;
+    float m20 = 0.0f, m21 = 0.0f, m22 = 0.0f, m23 = 0.0f;
+    float m30 = 0.0f, m31 = 0.0f, m32 = 0.0f, m33 = 0.0f;
 
     Matrix4x4 static identity()
     {
@@ -27,20 +20,20 @@ struct Matrix4x4
     Matrix4x4 static diagonal(float diagonal_value)
     {
         Matrix4x4 output;
-        output.values[0] = diagonal_value;
-        output.values[5] = diagonal_value;
-        output.values[10] = diagonal_value;
-        output.values[15] = diagonal_value;
+        output.m00 = diagonal_value;
+        output.m11 = diagonal_value;
+        output.m22 = diagonal_value;
+        output.m33 = diagonal_value;
         return output;
     }
 
     Matrix4x4 static scale(float3 scale)
     {
         Matrix4x4 output;
-        output.values[0] = scale.x;
-        output.values[5] = scale.y;
-        output.values[10] = scale.z;
-        output.values[15] = 1.0f;
+        output.m00 = scale.x;
+        output.m11 = scale.y;
+        output.m22 = scale.z;
+        output.m33 = 1.0f;
         return output;
     }
 
@@ -52,17 +45,17 @@ struct Matrix4x4
         float y = rotation.y;
         float z = rotation.z;
 
-        output.values[0] = 1 - 2 * (y * y + z * z);
-        output.values[1] = 2 * (x * y - z * w);
-        output.values[2] = 2 * (x * z + y * w);
+        output.m00 = 1 - 2 * (y * y + z * z);
+        output.m01 = 2 * (x * y - z * w);
+        output.m02 = 2 * (x * z + y * w);
 
-        output.values[4] = 2 * (x * y + z * w);
-        output.values[5] = 1 - 2 * (x * x + z * z);
-        output.values[6] = 2 * (y * z - x * w);
+        output.m10 = 2 * (x * y + z * w);
+        output.m11 = 1 - 2 * (x * x + z * z);
+        output.m12 = 2 * (y * z - x * w);
 
-        output.values[8] = 2 * (x * z - y * w);
-        output.values[9] = 2 * (y * z + x * w);
-        output.values[10] = 1 - 2 * (x * x + y * y);
+        output.m20 = 2 * (x * z - y * w);
+        output.m21 = 2 * (y * z + x * w);
+        output.m22 = 1 - 2 * (x * x + y * y);
 
         return output;
     }
@@ -70,10 +63,10 @@ struct Matrix4x4
     Matrix4x4 static translate(float3 translation)
     {
         Matrix4x4 output;
-        output.values[3] = translation.x;
-        output.values[7] = translation.y;
-        output.values[11] = translation.z;
-        output.values[15] = 1.0f;
+        output.m03 = translation.x;
+        output.m13 = translation.y;
+        output.m23 = translation.z;
+        output.m33 = 1.0f;
         return output;
     }
 
@@ -82,19 +75,54 @@ struct Matrix4x4
         switch (index)
         {
         case 0:
-            return float4(&values[0]);
+            return float4(m00, m01, m02, m03);
         case 1:
-            return float4(&values[4]);
+            return float4(m10, m11, m12, m13);
         case 2:
-            return float4(&values[8]);
+            return float4(m20, m21, m22, m23);
         default:
-            return float4(&values[12]);
+            return float4(m30, m31, m32, m33);
         }
     }
 
     inline float& get(int i, int j)
     {
-        return values[4 * i + j];
+        int index = 4 * i + j;
+        switch (index)
+        {
+        case 0:
+            return m00;
+        case 1:
+            return m01;
+        case 2:
+            return m02;
+        case 3:
+            return m03;
+        case 4:
+            return m10;
+        case 5:
+            return m11;
+        case 6:
+            return m12;
+        case 7:
+            return m13;
+        case 8:
+            return m20;
+        case 9:
+            return m21;
+        case 10:
+            return m22;
+        case 11:
+            return m23;
+        case 12:
+            return m30;
+        case 13:
+            return m31;
+        case 14:
+            return m32;
+        default:
+            return m33;
+        }
     }
 
     Matrix4x4 operator*(const Matrix4x4& right) const

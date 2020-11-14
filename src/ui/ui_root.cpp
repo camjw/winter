@@ -29,11 +29,11 @@ void UIRoot::new_frame()
 
 void UIRoot::draw()
 {
-    ImGui::NewFrame();
-
-    scene_hierarchy_viewer->draw_if_active();
-    menu_bar->draw_if_active();
-
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+//    ImGui::NewFrame();
+//
+//    scene_hierarchy_viewer->draw_if_active();
+//    menu_bar->draw_if_active();
+//
+//    ImGui::Render();
+//    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

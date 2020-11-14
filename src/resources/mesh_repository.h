@@ -14,7 +14,6 @@ public:
     Mesh* get_or_create_square();
 
     MeshID get_square_id();
-    MeshID get_cube_id();
 
     void delete_mesh(MeshID mesh_id);
     void clear();
@@ -25,15 +24,12 @@ public:
         std::vector<uint32_t> indices);
 
 private:
-    std::unordered_map<std::string, MeshID> filename_to_mesh_id;
-    std::unordered_map<MeshID, std::unique_ptr<Mesh>> meshes;
+    std::unordered_map<MeshID, std::shared_ptr<Mesh>> meshes;
     MeshID current_mesh_id = 0;
 
     Mesh* square_mesh = nullptr;
-    Mesh* cube_mesh = nullptr;
 
     MeshID square_mesh_id = INVALID_MESH;
-    MeshID cube_mesh_id = INVALID_MESH;
 };
 
 #endif

@@ -1,8 +1,10 @@
 #include "entity.h"
 #include "transform.h"
+#include <utils/uuid.h>
 
 Entity::Entity()
 {
+    name = uuid::new_uuid();
     transform = add_component<Transform>();
 }
 
