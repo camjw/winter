@@ -37,7 +37,17 @@ void OpenGLRenderer::begin_draw(const Time time, const Scene* scene)
         window->has_dirty_size = false;
     }
 
-    is_camera_set = false;
+    Camera* camera = nullptr;
+    if (scene->get_camera(camera))
+    {
+        is_camera_set = true;
+        set_camera(camera);
+    }
+    else
+    {
+        printf("No camera set!\n");
+        is_camera_set = false;
+    }
 
     ui_root->new_frame();
 }
@@ -51,16 +61,15 @@ void OpenGLRenderer::resize_framebuffers()
 void OpenGLRenderer::draw_scene_graph(const Scene* scene)
 {
     opaque_render_queue->clear();
-    set_camera(scene->get_camera());
     Matrix4x4 transform = Matrix4x4::identity();
-    draw_node(scene->get_root_node(), transform);
+    draw_node(scene->get_root(), transform);
 }
 
 void OpenGLRenderer::draw_node(const Entity* entity, const Matrix4x4& parent_transform)
 {
     Matrix4x4 node_transform = Matrix4x4::identity();
 
-    std::shared_ptr<Transform> entity_transform = entity->transform;
+    const std::shared_ptr<Transform> entity_transform = entity->transform;
     for (Transform* const& child : entity_transform->get_children())
     {
         draw_node(child->entity(), parent_transform * node_transform);
@@ -69,15 +78,17 @@ void OpenGLRenderer::draw_node(const Entity* entity, const Matrix4x4& parent_tra
 
 void OpenGLRenderer::enqueue_mesh(const Entity* entity, const Matrix4x4& parent_transform)
 {
-
 }
 
 void OpenGLRenderer::process_render_commands(const Scene* scene) const
 {
     framebuffer->bind();
 
-    float3 clear_colour = current_camera->clear_colour;
-    glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 0.0f);
+    if (is_camera_set)
+    {
+        const float3 clear_colour = current_camera->clear_colour();
+        glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 0.0f);
+    }
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glDisable(GL_FRAMEBUFFER_SRGB);
@@ -133,8 +144,16 @@ void OpenGLRenderer::draw_scene(const Time time, const Scene* scene)
 {
     begin_draw(time, scene);
     // TODO: add screen culling here
-    draw_scene_graph(scene);
-    process_render_commands(scene);
+    if (is_camera_set)
+    {
+        draw_scene_graph(scene);
+        process_render_commands(scene);
+    }
+    else
+    {
+        draw_no_camera_scene();
+    }
+
     ui_root->draw();
     end_draw();
 }
@@ -143,7 +162,7 @@ void OpenGLRenderer::process_command(const RenderCommand& command) const
 {
     Shader* shader = shader_repository->get_shader(command.shader_id);
 
-    Material* material  = material_repository->get_material(command.material_id);
+    Material* material = material_repository->get_material(command.material_id);
     shader->bind();
     shader->set_mat4(WINTER_CONSTANTS_MODEL, command.transform);
 
@@ -154,4 +173,10 @@ void OpenGLRenderer::process_command(const RenderCommand& command) const
     shader->set_float3("material.use_texture", material->colour);
 
     mesh_repository->get_mesh(command.mesh_id)->bind_and_draw();
+}
+
+void OpenGLRenderer::draw_no_camera_scene()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }

@@ -1,13 +1,15 @@
 #ifndef WINTER_COMPONENT_H
 #define WINTER_COMPONENT_H
 
-#include "entity.h"
+#include <timer.h>
 
 class Transform;
+class Entity;
 class Component
 {
 public:
-    Component(Entity* entity): _entity(entity) {}
+    Component(Entity* entity);
+    virtual ~Component() {}
 
     virtual void start() { }
     virtual void awake() { }
@@ -24,20 +26,13 @@ public:
         this->is_enabled = is_enabled;
     }
 
-    Transform* transform()
-    {
-        return _entity->transform.get();
-    }
+    std::shared_ptr<Transform> transform() const;
 
-    const Entity* entity() const
-    {
-        return _entity;
-    }
+    Entity* entity() const;
 
-private:
-    Entity* _entity;
-
+protected:
     bool is_enabled;
+    Entity* _entity;
 };
 
 #endif // WINTER_COMPONENT_H

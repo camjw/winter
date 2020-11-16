@@ -50,11 +50,12 @@ private:
 
     std::shared_ptr<UIRoot> ui_root;
 
-    Camera* current_camera;
+    Camera* current_camera = nullptr;
     bool is_camera_set = false;
 
     void process_command(const RenderCommand& command) const;
     void end_draw();
+    void draw_no_camera_scene();
 };
 
 #endif

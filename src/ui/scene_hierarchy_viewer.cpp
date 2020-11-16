@@ -8,7 +8,7 @@ void SceneHierarchyViewer::draw()
     if (ImGui::TreeNode("Current Scene"))
     {
         Scene* current_scene = scene_manager->get_current_scene();
-        Entity* root_node = current_scene->get_root_node();
+        const Entity* root_node = current_scene->get_root();
         draw_scene_node_inspector(root_node);
         ImGui::TreePop();
     }
@@ -23,8 +23,7 @@ void SceneHierarchyViewer::draw_scene_node_inspector(const Entity* entity)
     for (int i = 0; i < children.size(); i++)
     {
         const Entity* child_entity = children[i]->entity();
-
-        const std::string& name = child_entity->name;
+        const std::string& name = child_entity->name();
 
         ImGui::TreeNodeEx(name.c_str(), ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick);
         draw_scene_node_inspector(child_entity);

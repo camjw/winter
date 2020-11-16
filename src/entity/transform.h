@@ -5,11 +5,13 @@
 #include <maths/float3.h>
 #include <maths/matrix4x4.h>
 #include <maths/quaternion.h>
+#include <vector>
 
+class Entity;
 class Transform: public Component
 {
 public:
-    Transform(Entity* entity) : Component(entity) {}
+    Transform(Entity* entity);
 
     const float2& get_position() const
     {
@@ -54,11 +56,7 @@ public:
         return cached_transform_matrix;
     }
 
-    void set_parent(Transform* parent_transform)
-    {
-        parent = parent_transform;
-        parent_transform->children.push_back(this);
-    }
+    void set_parent(std::shared_ptr<Transform> parent_transform);
 
     const std::vector<Transform*>& get_children() const
     {
@@ -67,8 +65,13 @@ public:
 
     std::vector<Transform*> children;
 
+    const std::shared_ptr<Transform> parent() const
+    {
+        return _parent;
+    }
+
 private:
-    Transform* parent = nullptr;
+    std::shared_ptr<Transform> _parent = nullptr;
 
     bool is_dirty;
     Matrix4x4 cached_transform_matrix;
