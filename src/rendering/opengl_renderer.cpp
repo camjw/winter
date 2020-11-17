@@ -38,7 +38,7 @@ void OpenGLRenderer::begin_draw(const Time time, const Scene* scene)
     }
 
     Camera* camera = nullptr;
-    if (scene->get_camera(camera))
+    if (scene->get_camera(&camera))
     {
         is_camera_set = true;
         set_camera(camera);
@@ -83,12 +83,8 @@ void OpenGLRenderer::enqueue_mesh(const Entity* entity, const Matrix4x4& parent_
 void OpenGLRenderer::process_render_commands(const Scene* scene) const
 {
     framebuffer->bind();
+    draw_clear_colour();
 
-    if (is_camera_set)
-    {
-        const float3 clear_colour = current_camera->clear_colour();
-        glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 0.0f);
-    }
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glDisable(GL_FRAMEBUFFER_SRGB);
@@ -101,6 +97,7 @@ void OpenGLRenderer::process_render_commands(const Scene* scene) const
     }
 
     framebuffer->unbind();
+
     glDisable(GL_DEPTH_TEST);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -110,7 +107,7 @@ void OpenGLRenderer::process_render_commands(const Scene* scene) const
 
     int2 viewportDimensions = window->get_viewport_dimensions();
     glViewport(0, 0, viewportDimensions.x, viewportDimensions.y);
-    Shader* deferred_shader = shader_repository->get_shader("deferred_lighting");
+    Shader* deferred_shader = shader_repository->get_shader("deferred");
 
     deferred_shader->bind();
 
@@ -179,4 +176,10 @@ void OpenGLRenderer::draw_no_camera_scene()
 {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void OpenGLRenderer::draw_clear_colour() const
+{
+    const float3 clear_colour = current_camera->clear_colour();
+    glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 1.0f);
 }

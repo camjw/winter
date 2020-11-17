@@ -56,6 +56,7 @@ private:
     void process_command(const RenderCommand& command) const;
     void end_draw();
     void draw_no_camera_scene();
+    void draw_clear_colour() const;
 };
 
 #endif

@@ -10,7 +10,7 @@ EntityManager::EntityManager(const std::string& scene_name)
 
 EntityManager::~EntityManager()
 {
-    printf("ENTITY MANAGER BEING DELETED\n");
+    printf("Entity manager deleted for scene %s\n", root_entity->name().c_str());
     delete root_entity;
 }
 
@@ -25,10 +25,7 @@ std::shared_ptr<Entity> EntityManager::create_entity()
 std::shared_ptr<Entity> EntityManager::create_entity(const std::string& name)
 {
     std::shared_ptr<Entity> new_entity = std::make_shared<Entity>(name);
-    printf("New entity name: %s\n", new_entity->name().c_str());
-    printf("Transform owner name %s\n", new_entity->transform->entity()->name().c_str());
     new_entity->transform->set_parent(root_entity->transform);
-    printf("New entity name: %s\n", new_entity->name().c_str());
     new_entities.push_back(new_entity);
     return new_entity;
 }

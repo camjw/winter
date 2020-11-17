@@ -3,7 +3,6 @@
 
 Camera::Camera(Entity* entity): Component(entity)
 {
-    printf("Creating camera entity name is %s\n", _entity->name().c_str());
 }
 
 const Matrix4x4 Camera::get_view_matrix(float aspect_ratio) const

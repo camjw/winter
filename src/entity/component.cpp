@@ -4,7 +4,6 @@
 Component::Component(Entity* entity)
     : _entity(entity)
 {
-    printf("Creating component entity name is %s\n", _entity->name().c_str());
 }
 
 std::shared_ptr<Transform> Component::transform() const
@@ -14,6 +13,5 @@ std::shared_ptr<Transform> Component::transform() const
 
 Entity* Component::entity() const
 {
-    printf("Getting entity name is %s\n", _entity->name().c_str());
     return _entity;
 }

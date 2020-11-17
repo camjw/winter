@@ -36,26 +36,23 @@ public:
         return entity_manager->get_root();
     }
 
-    bool get_camera(Camera* camera) const
+    bool get_camera(Camera** camera) const
     {
         const Entity* current_entity = get_root();
-        printf("Root node name %s\n", current_entity->name().c_str());
         return dfs_find_camera(current_entity, camera);
     }
 
 private:
-    bool dfs_find_camera(const Entity* current_entity, Camera* camera) const
+    bool dfs_find_camera(const Entity* current_entity, Camera** camera) const
     {
-        printf("DFS at entity %s\n", current_entity->name().c_str());
         std::vector<Transform*> child_transforms = current_entity->transform->children;
         for (int i = 0; i < child_transforms.size(); i++)
         {
             const Entity* child_entity = child_transforms[i]->entity();
-            printf("Child entity name %s\n", child_entity->name().c_str());
             if (child_entity->has_component<Camera>())
             {
                 std::shared_ptr<Camera> entity_camera = child_entity->get_component<Camera>();
-                *camera = *(entity_camera.get());
+                *camera = entity_camera.get();
                 return true;
             }
 
