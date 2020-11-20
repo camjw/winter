@@ -1,3 +1,4 @@
+#include <constants/shader_constants.h>
 #include <rendering/opengl_renderer.h>
 
 OpenGLRenderer::OpenGLRenderer(std::shared_ptr<WinterContext> context,
@@ -13,10 +14,7 @@ OpenGLRenderer::OpenGLRenderer(std::shared_ptr<WinterContext> context,
 
     glCheckError();
 
-    mesh_repository = context->get_mesh_repository();
-    texture_repository = context->get_texture_repository();
-    material_repository = context->get_material_repository();
-    shader_repository = context->get_shader_repository();
+    resource_manager = context->get_resource_manager();
 
     opaque_render_queue = std::make_unique<RenderQueue>();
     std::make_unique<RenderQueue>();
@@ -29,7 +27,11 @@ void OpenGLRenderer::begin_draw(const Time time, const Scene* scene)
 {
     glfwPollEvents();
 
-    shader_repository->for_each(SetShaderTime(time));
+    resource_manager->for_each<Shader>([time](Shader* shader) {
+        shader->bind();
+        shader->set_float(WINTER_CONSTANTS_TOTAL_TIME, time.total_time);
+        shader->set_float(WINTER_CONSTANTS_DELTA_TIME, time.delta_time);
+    });
 
     if (window->has_dirty_size)
     {
@@ -107,14 +109,14 @@ void OpenGLRenderer::process_render_commands(const Scene* scene) const
 
     int2 viewportDimensions = window->get_viewport_dimensions();
     glViewport(0, 0, viewportDimensions.x, viewportDimensions.y);
-    Shader* deferred_shader = shader_repository->get_shader("deferred");
+    Shader* deferred_shader = resource_manager->get<Shader>("deferred");
 
     deferred_shader->bind();
 
     framebuffer->bind_textures();
     glCheckError();
 
-    mesh_repository->get_or_create_square()->bind_and_draw();
+    resource_manager->get<Mesh>("square")->bind_and_draw();
     glCheckError();
 }
 
@@ -131,8 +133,11 @@ void OpenGLRenderer::set_camera(Camera* camera)
     const Matrix4x4& projection_matrix = camera->get_projection_matrix();
     const Matrix4x4& view_matrix = camera->get_view_matrix(aspect_ratio);
 
-    shader_repository->for_each(SetShaderProjection(projection_matrix));
-    shader_repository->for_each(SetShaderCamera(view_matrix));
+    resource_manager->for_each<Shader>([projection_matrix, view_matrix](Shader* shader) {
+        shader->bind();
+        shader->set_mat4(WINTER_CONSTANTS_PROJECTION, projection_matrix);
+        shader->set_mat4(WINTER_CONSTANTS_VIEW, view_matrix);
+    });
 
     is_camera_set = true;
 }
@@ -157,19 +162,19 @@ void OpenGLRenderer::draw_scene(const Time time, const Scene* scene)
 
 void OpenGLRenderer::process_command(const RenderCommand& command) const
 {
-    Shader* shader = shader_repository->get_shader(command.shader_id);
+    Material* material = resource_manager->get<Material>(command.material);
 
-    Material* material = material_repository->get_material(command.material_id);
+    Shader* shader = resource_manager->get<Shader>(material->shader);
     shader->bind();
     shader->set_mat4(WINTER_CONSTANTS_MODEL, command.transform);
 
     shader->set_int("material.texture", 0);
-    texture_repository->get_texture(command.texture_id)->bind(0);
+    resource_manager->get<Texture>(material->texture)->bind(0);
 
     shader->set_bool("material.use_texture", material->use_texture);
-    shader->set_float3("material.use_texture", material->colour);
+    shader->set_float4("material.colour", material->colour.to_float4());
 
-    mesh_repository->get_mesh(command.mesh_id)->bind_and_draw();
+    resource_manager->get<Mesh>(command.mesh)->bind_and_draw();
 }
 
 void OpenGLRenderer::draw_no_camera_scene()

@@ -17,7 +17,7 @@ using ShaderID = uint32_t;
 class Shader
 {
 public:
-    void init(const std::string& vertex_filepath, const std::string& fragment_filepath);
+    Shader(const std::string& vertex_filepath, const std::string& fragment_filepath);
     void destroy() const;
 
     GLuint id() const

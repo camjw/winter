@@ -1,7 +1,7 @@
 #include <utils/opengl_helpers.h>
 #include <rendering/mesh.h>
 
-std::shared_ptr<Mesh> Mesh::primitive_mesh(int sides, bool rotate_by_half_segment)
+Mesh Mesh::primitive_mesh(int sides, bool rotate_by_half_segment)
 {
     std::vector<float3> mesh_positions = {
         float3(-1.0f, -1.0f, 0.0f),
@@ -21,7 +21,9 @@ std::shared_ptr<Mesh> Mesh::primitive_mesh(int sides, bool rotate_by_half_segmen
         0, 2, 1, 0, 3, 2
     };
 
-    return std::make_shared<Mesh>(mesh_positions, mesh_uvs, mesh_indices);
+    Mesh mesh = Mesh(mesh_positions, mesh_uvs, mesh_indices);
+    mesh.init();
+    return mesh;
 }
 
 void Mesh::init()

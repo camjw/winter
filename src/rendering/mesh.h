@@ -8,17 +8,6 @@
 #include <utility>
 #include <vector>
 
-using MeshID = uint32_t;
-const MeshID INVALID_MESH = UINT32_MAX;
-
-struct MeshComponent
-{
-    MeshID id = INVALID_MESH;
-    explicit MeshComponent() = default;
-    explicit MeshComponent(MeshID id)
-        : id(id) {};
-};
-
 enum PrimitiveType
 {
     TRIANGLE,
@@ -30,8 +19,9 @@ enum PrimitiveType
 class Mesh
 {
 public:
-    Mesh() = default;
-    static std::shared_ptr<Mesh> build_primitive(PrimitiveType primitive_type)
+    explicit Mesh() {};
+
+    static Mesh build_primitive(PrimitiveType primitive_type)
     {
         switch (primitive_type)
         {
@@ -69,7 +59,10 @@ public:
     Mesh& operator=(const Mesh&) = delete;
 
     Mesh(Mesh&& other) noexcept
-        : VAO(other.VAO)
+        : positions(other.positions)
+        , uvs(other.uvs)
+        , indices(other.indices)
+        , VAO(other.VAO)
         , EBO(other.EBO)
         , VBO(other.VBO)
     {
@@ -96,7 +89,7 @@ public:
     unsigned int VBO = 0;
 
 private:
-    static std::shared_ptr<Mesh> primitive_mesh(int sides, bool rotate_by_half_segment);
+    static Mesh primitive_mesh(int sides, bool rotate_by_half_segment);
 };
 
 #endif

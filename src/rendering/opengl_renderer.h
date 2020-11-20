@@ -12,11 +12,8 @@
 #include <rendering/point_light.h>
 #include <rendering/renderbuffer.h>
 #include <rendering/shader.h>
-#include <rendering/shader_commands/shader_commands.h>
 #include <rendering/texture.h>
-#include <resources/mesh_repository.h>
-#include <resources/shader_repository.h>
-#include <resources/texture_repository.h>
+#include <resources/resource_manager.h>
 #include <scene/scene.h>
 #include <ui/ui_root.h>
 #include <utils/opengl_helpers.h>
@@ -38,17 +35,11 @@ private:
     void resize_framebuffers();
 
     std::shared_ptr<Window> window;
-
-    std::shared_ptr<MeshRepository> mesh_repository;
-    std::shared_ptr<TextureRepository> texture_repository;
-    std::shared_ptr<MaterialRepository> material_repository;
-    std::shared_ptr<ShaderRepository> shader_repository;
+    std::shared_ptr<ResourceManager> resource_manager;
+    std::shared_ptr<UIRoot> ui_root;
 
     std::unique_ptr<RenderQueue> opaque_render_queue;
-
     std::unique_ptr<Framebuffer> framebuffer;
-
-    std::shared_ptr<UIRoot> ui_root;
 
     Camera* current_camera = nullptr;
     bool is_camera_set = false;

@@ -1,24 +1,11 @@
-#ifndef WINTER_TEXTURE_HPP
-#define WINTER_TEXTURE_HPP
+#ifndef WINTER_TEXTURE_REPOSITORY_HPP
+#define WINTER_TEXTURE_REPOSITORY_HPP
 
 #include <glad/glad.h>
 #include <stb_image.h>
 
 #include <cstdint>
 #include <string>
-
-using TextureID = uint32_t;
-const TextureID INVALID_TEXTURE = 1;
-
-struct TextureComponent
-{
-    TextureID id;
-    int binding_index;
-    explicit TextureComponent() = default;
-    TextureComponent(TextureID id, int binding_index)
-        : id(id)
-        , binding_index(binding_index) {};
-};
 
 struct Texture
 {
@@ -50,6 +37,7 @@ struct Texture
     }
 
     void bind(int texture_index) const;
+
     inline void release()
     {
         glDeleteTextures(1, &id_);
@@ -94,4 +82,4 @@ const TextureProperties DEFAULT_TEXTURE_PROPERTIES = TextureProperties {
     .mag_filter = GL_LINEAR,
 };
 
-#endif
+#endif //WINTER_TEXTURE_REPOSITORY_HPP

@@ -2,41 +2,26 @@
 #define WINTER_WINTER_CONTEXT_H
 
 #include <memory>
-#include <resources/material_repository.h>
-#include <resources/mesh_repository.h>
-#include <resources/shader_repository.h>
-#include <resources/texture_repository.h>
+#include <resources/material_factory.h>
+#include <resources/mesh_factory.h>
+#include <resources/resource_manager.h>
+#include <resources/shader_factory.h>
+#include <resources/texture_factory.h>
 
 class WinterContext
 {
 public:
     explicit WinterContext();
 
-    inline std::shared_ptr<MeshRepository> get_mesh_repository()
+    inline std::shared_ptr<ResourceManager> get_resource_manager()
     {
-        return mesh_repository;
-    }
-
-    inline std::shared_ptr<TextureRepository> get_texture_repository()
-    {
-        return texture_repository;
-    }
-
-    inline std::shared_ptr<MaterialRepository> get_material_repository()
-    {
-        return material_repository;
-    }
-
-    inline std::shared_ptr<ShaderRepository> get_shader_repository()
-    {
-        return shader_repository;
+        return resource_manager;
     }
 
 private:
-    std::shared_ptr<MeshRepository> mesh_repository;
-    std::shared_ptr<TextureRepository> texture_repository;
-    std::shared_ptr<MaterialRepository> material_repository;
-    std::shared_ptr<ShaderRepository> shader_repository;
+    void load_default_meshes();
+    void load_default_shaders();
+    std::shared_ptr<ResourceManager> resource_manager;
 };
 
 #endif //DEMO_DEMO_CONTEXT_H

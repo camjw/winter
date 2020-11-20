@@ -20,14 +20,6 @@ Engine::Engine()
     // Build context
     context = std::make_shared<WinterContext>();
 
-    // Init shaders
-    std::shared_ptr<ShaderRepository> shader_repository = context->get_shader_repository();
-    shader_repository->create_shader("pixel");
-    shader_repository->create_shader("deferred");
-
-    // Init default materials
-    std::shared_ptr<MaterialRepository> material_repository = context->get_material_repository();
-
     // Init scene manager
     scene_manager = std::make_shared<SceneManager>(context);
 
@@ -50,7 +42,7 @@ void Engine::run()
     const float CYCLE_TIME = 1000.0f / UPDATE_FREQUENCY;
 
     static Timer system_timer;
-    static Timer physics_timer;
+    static Timer frame_timer;
 
     float accumulated_milliseconds = 0.0f;
 
@@ -64,9 +56,9 @@ void Engine::run()
         {
             accumulated_milliseconds -= CYCLE_TIME;
 
-            physics_timer.tick();
+            frame_timer.tick();
 
-            Time time = physics_timer.get_time();
+            Time time = frame_timer.get_time();
             update(time);
 
             late_update(time);

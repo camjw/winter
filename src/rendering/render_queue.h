@@ -9,13 +9,8 @@
 
 struct RenderCommand
 {
-    MeshID mesh_id;
-
-    ShaderID shader_id;
-
-    TextureID texture_id = 0;
-
-    MaterialID material_id;
+    ResourceHandle mesh;
+    ResourceHandle material;
 
     Matrix4x4 transform;
 };
