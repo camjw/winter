@@ -1,17 +1,14 @@
 #ifndef WINTER_SHADER_HPP
 #define WINTER_SHADER_HPP
 
-#include <glad/glad.h>
-
 #include <fstream>
+#include <utils/opengl_include.h>
 #include <maths/float3.h>
 #include <maths/float4.h>
 #include <maths/matrix4x4.h>
 #include <sstream>
 #include <string>
 #include <utility>
-
-using ShaderID = uint32_t;
 
 // TODO: refactor so this doesn't use streams or strings
 class Shader

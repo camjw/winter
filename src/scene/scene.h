@@ -20,8 +20,8 @@ public:
         entity_manager = std::make_unique<EntityManager>(scene_name);
     }
 
-    virtual void on_create() = 0;
-    virtual void on_destroy() = 0;
+    virtual void on_create() {};
+    virtual void on_destroy() {};
 
     virtual void on_load() {};
     virtual void on_unload() {};
@@ -40,6 +40,11 @@ public:
     {
         const Entity* current_entity = get_root();
         return dfs_find_camera(current_entity, camera);
+    }
+
+    EntityManager* get_entity_manager() const
+    {
+        return entity_manager.get();
     }
 
 private:

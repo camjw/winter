@@ -15,7 +15,7 @@ const Matrix4x4 Camera::get_projection_matrix() const
     return Matrix4x4::identity();
 }
 
-void Camera::set_clear_colour(float3 clear_colour)
+void Camera::set_clear_colour(colour clear_colour)
 {
     _clear_colour = clear_colour;
 }

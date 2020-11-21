@@ -1,0 +1,40 @@
+{
+  "resources": {
+    "textures": [
+      "uv_test.png"
+    ],
+    "shaders": [
+      "pixel",
+      "deferred"
+    ],
+    "meshes": []
+  },
+  "entities": [
+    {
+      "name": "camera",
+      "components": [
+        {
+          "type": "transform",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "type": "camera",
+          "clear_colour": {
+            "r": 255,
+            "g": 75,
+            "b": 0
+          }
+        }
+      ],
+      "children": []
+    }
+  ]
+}

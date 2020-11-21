@@ -9,7 +9,7 @@ class TextureFactory : public ResourceFactory<Texture>
 {
 public:
     explicit TextureFactory()
-        : ResourceFactory("./assets/textures") {};
+        : ResourceFactory("assets/textures") {};
 
 protected:
     inline virtual std::shared_ptr<Texture> build(const std::string& name) override

@@ -185,6 +185,6 @@ void OpenGLRenderer::draw_no_camera_scene()
 
 void OpenGLRenderer::draw_clear_colour() const
 {
-    const float3 clear_colour = current_camera->clear_colour();
+    const float4 clear_colour = current_camera->clear_colour().to_float4();
     glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 1.0f);
 }

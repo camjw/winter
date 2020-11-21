@@ -9,7 +9,7 @@ class ShaderFactory : public ResourceFactory<Shader>
 {
 public:
     explicit ShaderFactory()
-        : ResourceFactory("./assets/shaders")
+        : ResourceFactory("assets/shaders")
     {
     }
 

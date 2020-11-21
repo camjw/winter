@@ -1,7 +1,7 @@
 #ifndef WINTER_RENDERING_MESH_HPP
 #define WINTER_RENDERING_MESH_HPP
 
-#include <GLFW/glfw3.h>
+#include <utils/opengl_include.h>
 
 #include <maths/maths.h>
 #include <string>

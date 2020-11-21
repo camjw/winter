@@ -1,10 +1,10 @@
 #ifndef WINTER_TEXTURE_REPOSITORY_HPP
 #define WINTER_TEXTURE_REPOSITORY_HPP
 
-#include <glad/glad.h>
 #include <stb_image.h>
 
 #include <cstdint>
+#include <utils/opengl_include.h>
 #include <string>
 
 struct Texture

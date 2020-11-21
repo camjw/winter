@@ -1,7 +1,5 @@
 #include <engine.h>
 #include <entity/transform.h>
-#include <rendering/material.h>
-#include <rendering/point_light.h>
 #include <utils/opengl_helpers.h>
 
 Engine::Engine()
@@ -13,7 +11,7 @@ Engine::Engine()
 
     IMGUI_CHECKVERSION();
     imgui_context = ImGui::CreateContext();
-    assert(imgui_context != nullptr && "Failed to create ImGui context");
+    assert(imgui_context != nullptr && "Failed to create Dear ImGui context");
 
     input = std::make_unique<InputProcessor>(window);
 
@@ -23,6 +21,7 @@ Engine::Engine()
     // Init scene manager
     scene_manager = std::make_shared<SceneManager>(context);
 
+    // Init ui
     ui_root = std::make_shared<UIRoot>(window, context, scene_manager, imgui_context);
 
     // Init renderer

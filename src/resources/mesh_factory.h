@@ -7,7 +7,7 @@ class MeshFactory : public ResourceFactory<Mesh>
 {
 public:
     explicit MeshFactory()
-        : ResourceFactory("./assets/meshes")
+        : ResourceFactory("assets/meshes")
     {
     }
 

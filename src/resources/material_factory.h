@@ -12,7 +12,7 @@ class MaterialFactory : public ResourceFactory<Material>
 {
 public:
     explicit MaterialFactory(std::shared_ptr<ResourceManager> resource_manager)
-        : ResourceFactory("./assets/materials")
+        : ResourceFactory("assets/materials")
         , resource_manager(resource_manager)
     {
     }

@@ -1,9 +1,7 @@
 #ifndef WINTER_WINDOW_HPP
 #define WINTER_WINDOW_HPP
 
-#include <glad/glad.h>
-
-#include <GLFW/glfw3.h>
+#include <utils/opengl_include.h>
 #include <cstdio>
 #include <maths/float2.h>
 #include <maths/int2.h>
