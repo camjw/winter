@@ -1,4 +1,4 @@
-#include <rendering/texture.h>
+#include <rendering/data/texture.h>
 #include <utils/opengl_helpers.h>
 
 Texture::Texture(int width, int height)

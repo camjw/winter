@@ -5,9 +5,9 @@
 #include <context/winter_context.h>
 #include <cstdio>
 #include <input/input_processor.h>
+#include <rendering/data/shader.h>
+#include <rendering/data/texture.h>
 #include <rendering/opengl_renderer.h>
-#include <rendering/shader.h>
-#include <rendering/texture.h>
 #include <scene/scene_manager.h>
 #include <stb_image.h>
 #include <thread>

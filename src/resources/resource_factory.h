@@ -15,15 +15,27 @@ public:
     {
     }
 
+    IResourceFactory(const std::string resource_path, const std::string resource_extension)
+        : RESOURCE_PATH(resource_path)
+        , RESOURCE_EXTENSION(resource_extension)
+    {
+    }
+
     virtual ResourceHandle load(const std::string& path) = 0;
 
 protected:
-    std::string get_full_path(const std::string& path)
+    std::string get_full_path(const std::string& name)
     {
-        return WINTER_ROOT + "/" + RESOURCE_PATH + "/" + path;
+        return WINTER_ROOT + "/" + RESOURCE_PATH + "/" + name;
+    }
+
+    std::string get_full_path_with_extension(const std::string& name)
+    {
+        return WINTER_ROOT + "/" + RESOURCE_PATH + "/" + name + RESOURCE_EXTENSION;
     }
 
     std::string RESOURCE_PATH;
+    std::string RESOURCE_EXTENSION;
 };
 
 template <class T>
@@ -32,6 +44,11 @@ class ResourceFactory : public IResourceFactory
 public:
     ResourceFactory(const std::string resource_path)
         : IResourceFactory(resource_path)
+    {
+    }
+
+    ResourceFactory(const std::string resource_path, const std::string resource_extension)
+        : IResourceFactory(resource_path, resource_extension)
     {
     }
 

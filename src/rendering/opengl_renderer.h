@@ -7,12 +7,12 @@
 #include <imgui/bindings/imgui_impl_glfw.h>
 #include <imgui/bindings/imgui_impl_opengl3.h>
 #include <imgui/imgui.h>
+#include <rendering/data/material.h>
+#include <rendering/data/point_light.h>
+#include <rendering/data/shader.h>
+#include <rendering/data/texture.h>
 #include <rendering/framebuffer.h>
-#include <rendering/material.h>
-#include <rendering/point_light.h>
 #include <rendering/renderbuffer.h>
-#include <rendering/shader.h>
-#include <rendering/texture.h>
 #include <resources/resource_manager.h>
 #include <scene/scene.h>
 #include <ui/ui_root.h>

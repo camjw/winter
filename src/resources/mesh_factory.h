@@ -1,7 +1,7 @@
 #ifndef WINTER_MESH_FACTORY_H
 #define WINTER_MESH_FACTORY_H
 
-#include <rendering/mesh.h>
+#include <rendering/data/mesh.h>
 
 class MeshFactory : public ResourceFactory<Mesh>
 {

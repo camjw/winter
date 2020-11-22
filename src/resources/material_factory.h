@@ -6,7 +6,7 @@
 #include "resource_manager.h"
 #include <maths/colour.h>
 #include <nlohmann/json.hpp>
-#include <rendering/material.h>
+#include <rendering/data/material.h>
 
 class MaterialFactory : public ResourceFactory<Material>
 {

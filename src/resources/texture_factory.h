@@ -2,7 +2,7 @@
 #define WINTER_RENDERING_TEXTURE_FACTORY_HPP
 
 #include "resource_factory.h"
-#include <rendering/texture.h>
+#include <rendering/data/texture.h>
 #include <utils/opengl_helpers.h>
 
 class TextureFactory : public ResourceFactory<Texture>

@@ -1,10 +1,10 @@
 #ifndef WINTER_RENDER_QUEUE_H
 #define WINTER_RENDER_QUEUE_H
 
-#include "material.h"
-#include "mesh.h"
-#include "shader.h"
-#include "texture.h"
+#include "rendering/data/material.h"
+#include "rendering/data/mesh.h"
+#include "rendering/data/shader.h"
+#include "rendering/data/texture.h"
 #include <maths/matrix4x4.h>
 
 struct RenderCommand

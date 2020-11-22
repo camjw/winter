@@ -2,7 +2,7 @@
 #define WINTER_SHADER_FACTORY_H
 
 #include "resource_factory.h"
-#include <rendering/shader.h>
+#include <rendering/data/shader.h>
 #include <utils/opengl_helpers.h>
 
 class ShaderFactory : public ResourceFactory<Shader>

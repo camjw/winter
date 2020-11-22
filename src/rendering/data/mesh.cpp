@@ -1,5 +1,5 @@
+#include <rendering/data/mesh.h>
 #include <utils/opengl_helpers.h>
-#include <rendering/mesh.h>
 
 Mesh Mesh::primitive_mesh(int sides, bool rotate_by_half_segment)
 {

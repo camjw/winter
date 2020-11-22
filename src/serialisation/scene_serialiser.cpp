@@ -1,9 +1,9 @@
 #include "scene_serialiser.h"
 #include <constants/folder_constants.h>
-#include <rendering/mesh.h>
-#include <rendering/shader.h>
-#include <rendering/texture.h>
-#include <iostream>
+#include <rendering/data/mesh.h>
+#include <rendering/data/shader.h>
+#include <rendering/data/texture.h>
+#include <rendering/data/tilemap.h>
 
 void SceneSerialiser::load_scene(const std::string& scene_name, Scene* scene)
 {
@@ -54,6 +54,7 @@ void SceneSerialiser::load_resources(nlohmann::json scene_data)
     std::vector<std::string> shader_data = resources_data["shaders"];
     std::vector<std::string> mesh_data = resources_data["meshes"];
     std::vector<std::string> texture_data = resources_data["textures"];
+    std::vector<std::string> tilemap_data = resources_data["tilemaps"];
 
     for (int i = 0; i < mesh_data.size(); i++)
     {
@@ -68,6 +69,11 @@ void SceneSerialiser::load_resources(nlohmann::json scene_data)
     for (int i = 0; i < shader_data.size(); i++)
     {
         resource_manager->load<Shader>(shader_data[i]);
+    }
+
+    for (int i = 0; i < tilemap_data.size(); i++)
+    {
+        resource_manager->load<Tilemap>(tilemap_data[i]);
     }
 }
 
