@@ -17,6 +17,7 @@ struct Tileset
         : texture_handle(texture_handle)
         , tilewidth(tilewidth)
         , tileheight(tileheight)
+        , tilecount(tilecount)
         , columns(columns)
         , image_width(image_width)
         , image_height(image_height)

@@ -38,6 +38,28 @@
         }
       ],
       "children": []
+    },
+    {
+      "name": "background",
+      "components": [
+        {
+          "type": "transform",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "type": "tilemap_renderer",
+          "tilemap": "forest"
+        }
+      ],
+      "children": []
     }
   ]
 }

@@ -1,13 +1,15 @@
 #ifndef WINTER_TILEMAP_H
 #define WINTER_TILEMAP_H
 
+#include "tilemap_layer.h"
 #include <resources/resource_handle.h>
+#include <vector>
 
 struct Tilemap
 {
-    Tilemap(ResourceHandle texture): texture(texture) {};
-
     ResourceHandle texture;
+    std::vector<TilemapLayer> layers;
+    bool infinite;
 };
 
 #endif //WINTER_TILEMAP_H

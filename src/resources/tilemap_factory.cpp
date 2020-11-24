@@ -1,6 +1,7 @@
 #include "tilemap_factory.h"
-#include <rendering/data/tileset.h>
-#include <utils/opengl_helpers.h>
+#include <maths/grid.h>
+#include <sstream>
+#include <string>
 
 std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
 {
@@ -13,11 +14,26 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
 
     std::string tileset_relative_path = tilemap_xml.child("map").child("tileset").attribute("source").as_string();
     std::string tileset_name = get_tileset_name(tileset_relative_path);
-    printf("tileset name: %s\n", tileset_name.c_str());
 
-    ResourceHandle tileset_handle = resource_manager->load<Tileset>(tileset_name);
+    ResourceHandle tileset_texture_handle = resource_manager->load<Tileset>(tileset_name);
     glCheckError();
-    return nullptr;
+
+    pugi::xml_object_range<pugi::xml_named_node_iterator> layers = tilemap_xml.children("layer");
+    std::vector<TilemapLayer> tilemap_layers;
+
+    for (pugi::xml_named_node_iterator layer = layers.begin(); layer != layers.end(); ++layer)
+    {
+        tilemap_layers.push_back(build_tilemap_layer(layer));
+    }
+
+    bool infinite = tilemap_xml.child("map").attribute("infinite").as_bool();
+    Tilemap tilemap = Tilemap {
+        .texture = tileset_texture_handle,
+        .layers = tilemap_layers,
+        .infinite = infinite
+    };
+
+    return std::make_shared<Tilemap>(tilemap);
 }
 
 std::string TilemapFactory::get_tileset_name(const std::string& relative_path) const
@@ -25,4 +41,34 @@ std::string TilemapFactory::get_tileset_name(const std::string& relative_path) c
     std::string base_filename = relative_path.substr(relative_path.find_last_of("/\\") + 1);
     std::string::size_type const p(base_filename.find_last_of('.'));
     return base_filename.substr(0, p);
+}
+
+TilemapLayer TilemapFactory::build_tilemap_layer(pugi::xml_named_node_iterator layer_data) const
+{
+    int id = layer_data->attribute("id").as_int();
+    std::string name = layer_data->attribute("name").as_string();
+    int width = layer_data->attribute("width").as_int();
+    int height = layer_data->attribute("height").as_int();
+
+    std::string data_string = layer_data->child("data").value();
+
+    Grid<int> data = Grid<int>(width, height);
+
+    std::stringstream data_stream(data_string);
+    std::string next_tile;
+    int counter = 0;
+    while (std::getline(data_stream, next_tile, ','))
+    {
+        int tile_data = atoi(next_tile.c_str());
+        data[counter / width][counter % width] = tile_data;
+        counter++;
+    }
+
+    return TilemapLayer {
+        .id = id,
+        .name = name,
+        .width = width,
+        .height = height,
+        .data = data,
+    };
 }

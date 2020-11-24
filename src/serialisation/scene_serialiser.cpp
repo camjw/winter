@@ -1,6 +1,6 @@
 #include "scene_serialiser.h"
 #include <constants/folder_constants.h>
-#include <rendering/data/mesh.h>
+#include <rendering/data/material.h>
 #include <rendering/data/shader.h>
 #include <rendering/data/texture.h>
 #include <rendering/data/tilemap.h>
@@ -11,11 +11,11 @@ void SceneSerialiser::load_scene(const std::string& scene_name, Scene* scene)
     std::ifstream scene_stream(get_full_path(scene_name));
     scene_stream >> scene_data;
 
-    load_resources(scene_data);
-    load_entities(scene, scene_data, scene->get_root()->transform);
+    ResourcesLoadInfo resources_load_info = load_resources(scene_data);
+    int num_loaded_entities = load_entities(scene, scene_data, scene->get_root()->transform);
 }
 
-void SceneSerialiser::load_entities(Scene* scene, const nlohmann::json& scene_data, std::shared_ptr<Transform> root_transform)
+int SceneSerialiser::load_entities(Scene* scene, const nlohmann::json& scene_data, std::shared_ptr<Transform> root_transform)
 {
     std::vector<nlohmann::json> entity_data = scene_data["entities"];
 
@@ -23,6 +23,8 @@ void SceneSerialiser::load_entities(Scene* scene, const nlohmann::json& scene_da
     {
         load_entity(scene, entity_data[i], root_transform);
     }
+
+    return entity_data.size();
 }
 
 std::shared_ptr<Entity> SceneSerialiser::load_entity(Scene* scene, const nlohmann::json& entity_data, std::shared_ptr<Transform> parent_transform)
@@ -48,22 +50,17 @@ std::shared_ptr<Entity> SceneSerialiser::load_entity(Scene* scene, const nlohman
     return entity;
 }
 
-void SceneSerialiser::load_resources(nlohmann::json scene_data)
+ResourcesLoadInfo SceneSerialiser::load_resources(nlohmann::json scene_data)
 {
     nlohmann::json resources_data = scene_data["resources"];
+    std::vector<std::string> material_data = resources_data["materials"];
     std::vector<std::string> shader_data = resources_data["shaders"];
-    std::vector<std::string> mesh_data = resources_data["meshes"];
     std::vector<std::string> texture_data = resources_data["textures"];
     std::vector<std::string> tilemap_data = resources_data["tilemaps"];
 
-    for (int i = 0; i < mesh_data.size(); i++)
+    for (int i = 0; i < material_data.size(); i++)
     {
-        resource_manager->load<Mesh>(mesh_data[i]);
-    }
-
-    for (int i = 0; i < texture_data.size(); i++)
-    {
-        resource_manager->load<Texture>(texture_data[i]);
+        resource_manager->load<Material>(material_data[i]);
     }
 
     for (int i = 0; i < shader_data.size(); i++)
@@ -71,10 +68,22 @@ void SceneSerialiser::load_resources(nlohmann::json scene_data)
         resource_manager->load<Shader>(shader_data[i]);
     }
 
+    for (int i = 0; i < texture_data.size(); i++)
+    {
+        resource_manager->load<Texture>(texture_data[i]);
+    }
+
     for (int i = 0; i < tilemap_data.size(); i++)
     {
         resource_manager->load<Tilemap>(tilemap_data[i]);
     }
+
+    return ResourcesLoadInfo {
+        .num_loaded_materials = material_data.size(),
+        .num_loaded_shaders = shader_data.size(),
+        .num_loaded_textures = texture_data.size(),
+        .num_loaded_tilemaps = tilemap_data.size(),
+    };
 }
 
 nlohmann::json SceneSerialiser::save_scene(Scene* scene) const
