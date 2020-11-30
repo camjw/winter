@@ -29,8 +29,8 @@ private:
     void begin_draw(const Time time, const Scene* scene);
     void set_camera(Camera* camera_entity);
     void draw_scene_graph(const Scene* scene);
-    void draw_node(const Entity* entity, const Matrix4x4& parent_transform);
-    void enqueue_mesh(const Entity* entity, const Matrix4x4& parent_transform);
+    void draw_node(const Entity* entity, const float4x4& parent_transform);
+    void enqueue_mesh(const Entity* entity, const float4x4& parent_transform);
     void process_render_commands(const Scene* scene) const;
     void resize_framebuffers();
 

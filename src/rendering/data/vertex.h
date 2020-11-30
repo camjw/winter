@@ -1,7 +1,7 @@
 #ifndef WINTER_VERTEX_H
 #define WINTER_VERTEX_H
 
-#include <maths/float3.h>
+#include <maths/maths.h>
 
 struct Vertex
 {

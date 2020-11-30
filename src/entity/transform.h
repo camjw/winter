@@ -2,9 +2,7 @@
 #define WINTER_TRANSFORM_H
 
 #include "component.h"
-#include <maths/float3.h>
-#include <maths/matrix4x4.h>
-#include <maths/quaternion.h>
+#include <maths/maths.h>
 #include <vector>
 
 class Entity;
@@ -46,7 +44,7 @@ public:
         is_dirty = true;;
     }
 
-    Matrix4x4 get_model_matrix()
+    float4x4 get_model_matrix()
     {
         if (is_dirty)
         {
@@ -74,7 +72,7 @@ private:
     std::shared_ptr<Transform> _parent = nullptr;
 
     bool is_dirty;
-    Matrix4x4 cached_transform_matrix;
+    float4x4 cached_transform_matrix;
 
     float2 _position = float2::zero();
     float _rotation = 0;
@@ -83,11 +81,11 @@ private:
 
     inline void recalculate_transform()
     {
-        cached_transform_matrix = Matrix4x4::identity();
+        cached_transform_matrix = float4x4::identity();
 
-        cached_transform_matrix = Matrix4x4::scale(float3(_scale, 1.0f)) * cached_transform_matrix;
-        cached_transform_matrix = Matrix4x4::rotation(quaternion::angle_axis(_rotation, float3(0, 0, 1))) * cached_transform_matrix;
-        cached_transform_matrix = Matrix4x4::translate(float3(_position, layer_index)) * cached_transform_matrix;
+        cached_transform_matrix = maths::scale(float3(_scale, 1.0f)) * cached_transform_matrix;
+        cached_transform_matrix = maths::rotation(quaternion::angle_axis(_rotation, float3(0, 0, 1))) * cached_transform_matrix;
+        cached_transform_matrix = maths::translation(float3(_position, layer_index)) * cached_transform_matrix;
     }
 };
 

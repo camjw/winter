@@ -2,7 +2,7 @@
 #define WINTER_POINT_LIGHT_H
 
 #include "shader.h"
-#include <maths/float3.h>
+#include <maths/maths.h>
 
 struct PointLight
 {

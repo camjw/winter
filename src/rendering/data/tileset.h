@@ -1,6 +1,8 @@
 #ifndef WINTER_TILESET_H
 #define WINTER_TILESET_H
 
+#include <resources/resource_handle.h>
+
 struct Tileset
 {
     ResourceHandle texture_handle;
@@ -24,4 +26,5 @@ struct Tileset
     {
     }
 };
+
 #endif // WINTER_TILESET_H

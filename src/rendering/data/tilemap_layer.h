@@ -1,7 +1,7 @@
 #ifndef WINTER_TILEMAP_LAYER_H
 #define WINTER_TILEMAP_LAYER_H
 
-#include <maths/grid.h>
+#include <maths/containers/grid.h>
 #include <string>
 
 struct TilemapLayer

@@ -4,7 +4,7 @@
 #include "shader.h"
 #include "texture.h"
 #include <maths/colour.h>
-#include <maths/float3.h>
+#include <maths/maths.h>
 #include <resources/resource_handle.h>
 
 enum RenderMode

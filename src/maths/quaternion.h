@@ -4,7 +4,6 @@
 #include <cstdio>
 #include <math.h>
 #include <cmath>
-#include "float3.h"
 #include <sstream>
 
 struct EulerAngles

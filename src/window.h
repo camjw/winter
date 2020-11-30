@@ -3,8 +3,7 @@
 
 #include <utils/opengl_include.h>
 #include <cstdio>
-#include <maths/float2.h>
-#include <maths/int2.h>
+#include <maths/maths.h>
 #include <stb_image.h>
 #include <string>
 #include <timer.h>

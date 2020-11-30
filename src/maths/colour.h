@@ -1,7 +1,8 @@
 #ifndef WINTER_COLOUR_H
 #define WINTER_COLOUR_H
 
-#include "float4.h"
+#include "vec.h"
+
 struct colour
 {
     colour()

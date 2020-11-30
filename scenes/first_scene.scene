@@ -7,6 +7,7 @@
       "pixel",
       "deferred"
     ],
+    "materials": [],
     "meshes": [],
     "tilemaps": [
       "forest"

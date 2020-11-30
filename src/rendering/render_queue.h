@@ -5,14 +5,14 @@
 #include "rendering/data/mesh.h"
 #include "rendering/data/shader.h"
 #include "rendering/data/texture.h"
-#include <maths/matrix4x4.h>
+#include <maths/maths.h>
 
 struct RenderCommand
 {
     ResourceHandle mesh;
     ResourceHandle material;
 
-    Matrix4x4 transform;
+    float4x4 transform;
 };
 
 class RenderQueue

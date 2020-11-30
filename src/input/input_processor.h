@@ -2,7 +2,7 @@
 #define WINTER_INPUT_PROCESSOR_HPP
 
 #include <input/keys.h>
-#include <maths/float2.h>
+#include <maths/maths.h>
 #include <utils/bitmask.h>
 #include <window.h>
 

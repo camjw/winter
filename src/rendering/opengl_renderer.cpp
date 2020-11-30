@@ -63,13 +63,13 @@ void OpenGLRenderer::resize_framebuffers()
 void OpenGLRenderer::draw_scene_graph(const Scene* scene)
 {
     opaque_render_queue->clear();
-    Matrix4x4 transform = Matrix4x4::identity();
+    float4x4 transform = float4x4::identity();
     draw_node(scene->get_root(), transform);
 }
 
-void OpenGLRenderer::draw_node(const Entity* entity, const Matrix4x4& parent_transform)
+void OpenGLRenderer::draw_node(const Entity* entity, const float4x4& parent_transform)
 {
-    Matrix4x4 node_transform = Matrix4x4::identity();
+    float4x4 node_transform = float4x4::identity();
 
     const std::shared_ptr<Transform> entity_transform = entity->transform;
     for (Transform* const& child : entity_transform->get_children())
@@ -78,7 +78,7 @@ void OpenGLRenderer::draw_node(const Entity* entity, const Matrix4x4& parent_tra
     }
 }
 
-void OpenGLRenderer::enqueue_mesh(const Entity* entity, const Matrix4x4& parent_transform)
+void OpenGLRenderer::enqueue_mesh(const Entity* entity, const float4x4& parent_transform)
 {
 }
 
@@ -130,8 +130,8 @@ void OpenGLRenderer::set_camera(Camera* camera)
     current_camera = camera;
     float aspect_ratio = window->get_aspect_ratio();
 
-    const Matrix4x4& projection_matrix = camera->get_projection_matrix();
-    const Matrix4x4& view_matrix = camera->get_view_matrix(aspect_ratio);
+    const float4x4& projection_matrix = camera->get_projection_matrix();
+    const float4x4& view_matrix = camera->get_view_matrix(aspect_ratio);
 
     resource_manager->for_each<Shader>([projection_matrix, view_matrix](Shader* shader) {
         shader->bind();

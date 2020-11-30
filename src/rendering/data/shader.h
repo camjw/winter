@@ -3,12 +3,11 @@
 
 #include <fstream>
 #include <utils/opengl_include.h>
-#include <maths/float3.h>
-#include <maths/float4.h>
-#include <maths/matrix4x4.h>
+#include <maths/maths.h>
 #include <sstream>
 #include <string>
 #include <utility>
+#include <maths/maths.h>
 
 // TODO: refactor so this doesn't use streams or strings
 class Shader
@@ -72,17 +71,17 @@ public:
         glUniform4f(glGetUniformLocation(id_, name.c_str()), x, y, z, w);
     }
 
-//    void set_mat2(const std::string& name, const glm::mat2& mat) const
-//    {
-//        glUniformMatrix2fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
-//    }
-//
-//    void set_mat3(const std::string& name, const glm::mat3& mat) const
-//    {
-//        glUniformMatrix3fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
-//    }
+    void set_mat2(const std::string& name, const float2x2& mat) const
+    {
+        glUniformMatrix2fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+    }
 
-    void set_mat4(const std::string& name, const Matrix4x4& mat) const
+    void set_mat3(const std::string& name, const float3x3& mat) const
+    {
+        glUniformMatrix3fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+    }
+
+    void set_mat4(const std::string& name, const float4x4& mat) const
     {
         glUniformMatrix4fv(glGetUniformLocation(id_, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
