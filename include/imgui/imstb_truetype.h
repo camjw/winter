@@ -120,8 +120,8 @@
 //
 //   Starting with version 1.06, the rasterizer was replaced with a new,
 //   faster and generally-more-precise rasterizer. The new rasterizer more
-//   accurately measures pixel coverage for anti-aliasing, except in the case
-//   where multiple shapes overlap, in which case it overestimates the AA pixel
+//   accurately measures sprite coverage for anti-aliasing, except in the case
+//   where multiple shapes overlap, in which case it overestimates the AA sprite
 //   coverage. Thus, anti-aliasing of intersecting shapes may look wrong. If
 //   this turns out to be a problem, you can re-enable the old rasterizer with
 //        #define STBTT_RASTERIZER_VERSION 1
@@ -549,7 +549,7 @@ typedef struct
 
 STBTT_DEF void stbtt_GetBakedQuad(const stbtt_bakedchar *chardata, int pw, int ph,  // same data as above
                                int char_index,             // character to display
-                               float *xpos, float *ypos,   // pointers to current position in screen pixel space
+                               float *xpos, float *ypos,   // pointers to current position in screen sprite space
                                stbtt_aligned_quad *q,      // output: quad to draw
                                int opengl_fillrule);       // true if opengl fill rule; false if DX9 or earlier
 // Call GetBakedQuad with char_index = 'character - first_char', and it
@@ -657,7 +657,7 @@ STBTT_DEF void stbtt_PackSetSkipMissingCodepoints(stbtt_pack_context *spc, int s
 
 STBTT_DEF void stbtt_GetPackedQuad(const stbtt_packedchar *chardata, int pw, int ph,  // same data as above
                                int char_index,             // character to display
-                               float *xpos, float *ypos,   // pointers to current position in screen pixel space
+                               float *xpos, float *ypos,   // pointers to current position in screen sprite space
                                stbtt_aligned_quad *q,      // output: quad to draw
                                int align_to_integer);
 
@@ -861,7 +861,7 @@ STBTT_DEF unsigned char *stbtt_GetCodepointBitmap(const stbtt_fontinfo *info, fl
 // *width & *height are filled out with the width & height of the bitmap,
 // which is stored left-to-right, top-to-bottom.
 //
-// xoff/yoff are the offset it pixel space from the glyph origin to the top-left of the bitmap
+// xoff/yoff are the offset it sprite space from the glyph origin to the top-left of the bitmap
 
 STBTT_DEF unsigned char *stbtt_GetCodepointBitmapSubpixel(const stbtt_fontinfo *info, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint, int *width, int *height, int *xoff, int *yoff);
 // the same as stbtt_GetCodepoitnBitmap, but you can specify a subpixel
@@ -939,7 +939,7 @@ STBTT_DEF unsigned char * stbtt_GetCodepointSDF(const stbtt_fontinfo *info, floa
 //        padding           --  extra "pixels" around the character which are filled with the distance to the character (not 0),
 //                                 which allows effects like bit outlines
 //        onedge_value      --  value 0-255 to test the SDF against to reconstruct the character (i.e. the isocontour of the character)
-//        pixel_dist_scale  --  what value the SDF should increase by when moving one SDF "pixel" away from the edge (on the 0..255 scale)
+//        pixel_dist_scale  --  what value the SDF should increase by when moving one SDF "sprite" away from the edge (on the 0..255 scale)
 //                                 if positive, > onedge_value is inside; if negative, < onedge_value is inside
 //        width,height      --  output height & width of the SDF bitmap (including padding)
 //        xoff,yoff         --  output origin of the character
@@ -957,7 +957,7 @@ STBTT_DEF unsigned char * stbtt_GetCodepointSDF(const stbtt_fontinfo *info, floa
 //
 //      This will create an SDF bitmap in which the character is about 22 pixels
 //      high but the whole bitmap is about 22+5+5=32 pixels high. To produce a filled
-//      shape, sample the SDF at each pixel and fill the pixel if the SDF value
+//      shape, sample the SDF at each sprite and fill the sprite if the SDF value
 //      is greater than or equal to 180/255. (You'll actually want to antialias,
 //      which is beyond the scope of this example.) Additionally, you can compute
 //      offset outlines (e.g. to stroke the character border inside & outside,
@@ -968,7 +968,7 @@ STBTT_DEF unsigned char * stbtt_GetCodepointSDF(const stbtt_fontinfo *info, floa
 //      outside effects only (the interior range is needed to allow proper
 //      antialiasing of the font at *smaller* sizes)
 //
-// The function computes the SDF analytically at each SDF pixel, not by e.g.
+// The function computes the SDF analytically at each SDF sprite, not by e.g.
 // building a higher-res bitmap and approximating it. In theory the quality
 // should be as high as possible for an SDF of this size & representation, but
 // unclear if this is true in practice (perhaps building a higher-res bitmap
@@ -2805,7 +2805,7 @@ static void stbtt__fill_active_edges(unsigned char *scanline, int len, stbtt__ac
 
             if (i < len && j >= 0) {
                if (i == j) {
-                  // x0,x1 are the same pixel, so compute combined coverage
+                  // x0,x1 are the same sprite, so compute combined coverage
                   scanline[i] = scanline[i] + (stbtt_uint8) ((x1 - x0) * max_weight >> STBTT_FIXSHIFT);
                } else {
                   if (i >= 0) // add antialiasing for x0
@@ -2849,7 +2849,7 @@ static void stbtt__rasterize_sorted_edges(stbtt__bitmap *result, stbtt__edge *e,
    while (j < result->h) {
       STBTT_memset(scanline, 0, result->w);
       for (s=0; s < vsubsample; ++s) {
-         // find center of pixel for this scanline
+         // find center of sprite for this scanline
          float scan_y = y + 0.5f;
          stbtt__active_edge **step = &active;
 
@@ -2975,7 +2975,7 @@ static void stbtt__fill_active_edges_new(float *scanline, float *scanline_fill, 
    float y_bottom = y_top+1;
 
    while (e) {
-      // brute force every pixel
+      // brute force every sprite
 
       // compute intersection points with top & bottom
       STBTT_assert(e->ey >= y_top);
@@ -3022,12 +3022,12 @@ static void stbtt__fill_active_edges_new(float *scanline, float *scanline_fill, 
 
             if ((int) x_top == (int) x_bottom) {
                float height;
-               // simple case, only spans one pixel
+               // simple case, only spans one sprite
                int x = (int) x_top;
                height = sy1 - sy0;
                STBTT_assert(x >= 0 && x < len);
                scanline[x] += e->direction * (1-((x_top - x) + (x_bottom-x))/2)  * height;
-               scanline_fill[x] += e->direction * height; // everything right of this pixel is filled
+               scanline_fill[x] += e->direction * height; // everything right of this sprite is filled
             } else {
                int x,x1,x2;
                float y_crossing, step, sign, area;
@@ -3079,7 +3079,7 @@ static void stbtt__fill_active_edges_new(float *scanline, float *scanline_fill, 
             for (x=0; x < len; ++x) {
                // cases:
                //
-               // there can be up to two intersections with the pixel. any intersection
+               // there can be up to two intersections with the sprite. any intersection
                // with left or right edges can be handled by splitting into two (or three)
                // regions. intersections with top & bottom do not necessitate case-wise logic.
                //
@@ -3154,7 +3154,7 @@ static void stbtt__rasterize_sorted_edges(stbtt__bitmap *result, stbtt__edge *e,
    e[n].y0 = (float) (off_y + result->h) + 1;
 
    while (j < result->h) {
-      // find center of pixel for this scanline
+      // find center of sprite for this scanline
       float scan_y_top    = y + 0.0f;
       float scan_y_bottom = y + 1.0f;
       stbtt__active_edge **step = &active;
@@ -3402,7 +3402,7 @@ static int stbtt__tesselate_curve(stbtt__point *points, int *num_points, float x
    float dy = (y0+y2)/2 - my;
    if (n > 16) // 65536 segments on one curve better be enough!
       return 1;
-   if (dx*dx+dy*dy > objspace_flatness_squared) { // half-pixel error allowed... need to be smaller if AA
+   if (dx*dx+dy*dy > objspace_flatness_squared) { // half-sprite error allowed... need to be smaller if AA
       stbtt__tesselate_curve(points, num_points, x0,y0, (x0+x1)/2.0f,(y0+y1)/2.0f, mx,my, objspace_flatness_squared,n+1);
       stbtt__tesselate_curve(points, num_points, mx,my, (x1+x2)/2.0f,(y1+y2)/2.0f, x2,y2, objspace_flatness_squared,n+1);
    } else {

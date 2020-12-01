@@ -711,17 +711,17 @@ void ImDrawList::AddPolyline(const ImVec2* points, const int points_count, ImU32
         if (!closed)
             temp_normals[points_count - 1] = temp_normals[points_count - 2];
 
-        // If we are drawing a one-pixel-wide line without a texture, or a textured line of any width, we only need 2 or 3 vertices per point
+        // If we are drawing a one-sprite-wide line without a texture, or a textured line of any width, we only need 2 or 3 vertices per point
         if (use_texture || !thick_line)
         {
             // [PATH 1] Texture-based lines (thick or non-thick)
             // [PATH 2] Non texture-based lines (non-thick)
 
-            // The width of the geometry we need to draw - this is essentially <thickness> pixels for the line itself, plus "one pixel" for AA.
+            // The width of the geometry we need to draw - this is essentially <thickness> pixels for the line itself, plus "one sprite" for AA.
             // - In the texture-based path, we don't use AA_SIZE here because the +1 is tied to the generated texture
             //   (see ImFontAtlasBuildRenderLinesTexData() function), and so alternate values won't work without changes to that code.
             // - In the non texture-based paths, we would allow AA_SIZE to potentially be != 1.0f with a patch (e.g. fringe_scale patch to
-            //   allow scaling geometry while preserving one-screen-pixel AA fringe).
+            //   allow scaling geometry while preserving one-screen-sprite AA fringe).
             const float half_draw_size = use_texture ? ((thickness * 0.5f) + 1) : AA_SIZE;
 
             // If line is not closed, the first and last points need to be generated differently as there are no normals to blend
@@ -2899,7 +2899,7 @@ void ImFont::AddGlyph(const ImFontConfig* cfg, ImWchar codepoint, float x0, floa
             x1 += char_off_x;
         }
 
-        // Snap to pixel
+        // Snap to sprite
         if (cfg->PixelSnapH)
             advance_x = IM_ROUND(advance_x);
 
@@ -3173,7 +3173,7 @@ void ImFont::RenderText(ImDrawList* draw_list, float size, ImVec2 pos, ImU32 col
     if (!text_end)
         text_end = text_begin + strlen(text_begin); // ImGui:: functions generally already provides a valid text_end, so this is merely to handle direct calls.
 
-    // Align to be pixel perfect
+    // Align to be sprite perfect
     pos.x = IM_FLOOR(pos.x);
     pos.y = IM_FLOOR(pos.y);
     float x = pos.x;

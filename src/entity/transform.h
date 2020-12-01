@@ -5,6 +5,56 @@
 #include <maths/maths.h>
 #include <vector>
 
+struct TransformData
+{
+    float2 local_position;
+    float local_rotation;
+    float2 local_scale;
+
+    float4x4 parent_transform;
+
+    static TransformData translate(TransformData original, float2 translation)
+    {
+        return TransformData {
+            .local_position = original.local_position + translation,
+            .local_rotation = original.local_rotation,
+            .local_scale = original.local_scale,
+            .parent_transform = original.parent_transform,
+        };
+    }
+
+    static TransformData rotate(TransformData original, float rotation)
+    {
+        return TransformData {
+            .local_position = original.local_position,
+            .local_rotation = original.local_rotation + rotation,
+            .local_scale = original.local_scale,
+            .parent_transform = original.parent_transform,
+        };
+    }
+
+    static TransformData scale(TransformData original, float2 scale)
+    {
+        return TransformData {
+            .local_position = original.local_position,
+            .local_rotation = original.local_rotation,
+            .local_scale = original.local_scale * scale,
+            .parent_transform = original.parent_transform,
+        };
+    }
+
+    float4x4 get_model_matrix()
+    {
+        float4x4 output = float4x4::identity();
+
+        output = maths::scale(float3(local_scale, 1.0f)) * output;
+        output = maths::rotation(quaternion::angle_axis(local_rotation, float3(0, 0, 1))) * output;
+        output = maths::translation(float3(local_position, 1)) * output;;
+
+        return parent_transform * output;
+    }
+};
+
 class Entity;
 class Transform: public Component
 {
@@ -14,6 +64,11 @@ public:
     const float2& get_position() const
     {
         return _position;
+    }
+
+    const void add_position(const float2& offset)
+    {
+        _position += offset;
     }
 
     const float& get_rotation() const
@@ -66,6 +121,16 @@ public:
     const std::shared_ptr<Transform> parent() const
     {
         return _parent;
+    }
+
+    TransformData get_transform_data(float4x4 parent_transform)
+    {
+        return TransformData {
+            .local_position = _position,
+            .local_rotation = _rotation,
+            .local_scale = _scale,
+            .parent_transform = parent_transform
+        };
     }
 
 private:

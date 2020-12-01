@@ -69,17 +69,50 @@ void OpenGLRenderer::draw_scene_graph(const Scene* scene)
 
 void OpenGLRenderer::draw_node(const Entity* entity, const float4x4& parent_transform)
 {
-    float4x4 node_transform = float4x4::identity();
+    float4x4 node_transform = parent_transform * entity->transform->get_model_matrix();
 
-    const std::shared_ptr<Transform> entity_transform = entity->transform;
-    for (Transform* const& child : entity_transform->get_children())
+    if (entity->has_component<TilemapRenderer>())
+    {
+        enqueue_tilemap(entity, parent_transform);
+    }
+
+    for (Transform* const& child : entity->transform->get_children())
     {
         draw_node(child->entity(), parent_transform * node_transform);
     }
 }
 
-void OpenGLRenderer::enqueue_mesh(const Entity* entity, const float4x4& parent_transform)
+void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& parent_transform)
 {
+    TilemapRenderer* tilemap_renderer = entity->get_component<TilemapRenderer>().get();
+    Tilemap* tilemap = resource_manager->get<Tilemap>(tilemap_renderer->tilemap);
+
+    ResourceHandle square_mesh_handle = resource_manager->load<Mesh>("square");
+    ResourceHandle material_handle = tilemap->material;
+
+    TransformData entity_transform_data = entity->transform->get_transform_data(parent_transform);
+
+    for (int i = 0; i < tilemap->layers.size(); i++)
+    {
+        TilemapLayer layer = tilemap->layers[i];
+        assert(material_handle.is_of_type<Material>() && "Tilemap layer should have handle to material");
+
+        for (int j = 0; j < layer.width; j++)
+        {
+            for (int k = 0; k < layer.height; k++)
+            {
+                int tile_type = layer.data[j][k];
+
+                TransformData tile_transform_data = TransformData::translate(entity_transform_data, float2(j, k));
+                opaque_render_queue->push_back(RenderCommand {
+                    .mesh = square_mesh_handle,
+                    .material = material_handle,
+                    .tile_id = tile_type,
+                    .transform = tile_transform_data.get_model_matrix()
+                });
+            }
+        }
+    }
 }
 
 void OpenGLRenderer::process_render_commands(const Scene* scene) const
@@ -95,6 +128,7 @@ void OpenGLRenderer::process_render_commands(const Scene* scene) const
 
     for (const RenderCommand& command : opaque_render_queue->commands)
     {
+        printf("command\n");
         process_command(command);
     }
 

@@ -26,6 +26,6 @@ void WinterContext::load_default_meshes()
 
 void WinterContext::load_default_shaders()
 {
-    resource_manager->load<Shader>("pixel");
+    resource_manager->load<Shader>("sprite");
     resource_manager->load<Shader>("deferred");
 }

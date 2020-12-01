@@ -3,6 +3,7 @@
 
 #include <maths/containers/grid.h>
 #include <string>
+#include <vector>
 
 struct TilemapLayer
 {
@@ -10,7 +11,7 @@ struct TilemapLayer
     std::string name;
     int width;
     int height;
-    Grid<int> data;
+    std::vector<std::vector<int>> data;
 };
 
 #endif // WINTER_TILEMAP_LAYER_H

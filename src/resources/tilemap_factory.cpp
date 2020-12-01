@@ -1,5 +1,6 @@
 #include "tilemap_factory.h"
 #include <maths/containers/grid.h>
+#include <rendering/data/material.h>
 #include <sstream>
 #include <string>
 
@@ -16,9 +17,16 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
     std::string tileset_name = get_tileset_name(tileset_relative_path);
 
     ResourceHandle tileset_texture_handle = resource_manager->load<Tileset>(tileset_name);
+    Material tileset_material = Material {
+        .texture = tileset_texture_handle,
+        .shader = resource_manager->load<Shader>("tilemap"),
+    };
+
+    ResourceHandle tileset_material_handle = resource_manager->insert<Material>(tileset_name + "_material", std::move(tileset_material));
+
     glCheckError();
 
-    pugi::xml_object_range<pugi::xml_named_node_iterator> layers = tilemap_xml.children("layer");
+    pugi::xml_object_range<pugi::xml_named_node_iterator> layers = tilemap_xml.child("map").children("layer");
     std::vector<TilemapLayer> tilemap_layers;
 
     for (pugi::xml_named_node_iterator layer = layers.begin(); layer != layers.end(); ++layer)
@@ -28,7 +36,7 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
 
     bool infinite = tilemap_xml.child("map").attribute("infinite").as_bool();
     Tilemap tilemap = Tilemap {
-        .texture = tileset_texture_handle,
+        .material = tileset_material_handle,
         .layers = tilemap_layers,
         .infinite = infinite
     };
@@ -50,9 +58,10 @@ TilemapLayer TilemapFactory::build_tilemap_layer(pugi::xml_named_node_iterator l
     int width = layer_data->attribute("width").as_int();
     int height = layer_data->attribute("height").as_int();
 
+    auto  = layer_data->children();
     std::string data_string = layer_data->child("data").value();
 
-    Grid<int> data = Grid<int>(width, height);
+    std::vector<std::vector<int>> data(height, std::vector<int>());
 
     std::stringstream data_stream(data_string);
     std::string next_tile;
@@ -60,7 +69,7 @@ TilemapLayer TilemapFactory::build_tilemap_layer(pugi::xml_named_node_iterator l
     while (std::getline(data_stream, next_tile, ','))
     {
         int tile_data = atoi(next_tile.c_str());
-        data[counter / width][counter % width] = tile_data;
+        data[counter / width].push_back(tile_data);
         counter++;
     }
 

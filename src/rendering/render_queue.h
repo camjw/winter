@@ -6,11 +6,15 @@
 #include "rendering/data/shader.h"
 #include "rendering/data/texture.h"
 #include <maths/maths.h>
+#include <unordered_map>
+#include <string>
 
 struct RenderCommand
 {
     ResourceHandle mesh;
     ResourceHandle material;
+
+    int tile_id;
 
     float4x4 transform;
 };

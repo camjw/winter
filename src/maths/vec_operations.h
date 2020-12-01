@@ -107,6 +107,17 @@ namespace maths
         return v;
     }
 
+    template <typename T, std::size_t length>
+    constexpr vec<T, length>& operator+=(vec<T, length>& v, vec<T, length>& w)
+    {
+        for (std::size_t i = 0; i < length; i++)
+        {
+            v[i] += w[i];
+        }
+
+        return v;
+    }
+
     // operator -
     template <typename T, std::size_t length>
     constexpr vec<T, length> operator-(const vec<T, length>& v, T t)

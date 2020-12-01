@@ -30,7 +30,7 @@ private:
     void set_camera(Camera* camera_entity);
     void draw_scene_graph(const Scene* scene);
     void draw_node(const Entity* entity, const float4x4& parent_transform);
-    void enqueue_mesh(const Entity* entity, const float4x4& parent_transform);
+    void enqueue_tilemap(const Entity* tilemap_renderer, const float4x4& parent_transform);
     void process_render_commands(const Scene* scene) const;
     void resize_framebuffers();
 

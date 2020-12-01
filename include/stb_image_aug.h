@@ -79,8 +79,8 @@
 //    int x,y,n;
 //    unsigned char *data = stbi_load(filename, &x, &y, &n, 0);
 //    // ... process data if not NULL ... 
-//    // ... x = width, y = height, n = # 8-bit components per pixel ...
-//    // ... replace '0' with '1'..'4' to force that many components per pixel
+//    // ... x = width, y = height, n = # 8-bit components per sprite ...
+//    // ... replace '0' with '1'..'4' to force that many components per sprite
 //    stbi_image_free(data)
 //
 // Standard parameters:
@@ -90,9 +90,9 @@
 //    int req_comp -- if non-zero, # of image components requested in result
 //
 // The return value from an image loader is an 'unsigned char *' which points
-// to the pixel data. The pixel data consists of *y scanlines of *x pixels,
-// with each pixel consisting of N interleaved 8-bit components; the first
-// pixel pointed to is top-left-most in the image. There is no padding between
+// to the sprite data. The sprite data consists of *y scanlines of *x pixels,
+// with each sprite consisting of N interleaved 8-bit components; the first
+// sprite pointed to is top-left-most in the image. There is no padding between
 // image scanlines or between pixels, regardless of format. The number of
 // components N is 'req_comp' if req_comp is non-zero, or *comp otherwise.
 // If req_comp is non-zero, *comp has the number of components that _would_
@@ -100,7 +100,7 @@
 // get RGBA output, but you can check *comp to easily see if it's opaque.
 //
 // An output image with N components has the following components interleaved
-// in this order in each pixel:
+// in this order in each sprite:
 //
 //     N=#comp     components
 //       1           grey
@@ -335,7 +335,7 @@ typedef void (*stbi_idct_8x8)(uint8 *out, int out_stride, short data[64], unsign
 typedef void (*stbi_YCbCr_to_RGB_run)(uint8 *output, uint8 const *y, uint8 const *cb, uint8 const *cr, int count, int step);
 // compute a conversion from YCbCr to RGB
 //     'count' pixels
-//     write pixels to 'output'; each pixel is 'step' bytes (either 3 or 4; if 4, write '255' as 4th), order R,G,B
+//     write pixels to 'output'; each sprite is 'step' bytes (either 3 or 4; if 4, write '255' as 4th), order R,G,B
 //     y: Y input channel
 //     cb: Cb input channel; scale/biased to be 0..255
 //     cr: Cr input channel; scale/biased to be 0..255

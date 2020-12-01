@@ -28,6 +28,12 @@ struct ResourceHandle
     }
 
     template <typename T>
+    bool is_of_type() const
+    {
+        return std::type_index(typeid(T)) == type;
+    }
+
+    template <typename T>
     static ResourceHandle invalid_handle()
     {
         return ResourceHandle(std::type_index(typeid(T)), 0);

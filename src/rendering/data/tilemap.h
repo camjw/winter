@@ -7,7 +7,7 @@
 
 struct Tilemap
 {
-    ResourceHandle texture;
+    ResourceHandle material;
     std::vector<TilemapLayer> layers;
     bool infinite;
 };

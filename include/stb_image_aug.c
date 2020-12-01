@@ -488,7 +488,7 @@ static unsigned char *convert_format(unsigned char *data, int img_n, int req_com
       #define COMBO(a,b)  ((a)*8+(b))
       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
       // convert source image with img_n components to one with req_comp components;
-      // avoid switch per pixel, so use switch per scanline and massive macros
+      // avoid switch per sprite, so use switch per scanline and massive macros
       switch(COMBO(img_n, req_comp)) {
          CASE(1,2) dest[0]=src[0], dest[1]=255; break;
          CASE(1,3) dest[0]=dest[1]=dest[2]=src[0]; break;
@@ -2093,7 +2093,7 @@ static int create_png_image(png *a, uint8 *raw, uint32 raw_len, int out_n)
       if (filter > 4) return e("invalid filter","Corrupt PNG");
       // if first row, use special filter that doesn't sample previous row
       if (j == 0) filter = first_row_filter[filter];
-      // handle first pixel explicitly
+      // handle first sprite explicitly
       for (k=0; k < img_n; ++k) {
          switch(filter) {
             case F_none       : cur[k] = raw[k]; break;
@@ -2109,7 +2109,7 @@ static int create_png_image(png *a, uint8 *raw, uint32 raw_len, int out_n)
       raw += img_n;
       cur += out_n;
       prior += out_n;
-      // this is a little gross, so that we don't switch per-pixel or per-component
+      // this is a little gross, so that we don't switch per-sprite or per-component
       if (img_n == out_n) {
          #define CASE(f) \
              case f:     \
@@ -2234,7 +2234,7 @@ static int parse_png_file(png *z, int scan, int req_comp)
             comp  = get8(s);  if (comp) return e("bad comp method","Corrupt PNG");
             filter= get8(s);  if (filter) return e("bad filter method","Corrupt PNG");
             interlace = get8(s); if (interlace) return e("interlaced","PNG not supported: interlaced mode");
-            if (!s->img_x || !s->img_y) return e("0-pixel image","Corrupt PNG");
+            if (!s->img_x || !s->img_y) return e("0-sprite image","Corrupt PNG");
             if (!pal_img_n) {
                s->img_n = (color & 2 ? 3 : 1) + (color & 4 ? 1 : 0);
                if ((1 << 30) / s->img_x / s->img_n < s->img_y) return e("too large", "Image too large to decode");
@@ -2746,7 +2746,7 @@ static int tga_test(stbi *s)
 	get16(s);		//	discard y origin
 	if( get16(s) < 1 ) return 0;		//	test width
 	if( get16(s) < 1 ) return 0;		//	test height
-	sz = get8(s);	//	bits per pixel
+	sz = get8(s);	//	bits per sprite
 	if( (sz != 8) && (sz != 16) && (sz != 24) && (sz != 32) ) return 0;	//	only RGB or RGBA or grey allowed
 	return 1;		//	seems to have passed everything
 }
@@ -2868,7 +2868,7 @@ static stbi_uc *tga_load(stbi *s, int *x, int *y, int *comp, int req_comp)
 		{
 			read_next_pixel = 1;
 		}
-		//	OK, if I need to read a pixel, do it now
+		//	OK, if I need to read a sprite, do it now
 		if( read_next_pixel )
 		{
 			//	load however much data we did have
@@ -2926,9 +2926,9 @@ static stbi_uc *tga_load(stbi *s, int *x, int *y, int *comp, int req_comp)
 				trans_data[3] = raw_data[3];
 				break;
 			}
-			//	clear the reading flag for the next pixel
+			//	clear the reading flag for the next sprite
 			read_next_pixel = 0;
-		} // end of reading a pixel
+		} // end of reading a sprite
 		//	convert to final format
 		switch( req_comp )
 		{
@@ -3171,7 +3171,7 @@ static stbi_uc *psd_load(stbi *s, int *x, int *y, int *comp, int req_comp)
 
 	} else {
 		// We're at the raw image data.  It's each channel in order (Red, Green, Blue, Alpha, ...)
-		// where each channel consists of an 8-bit value for each pixel in the image.
+		// where each channel consists of an 8-bit value for each sprite in the image.
 
 		// Read the data by channel.
 		for (channel = 0; channel < 4; channel++) {
@@ -3382,7 +3382,7 @@ static float *hdr_load(stbi *s, int *x, int *y, int *comp, int req_comp)
          len = get8(s);
          if (c1 != 2 || c2 != 2 || (len & 0x80)) {
             // not run-length encoded, so we have to actually use THIS data as a decoded
-            // pixel (note this can't be a valid pixel--one of RGB must be >= 128)
+            // sprite (note this can't be a valid sprite--one of RGB must be >= 128)
             stbi_uc rgbe[4] = { c1,c2,len, get8(s) };
             hdr_convert(hdr_data, rgbe, req_comp);
             i = 1;
@@ -3490,7 +3490,7 @@ static stbi_uc *hdr_load_rgbe(stbi *s, int *x, int *y, int *comp, int req_comp)
          len = get8(s);
          if (c1 != 2 || c2 != 2 || (len & 0x80)) {
             // not run-length encoded, so we have to actually use THIS data as a decoded
-            // pixel (note this can't be a valid pixel--one of RGB must be >= 128)
+            // sprite (note this can't be a valid sprite--one of RGB must be >= 128)
             scanline[0] = c1;
             scanline[1] = c2;
             scanline[2] = len;

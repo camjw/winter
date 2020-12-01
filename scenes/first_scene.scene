@@ -4,8 +4,9 @@
       "uv_test.png"
     ],
     "shaders": [
-      "pixel",
-      "deferred"
+      "sprite",
+      "deferred",
+      "tilemap"
     ],
     "materials": [],
     "meshes": [],
