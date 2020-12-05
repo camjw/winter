@@ -3,7 +3,6 @@ layout (location = 0) in vec3 inPosition;
 layout (location = 1) in vec2 inTexCoord;
 
 out vec2 TexCoords;
-out vec3 position;
 
 uniform float TOTAL_TIME;
 uniform float DELTA_TIME;
