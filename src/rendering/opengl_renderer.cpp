@@ -1,4 +1,6 @@
 #include <constants/shader_constants.h>
+#include <rendering/data/tilemap_layer.h>
+#include <rendering/data/tileset.h>
 #include <rendering/opengl_renderer.h>
 
 OpenGLRenderer::OpenGLRenderer(std::shared_ptr<WinterContext> context,
@@ -86,6 +88,7 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
 {
     TilemapRenderer* tilemap_renderer = entity->get_component<TilemapRenderer>().get();
     Tilemap* tilemap = resource_manager->get<Tilemap>(tilemap_renderer->tilemap);
+    Tileset tileset = *(resource_manager->get<Tileset>(tilemap->tileset));
 
     ResourceHandle square_mesh_handle = resource_manager->load<Mesh>("square");
     ResourceHandle material_handle = tilemap->material;
@@ -97,9 +100,9 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
         TilemapLayer layer = tilemap->layers[i];
         assert(material_handle.is_of_type<Material>() && "Tilemap layer should have handle to material");
 
-        for (int j = 0; j < 1; j++)
+        for (int j = 0; j < layer.width; j++)
         {
-            for (int k = 0; k < 1; k++)
+            for (int k = 0; k < layer.height; k++)
             {
                 int tile_type = layer.data[j][k];
 
@@ -107,8 +110,9 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
                 opaque_render_queue->push_back(RenderCommand {
                     .mesh = square_mesh_handle,
                     .material = material_handle,
-                    .tile_id = tile_type,
-                    .transform = tile_transform_data.get_model_matrix()
+                    .transform = tile_transform_data.get_model_matrix(),
+                    .tile_transform = calculate_tile_transform(tile_type, tileset),
+                    .tile_type = tile_type
                 });
             }
         }
@@ -165,8 +169,8 @@ void OpenGLRenderer::set_camera(Camera* camera)
     current_camera = camera;
     float aspect_ratio = window->get_aspect_ratio();
 
-    const float4x4& projection_matrix = camera->get_projection_matrix();
-    const float4x4& view_matrix = camera->get_view_matrix(aspect_ratio);
+    const float4x4& projection_matrix = camera->get_projection_matrix(aspect_ratio);
+    const float4x4& view_matrix = camera->get_view_matrix();
 
     resource_manager->for_each<Shader>([projection_matrix, view_matrix](Shader* shader) {
         shader->bind();
@@ -180,7 +184,6 @@ void OpenGLRenderer::set_camera(Camera* camera)
 void OpenGLRenderer::draw_scene(const Time time, const Scene* scene)
 {
     begin_draw(time, scene);
-    // TODO: add screen culling here
     if (is_camera_set)
     {
         draw_scene_graph(scene);
@@ -201,12 +204,14 @@ void OpenGLRenderer::process_command(const RenderCommand& command) const
     Shader* shader = resource_manager->get<Shader>(material->shader);
     shader->bind();
     shader->set_mat4(WINTER_CONSTANTS_MODEL, command.transform);
+    shader->set_mat3("tileData.model", command.tile_transform);
+    shader->set_int("tileData.tileType", command.tile_type);
     shader->set_int("material.texture", 0);
 
     resource_manager->get<Texture>(material->texture)->bind(0);
 
     shader->set_bool("material.use_texture", material->use_texture);
-    shader->set_float4("material.colour", material->colour.to_float4());
+    shader->set_float4("material.colour", material->colour);
 
     Mesh* mesh = resource_manager->get<Mesh>(command.mesh);
     mesh->bind_and_draw();
@@ -221,6 +226,6 @@ void OpenGLRenderer::draw_no_camera_scene()
 
 void OpenGLRenderer::draw_clear_colour() const
 {
-    const float4 clear_colour = current_camera->clear_colour().to_float4();
+    const float4 clear_colour = current_camera->clear_colour;
     glClearColor(clear_colour.x, clear_colour.y, clear_colour.z, 1.0f);
 }

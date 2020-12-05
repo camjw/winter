@@ -11,8 +11,15 @@ uniform mat4 MODEL;
 uniform mat4 VIEW;
 uniform mat4 PROJECTION;
 
+struct TileData {
+    mat3 model;
+    int tileType;
+};
+
+uniform TileData tileData;
+
 void main()
 {
-    TexCoords = inTexCoord;
-    gl_Position = MODEL * vec4(inPosition, 1.0);
+    TexCoords = vec2(tileData.model * vec3(inTexCoord,1.0f));
+    gl_Position = PROJECTION * VIEW * MODEL * vec4(inPosition, 1.0);
 }

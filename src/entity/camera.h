@@ -10,18 +10,11 @@ class Camera : public Component
 public:
     Camera(Entity* entity);
 
-    const float4x4 get_projection_matrix() const;
-    const float4x4 get_view_matrix(float aspect_ratio) const;
+    const float4x4 get_projection_matrix(float aspect_ratio) const;
+    const float4x4 get_view_matrix() const;
 
-    void set_clear_colour(colour clear_colour);
-
-    const colour clear_colour() const
-    {
-        return _clear_colour;
-    }
-
-private:
-    colour _clear_colour = colour::black();
+    colour clear_colour = colour::black();
+    float orthographic_size = 50.0f;
 };
 
 #endif //WINTER_CAMERA_H

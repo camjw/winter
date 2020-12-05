@@ -1,6 +1,7 @@
 #ifndef WINTER_TILESET_H
 #define WINTER_TILESET_H
 
+#include <maths/matrix.h>
 #include <resources/resource_handle.h>
 
 struct Tileset
@@ -26,5 +27,8 @@ struct Tileset
     {
     }
 };
+
+float3x3 calculate_tile_transform(int tile_type, Tileset tileset);
+
 
 #endif // WINTER_TILESET_H

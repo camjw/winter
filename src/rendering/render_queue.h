@@ -14,9 +14,10 @@ struct RenderCommand
     ResourceHandle mesh;
     ResourceHandle material;
 
-    int tile_id;
-
     float4x4 transform;
+
+    float3x3 tile_transform;
+    int tile_type;
 };
 
 class RenderQueue

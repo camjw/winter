@@ -86,21 +86,66 @@ namespace maths
     {
         float4x4 output = float4x4::identity();
 
-        output.x[0] = 1 - 2 * (q.y * q.y + q.z * q.z);
-        output.y[0] = 2 * (q.x * q.y - q.z * q.w);
-        output.z[0] = 2 * (q.x * q.z + q.y * q.w);
+        output[0][0] = 1 - 2 * (q.y * q.y + q.z * q.z);
+        output[1][0] = 2 * (q.x * q.y - q.z * q.w);
+        output[2][0] = 2 * (q.x * q.z + q.y * q.w);
 
-        output.x[1] = 2 * (q.x * q.y + q.z * q.w);
-        output.y[1] = 1 - 2 * (q.x * q.x + q.z * q.z);
-        output.z[1] = 2 * (q.y * q.z - q.x * q.w);
+        output[0][1] = 2 * (q.x * q.y + q.z * q.w);
+        output[1][1] = 1 - 2 * (q.x * q.x + q.z * q.z);
+        output[2][1] = 2 * (q.y * q.z - q.x * q.w);
 
-        output.x[2] = 2 * (q.x * q.z - q.y * q.w);
-        output.y[2] = 2 * (q.y * q.z + q.x * q.w);
-        output.z[2] = 1 - 2 * (q.x * q.x + q.y * q.y);
+        output[0][2] = 2 * (q.x * q.z - q.y * q.w);
+        output[1][2] = 2 * (q.y * q.z + q.x * q.w);
+        output[2][2] = 1 - 2 * (q.x * q.x + q.y * q.y);
 
         return output;
     }
 
+    static float4x4 look_at_2d(const float2& position)
+    {
+        float4x4 output = float4x4::zero();
+
+        output[0][0] = 1;
+        output[1][0] = 0;
+        output[2][0] = 0;
+        output[3][0] = -position.x;
+
+        output[0][1] = 0;
+        output[1][1] = 1;
+        output[2][1] = 0;
+        output[3][1] = -position.y;
+
+        output[0][2] = 0;
+        output[1][2] = 0;
+        output[2][2] = 1;
+        output[3][2] = -64;
+
+        output[0][3] = 0;
+        output[1][3] = 0;
+        output[2][3] = 0;
+        output[3][3] = 1;
+
+        return output;
+    }
+
+    // Aspect ratio is width / height
+    static float4x4 orthographic_projection(float orthographic_size, float aspect_ratio)
+    {
+        float4x4 output = float4x4::zero();
+
+        output[0][0] = aspect_ratio * 1.0f / orthographic_size;
+
+        output[1][1] = 1.0f / orthographic_size;
+
+        output[2][2] = 1.0f / 255;
+
+        output[3][0] = 0;
+        output[3][1] = 0;
+        output[3][2] = -1.0f / 255;
+        output[3][3] = 1;
+
+        return output;
+    }
 }
 
 #endif

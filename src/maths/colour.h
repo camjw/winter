@@ -36,6 +36,8 @@ struct colour
         return float4((float)r / 255.0f, (float)g / 255.0f, (float)b / 255.0f, (float)a / 255.0f);
     }
 
+    operator float4() { return to_float4(); }
+
     static colour black()
     {
         return colour(0, 0, 0);

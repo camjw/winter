@@ -1,6 +1,7 @@
 #include "tilemap_factory.h"
 #include <maths/containers/grid.h>
 #include <rendering/data/material.h>
+#include <rendering/data/tileset.h>
 #include <sstream>
 #include <string>
 
@@ -43,6 +44,7 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
     bool infinite = tilemap_xml.child("map").attribute("infinite").as_bool();
     Tilemap tilemap = Tilemap {
         .material = tileset_material_handle,
+        .tileset = tileset_handle,
         .layers = tilemap_layers,
         .infinite = infinite
     };

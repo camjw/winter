@@ -5,17 +5,12 @@ Camera::Camera(Entity* entity): Component(entity)
 {
 }
 
-const float4x4 Camera::get_view_matrix(float aspect_ratio) const
+const float4x4 Camera::get_view_matrix() const
 {
-    return float4x4::identity();
+    return maths::look_at_2d(transform()->get_position());
 }
 
-const float4x4 Camera::get_projection_matrix() const
+const float4x4 Camera::get_projection_matrix(float aspect_ratio) const
 {
-    return float4x4::identity();
-}
-
-void Camera::set_clear_colour(colour clear_colour)
-{
-    _clear_colour = clear_colour;
+    return maths::orthographic_projection(orthographic_size, aspect_ratio);
 }

@@ -163,6 +163,18 @@ namespace maths
             return output;
         }
 
+        static matrix diagonal(vec<T, side_length> v)
+        {
+            matrix output = zero();
+
+            for (int i = 0; i < side_length; i++)
+            {
+                output[i][i] = v[i];
+            }
+
+            return output;
+        }
+
         static matrix zero()
         {
             matrix output;
