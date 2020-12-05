@@ -13,12 +13,18 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
         return nullptr;
     }
 
-    std::string tileset_relative_path = tilemap_xml.child("map").child("tileset").attribute("source").as_string();
+    std::string tileset_relative_path = tilemap_xml
+                                            .child("map")
+                                            .child("tileset")
+                                            .attribute("source")
+                                            .as_string();
     std::string tileset_name = get_tileset_name(tileset_relative_path);
 
-    ResourceHandle tileset_texture_handle = resource_manager->load<Tileset>(tileset_name);
+    ResourceHandle tileset_handle = resource_manager->load<Tileset>(tileset_name);
+    Tileset* tileset = resource_manager->get<Tileset>(tileset_handle);
+
     Material tileset_material = Material {
-        .texture = tileset_texture_handle,
+        .texture = tileset->texture_handle,
         .shader = resource_manager->load<Shader>("tilemap"),
     };
 
@@ -29,7 +35,7 @@ std::shared_ptr<Tilemap> TilemapFactory::build(const std::string& name)
     pugi::xml_object_range<pugi::xml_named_node_iterator> layers = tilemap_xml.child("map").children("layer");
     std::vector<TilemapLayer> tilemap_layers;
 
-    for (pugi::xml_named_node_iterator layer = layers.begin(); layer != layers.end(); ++layer)
+    for (pugi::xml_node layer : layers)
     {
         tilemap_layers.push_back(build_tilemap_layer(layer));
     }
@@ -51,16 +57,14 @@ std::string TilemapFactory::get_tileset_name(const std::string& relative_path) c
     return base_filename.substr(0, p);
 }
 
-TilemapLayer TilemapFactory::build_tilemap_layer(pugi::xml_named_node_iterator layer_data) const
+TilemapLayer TilemapFactory::build_tilemap_layer(pugi::xml_node layer_data) const
 {
-    int id = layer_data->attribute("id").as_int();
-    std::string name = layer_data->attribute("name").as_string();
-    int width = layer_data->attribute("width").as_int();
-    int height = layer_data->attribute("height").as_int();
+    int id = layer_data.attribute("id").as_int();
+    std::string name = layer_data.attribute("name").as_string();
+    int width = layer_data.attribute("width").as_int();
+    int height = layer_data.attribute("height").as_int();
 
-    auto  = layer_data->children();
-    std::string data_string = layer_data->child("data").value();
-
+    std::string data_string = layer_data.child_value("data");
     std::vector<std::vector<int>> data(height, std::vector<int>());
 
     std::stringstream data_stream(data_string);

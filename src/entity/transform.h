@@ -101,7 +101,8 @@ public:
 
     float4x4 get_model_matrix()
     {
-        if (is_dirty)
+        // TODO: get this is_dirty thing working
+        if (is_dirty || true)
         {
             recalculate_transform();
         }

@@ -47,8 +47,8 @@
         {
           "type": "transform",
           "position": {
-            "x": 10,
-            "y": 10
+            "x": 0,
+            "y": 0
           },
           "rotation": 0,
           "scale": {

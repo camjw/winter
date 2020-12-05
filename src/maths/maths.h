@@ -75,9 +75,9 @@ namespace maths
     {
         float4x4 output = float4x4::identity();
 
-        output.x[3] = t.x;
-        output.y[3] = t.y;
-        output.z[3] = t.z;
+        output.w[0] = t.x;
+        output.w[1] = t.y;
+        output.w[2] = t.z;
 
         return output;
     }
@@ -87,15 +87,15 @@ namespace maths
         float4x4 output = float4x4::identity();
 
         output.x[0] = 1 - 2 * (q.y * q.y + q.z * q.z);
-        output.x[1] = 2 * (q.x * q.y - q.z * q.w);
-        output.x[2] = 2 * (q.x * q.z + q.y * q.w);
+        output.y[0] = 2 * (q.x * q.y - q.z * q.w);
+        output.z[0] = 2 * (q.x * q.z + q.y * q.w);
 
-        output.y[0] = 2 * (q.x * q.y + q.z * q.w);
+        output.x[1] = 2 * (q.x * q.y + q.z * q.w);
         output.y[1] = 1 - 2 * (q.x * q.x + q.z * q.z);
-        output.y[2] = 2 * (q.y * q.z - q.x * q.w);
+        output.z[1] = 2 * (q.y * q.z - q.x * q.w);
 
-        output.z[0] = 2 * (q.x * q.z - q.y * q.w);
-        output.z[0] = 2 * (q.y * q.z + q.x * q.w);
+        output.x[2] = 2 * (q.x * q.z - q.y * q.w);
+        output.y[2] = 2 * (q.y * q.z + q.x * q.w);
         output.z[2] = 1 - 2 * (q.x * q.x + q.y * q.y);
 
         return output;

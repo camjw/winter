@@ -5,7 +5,7 @@ in vec2 TexCoords;
 
 struct Material {
     sampler2D texture;
-    vec3 colour;
+    vec4 colour;
     bool use_texture;
 };
 

@@ -4,6 +4,9 @@
 #include <cstddef>
 #include "vec.h"
 
+// CAMERON: the vectors should be the _columns_ of the matrix so that
+// this works nicely with OpenGL.
+
 namespace maths
 {
 
@@ -145,6 +148,8 @@ namespace maths
 
         matrix(const matrix&) = default;
         matrix& operator=(const matrix&) = default;
+
+        operator float*() { return reinterpret_cast<float*>(this); }
 
         static matrix diagonal(T t)
         {

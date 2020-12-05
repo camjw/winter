@@ -24,7 +24,7 @@ protected:
 private:
     std::shared_ptr<ResourceManager> resource_manager;
     std::string get_tileset_name(const std::string& relative_path) const;
-    TilemapLayer build_tilemap_layer(pugi::xml_named_node_iterator iterator) const;
+    TilemapLayer build_tilemap_layer(pugi::xml_node iterator) const;
 };
 
 #endif // WINTER_TILEMAP_FACTORY_H

@@ -97,9 +97,9 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
         TilemapLayer layer = tilemap->layers[i];
         assert(material_handle.is_of_type<Material>() && "Tilemap layer should have handle to material");
 
-        for (int j = 0; j < layer.width; j++)
+        for (int j = 0; j < 1; j++)
         {
-            for (int k = 0; k < layer.height; k++)
+            for (int k = 0; k < 1; k++)
             {
                 int tile_type = layer.data[j][k];
 
@@ -117,41 +117,42 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
 
 void OpenGLRenderer::process_render_commands(const Scene* scene) const
 {
-    framebuffer->bind();
-    draw_clear_colour();
-
+//    framebuffer->bind();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    glDisable(GL_FRAMEBUFFER_SRGB);
-    glDisable(GL_BLEND);
-    glViewport(0, 0, window->width(), window->height());
+    draw_clear_colour();
+    glCheckError();
+
+//    glEnable(GL_DEPTH_TEST);
+//    glDisable(GL_FRAMEBUFFER_SRGB);
+//    glViewport(0, 0, window->width(), window->height());
+    glCheckError();
 
     for (const RenderCommand& command : opaque_render_queue->commands)
     {
-        printf("command\n");
         process_command(command);
     }
-
-    framebuffer->unbind();
-
-    glDisable(GL_DEPTH_TEST);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glEnable(GL_FRAMEBUFFER_SRGB);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    int2 viewportDimensions = window->get_viewport_dimensions();
-    glViewport(0, 0, viewportDimensions.x, viewportDimensions.y);
-    Shader* deferred_shader = resource_manager->get<Shader>("deferred");
-
-    deferred_shader->bind();
-
-    framebuffer->bind_textures();
     glCheckError();
 
-    resource_manager->get<Mesh>("square")->bind_and_draw();
-    glCheckError();
+//    framebuffer->unbind();
+//
+//    glDisable(GL_DEPTH_TEST);
+//    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+//    glClear(GL_COLOR_BUFFER_BIT);
+//    glEnable(GL_FRAMEBUFFER_SRGB);
+//    glCheckError();
+//
+//    int2 viewportDimensions = window->get_viewport_dimensions();
+//    glViewport(0, 0, viewportDimensions.x, viewportDimensions.y);
+//    Shader* deferred_shader = resource_manager->get<Shader>("deferred");
+//    glCheckError();
+//
+//    deferred_shader->bind();
+//
+//    framebuffer->bind_textures();
+//    glCheckError();
+//
+//    resource_manager->get<Mesh>("square")->bind_and_draw();
+//    glCheckError();
 }
 
 void OpenGLRenderer::end_draw()
@@ -197,18 +198,19 @@ void OpenGLRenderer::draw_scene(const Time time, const Scene* scene)
 void OpenGLRenderer::process_command(const RenderCommand& command) const
 {
     Material* material = resource_manager->get<Material>(command.material);
-
     Shader* shader = resource_manager->get<Shader>(material->shader);
     shader->bind();
     shader->set_mat4(WINTER_CONSTANTS_MODEL, command.transform);
-
     shader->set_int("material.texture", 0);
+
     resource_manager->get<Texture>(material->texture)->bind(0);
 
     shader->set_bool("material.use_texture", material->use_texture);
     shader->set_float4("material.colour", material->colour.to_float4());
 
-    resource_manager->get<Mesh>(command.mesh)->bind_and_draw();
+    Mesh* mesh = resource_manager->get<Mesh>(command.mesh);
+    mesh->bind_and_draw();
+    glCheckError();
 }
 
 void OpenGLRenderer::draw_no_camera_scene()
