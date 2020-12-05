@@ -14,3 +14,7 @@ const float4x4 Camera::get_projection_matrix(float aspect_ratio) const
 {
     return maths::orthographic_projection(orthographic_size, aspect_ratio);
 }
+
+void Camera::update(Time* time, Input* input)
+{
+}
