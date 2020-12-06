@@ -4,7 +4,7 @@
 #include "scene.h"
 #include "scene_id.h"
 #include <context/winter_context.h>
-#include <input/input_processor.h>
+#include <input/input.h>
 #include <memory>
 #include <serialisation/scene_serialiser.h>
 #include <timer.h>
@@ -14,8 +14,8 @@ class SceneManager
 public:
     SceneManager(std::shared_ptr<WinterContext> context);
 
-    void update(Time time, InputState* input);
-    void late_update(Time time, InputState* input);
+    void update(const Time& time, const Input* input);
+    void late_update(const Time& time, const Input* input);
 
     Scene* get_current_scene();
     Scene* get_scene(SceneID scene_id);

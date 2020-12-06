@@ -13,7 +13,7 @@ Engine::Engine()
     imgui_context = ImGui::CreateContext();
     assert(imgui_context != nullptr && "Failed to create Dear ImGui context");
 
-    input = std::make_unique<InputProcessor>(window);
+    input = std::make_unique<Input>(window);
 
     // Build context
     context = std::make_shared<WinterContext>();

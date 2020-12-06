@@ -24,18 +24,18 @@ void Entity::start()
     }
 }
 
-void Entity::update(const Time& time)
+void Entity::update(const Time& time, const Input* input)
 {
     for (int i = components.size() - 1; i >= 0; i--)
     {
-        components[i]->update(time);
+        components[i]->update(time, input);
     }
 }
 
-void Entity::late_update(const Time& time)
+void Entity::late_update(const Time& time, const Input* input)
 {
     for (int i = components.size() - 1; i >= 0; i--)
     {
-        components[i]->late_update(time);
+        components[i]->late_update(time, input);
     }
 }

@@ -8,7 +8,7 @@
 #include <string>
 #include <timer.h>
 
-class InputState;
+class Input;
 class Window
 {
 public:
@@ -37,7 +37,7 @@ public:
         this->height_ = height;
     }
 
-    void update(Time time, InputState* input);
+    void update(const Time& time, const Input* input);
 
     void load_icon(const std::string& icon_path);
 

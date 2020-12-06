@@ -46,19 +46,19 @@ std::shared_ptr<Entity> EntityManager::create_entity(const std::string& name, st
     return new_entity;
 }
 
-void EntityManager::update(const Time& time)
+void EntityManager::update(const Time& time, const Input* input)
 {
     for (auto& entity : entities)
     {
-        entity->update(time);
+        entity->update(time, input);
     }
 }
 
-void EntityManager::late_update(const Time& time)
+void EntityManager::late_update(const Time& time, const Input* input)
 {
     for (auto& entity : entities)
     {
-        entity->late_update(time);
+        entity->late_update(time, input);
     }
 }
 

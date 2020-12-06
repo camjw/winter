@@ -2,6 +2,7 @@
 #define WINTER_ENTITY_MANAGER_H
 
 #include "transform.h"
+#include <input/input.h>
 #include <memory>
 #include <vector>
 
@@ -19,8 +20,8 @@ public:
 
     const Entity* get_root() const;
 
-    void update(const Time& time);
-    void late_update(const Time& time);
+    void update(const Time& time, const Input* input);
+    void late_update(const Time& time, const Input* input);
 
     void process_new_entities();
 

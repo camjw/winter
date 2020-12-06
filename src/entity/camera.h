@@ -16,7 +16,7 @@ public:
     colour clear_colour = colour::black();
     float orthographic_size = 50.0f;
 
-    virtual void update(const Time& time, Input* input) override;
+    virtual void update(const Time& time, const Input* input) override;
 };
 
 #endif //WINTER_CAMERA_H

@@ -26,6 +26,16 @@ public:
     virtual void on_load() {};
     virtual void on_unload() {};
 
+    void update(const Time& time, const Input* input)
+    {
+        entity_manager->update(time, input);
+    }
+
+    void late_update(const Time& time, const Input* input)
+    {
+        entity_manager->late_update(time, input);
+    }
+
     inline SceneID get_scene_id() const
     {
         return scene_id;

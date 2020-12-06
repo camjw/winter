@@ -1,6 +1,6 @@
-#include <input/input_processor.h>
+#include <input/input.h>
 
-InputProcessor::InputProcessor(std::shared_ptr<Window> window)
+Input::Input(std::shared_ptr<Window> window)
     : this_frame_mouse(0.0f, 0.0f)
     , last_frame_mouse(0.0f, 0.0f)
     , window(window)
@@ -10,7 +10,7 @@ InputProcessor::InputProcessor(std::shared_ptr<Window> window)
     process_framebuffer_size_event(window->width(), window->height());
 }
 
-void InputProcessor::process_input()
+void Input::process_input()
 {
     glfwPollEvents();
 
@@ -53,22 +53,22 @@ void InputProcessor::process_input()
     this_frame_mouse = mouse_position;
 }
 
-bool InputProcessor::is_key_pressed(Key keycode)
+const bool Input::get_key(Key keycode) const
 {
     return this_frame_keys.get_bit((int)keycode);
 }
 
-bool InputProcessor::is_key_up(Key keycode)
+const bool Input::get_key_up(Key keycode) const
 {
     return !this_frame_keys.get_bit((int)keycode) && last_frame_keys.get_bit((int)keycode);
 }
 
-bool InputProcessor::is_key_down(Key keycode)
+const bool Input::get_key_down(Key keycode) const
 {
     return this_frame_keys.get_bit((int)keycode) && !last_frame_keys.get_bit((int)keycode);
 }
 
-void InputProcessor::process_keyboard_event(int key, int scancode, int action, int mods)
+void Input::process_keyboard_event(int key, int scancode, int action, int mods)
 {
     if (imgui_io.WantCaptureKeyboard)
     {
@@ -86,7 +86,7 @@ void InputProcessor::process_keyboard_event(int key, int scancode, int action, i
     }
 }
 
-void InputProcessor::process_mouse_position_event(double xpos, double ypos)
+void Input::process_mouse_position_event(double xpos, double ypos)
 {
     if (imgui_io.WantCaptureMouse)
     {
@@ -97,7 +97,7 @@ void InputProcessor::process_mouse_position_event(double xpos, double ypos)
     mouse_position.y = (float)ypos;
 }
 
-void InputProcessor::process_mouse_button_event(int button, int action, int mods)
+void Input::process_mouse_button_event(int button, int action, int mods)
 {
     if (imgui_io.WantCaptureMouse)
     {
@@ -114,7 +114,7 @@ void InputProcessor::process_mouse_button_event(int button, int action, int mods
     }
 }
 
-void InputProcessor::process_framebuffer_size_event(float width, float height)
+void Input::process_framebuffer_size_event(float width, float height)
 {
     framebuffer_size = float2(width, height);
     window->has_dirty_size = true;

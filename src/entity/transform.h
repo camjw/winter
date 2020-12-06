@@ -49,54 +49,50 @@ struct TransformData
 
         output = maths::scale(float3(local_scale, 1.0f)) * output;
         output = maths::rotation(quaternion::angle_axis(local_rotation, float3(0, 0, 1))) * output;
-        output = maths::translation(float3(local_position, 1)) * output;;
+        output = maths::translation(float3(local_position, 1)) * output;
+        ;
 
         return parent_transform * output;
     }
 };
 
 class Entity;
-class Transform: public Component
+class Transform : public Component
 {
 public:
     Transform(Entity* entity);
 
-    const float2& get_position() const
+    float2& position()
+    {
+        is_dirty = true;
+        return _position;
+    }
+
+    const float2& position() const
     {
         return _position;
     }
 
-    const void add_position(const float2& offset)
+    float& rotation()
     {
-        _position += offset;
+        is_dirty = true;
+        return _rotation;
     }
 
-    const float& get_rotation() const
+    const float& rotation() const
     {
         return _rotation;
     }
 
-    const float2& get_scale() const
+    float2& scale()
     {
+        is_dirty = true;
         return _scale;
     }
 
-    void set_position(const float2& position)
+    const float2& scale() const
     {
-        _position = position;
-        is_dirty = true;
-    }
-
-    void set_rotation(float rotation)
-    {
-        _rotation = rotation;
-        is_dirty = true;
-    }
-
-    void set_scale(const float2& scale)
-    {
-        _scale = scale;
-        is_dirty = true;;
+        return _scale;
     }
 
     float4x4 get_model_matrix()
@@ -137,7 +133,7 @@ public:
 private:
     std::shared_ptr<Transform> _parent = nullptr;
 
-    bool is_dirty;
+    bool is_dirty = true;
     float4x4 cached_transform_matrix;
 
     float2 _position = float2::zero();

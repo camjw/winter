@@ -23,8 +23,8 @@ public:
 
     void awake();
     void start();
-    void update(const Time& time);
-    void late_update(const Time& time);
+    void update(const Time& time, const Input* input);
+    void late_update(const Time& time, const Input* input);
 
     template <typename T> std::shared_ptr<T> add_component()
     {

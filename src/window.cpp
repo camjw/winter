@@ -1,4 +1,4 @@
-#include <input/input_processor.h>
+#include <input/input.h>
 #include <utils/opengl_helpers.h>
 #include <window.h>
 
@@ -64,7 +64,7 @@ void Window::setup_callbacks()
 
 void Window::keyboard_callback(GLFWwindow* window, int key, int scan_code, int action, int mods)
 {
-    InputProcessor* input = reinterpret_cast<InputProcessor*>(glfwGetWindowUserPointer(window));
+    Input* input = reinterpret_cast<Input*>(glfwGetWindowUserPointer(window));
     input->process_keyboard_event(key, scan_code, action, mods);
 
     glCheckError();
@@ -72,13 +72,13 @@ void Window::keyboard_callback(GLFWwindow* window, int key, int scan_code, int a
 
 void Window::mouse_position_callback(GLFWwindow* window, double x_pos, double y_pos)
 {
-    InputProcessor* input = reinterpret_cast<InputProcessor*>(glfwGetWindowUserPointer(window));
+    Input* input = reinterpret_cast<Input*>(glfwGetWindowUserPointer(window));
     input->process_mouse_position_event(x_pos, y_pos);
 }
 
 void Window::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    InputProcessor* input = reinterpret_cast<InputProcessor*>(glfwGetWindowUserPointer(window));
+    Input* input = reinterpret_cast<Input*>(glfwGetWindowUserPointer(window));
     input->process_mouse_button_event(button, action, mods);
 }
 
@@ -89,18 +89,18 @@ void Window::error_callback(int code, const char* description)
 
 void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    InputProcessor* input = reinterpret_cast<InputProcessor*>(glfwGetWindowUserPointer(window));
+    Input* input = reinterpret_cast<Input*>(glfwGetWindowUserPointer(window));
     input->process_framebuffer_size_event(width, height);
     glViewport(0, 0, width, height);
 }
 
-void Window::update(Time time, InputState* input)
+void Window::update(const Time& time, const Input* input)
 {
     float2 framebuffer_size = input->get_framebuffer_size();
     width_ = framebuffer_size.x;
     height_ = framebuffer_size.y;
 
-    close_window = input->is_key_pressed(Key::Esc);
+    close_window = input->get_key(Key::Esc);
 }
 
 void Window::load_icon(const std::string& icon_path)

@@ -8,9 +8,21 @@ SceneManager::SceneManager(std::shared_ptr<WinterContext> context)
     current_scene_id = first_scene;
 }
 
-void SceneManager::update(Time time, InputState* input) { }
+void SceneManager::update(const Time& time, const Input* input)
+{
+    for (const std::pair<SceneID, Scene*> scene : scenes)
+    {
+        scene.second->update(time, input);
+    }
+}
 
-void SceneManager::late_update(Time time, InputState* input) { }
+void SceneManager::late_update(const Time& time, const Input* input)
+{
+    for (const std::pair<SceneID, Scene*> scene : scenes)
+    {
+        scene.second->late_update(time, input);
+    }
+}
 
 Scene* SceneManager::get_current_scene()
 {

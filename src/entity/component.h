@@ -1,6 +1,7 @@
 #ifndef WINTER_COMPONENT_H
 #define WINTER_COMPONENT_H
 
+#include <input/input.h>
 #include <timer.h>
 
 class Transform;
@@ -13,8 +14,8 @@ public:
 
     virtual void start() { }
     virtual void awake() { }
-    virtual void update(const Time& time) { }
-    virtual void late_update(const Time& time) { }
+    virtual void update(const Time& time, const Input* input) { }
+    virtual void late_update(const Time& time, const Input* input) { }
 
     void set_enabled(bool is_enabled)
     {

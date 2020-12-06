@@ -4,7 +4,7 @@
 #include <chrono>
 #include <context/winter_context.h>
 #include <cstdio>
-#include <input/input_processor.h>
+#include <input/input.h>
 #include <rendering/data/shader.h>
 #include <rendering/data/texture.h>
 #include <rendering/opengl_renderer.h>
@@ -36,7 +36,7 @@ private:
     bool is_running();
 
     std::shared_ptr<Window> window;
-    std::unique_ptr<InputProcessor> input;
+    std::unique_ptr<Input> input;
     std::unique_ptr<EventRepository> event_repository;
 
     std::shared_ptr<UIRoot> ui_root;
