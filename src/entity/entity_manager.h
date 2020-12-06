@@ -5,6 +5,7 @@
 #include <input/input.h>
 #include <memory>
 #include <vector>
+#include <queue>
 
 class Entity;
 class EntityManager
@@ -28,7 +29,7 @@ public:
 private:
     Entity* root_entity;
     std::vector<std::shared_ptr<Entity>> entities;
-    std::vector<std::shared_ptr<Entity>> new_entities;
+    std::queue<std::shared_ptr<Entity>> new_entities;
 };
 
 #endif //WINTER_ENTITY_MANAGER_H

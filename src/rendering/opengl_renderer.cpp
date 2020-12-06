@@ -100,13 +100,13 @@ void OpenGLRenderer::enqueue_tilemap(const Entity* entity, const float4x4& paren
         TilemapLayer layer = tilemap->layers[i];
         assert(material_handle.is_of_type<Material>() && "Tilemap layer should have handle to material");
 
-        for (int j = 0; j < layer.width; j++)
+        for (int j = 0; j < layer.height; j++)
         {
-            for (int k = 0; k < layer.height; k++)
+            for (int k = 0; k < layer.width; k++)
             {
                 int tile_type = layer.data[j][k];
 
-                TransformData tile_transform_data = TransformData::translate(entity_transform_data, float2(j, k));
+                TransformData tile_transform_data = TransformData::translate(entity_transform_data, float2(k, layer.height - j));
                 opaque_render_queue->push_back(RenderCommand {
                     .mesh = square_mesh_handle,
                     .material = material_handle,

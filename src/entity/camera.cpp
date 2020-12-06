@@ -1,7 +1,8 @@
 #include "camera.h"
 #include "entity.h"
 
-Camera::Camera(Entity* entity): Component(entity)
+Camera::Camera(Entity* entity)
+    : Component(entity)
 {
 }
 
@@ -19,21 +20,25 @@ void Camera::update(const Time& time, const Input* input)
 {
     if (input->get_key(Key::Left))
     {
-        transform()->position() += float2(-1, 0) * time.delta_time;
+        printf("Left pressed\n");
+        transform()->position() += track_speed * float2(-1, 0) * time.delta_time;
     }
 
     if (input->get_key(Key::Right))
     {
-        transform()->position() += float2(1, 0) * time.delta_time;
+        printf("Right pressed\n");
+        transform()->position() += track_speed * float2(1, 0) * time.delta_time;
     }
 
     if (input->get_key(Key::Up))
     {
-        transform()->position() += float2(0, 1) * time.delta_time;
+        printf("Up pressed\n");
+        transform()->position() += track_speed * float2(0, 1) * time.delta_time;
     }
 
     if (input->get_key(Key::Down))
     {
-        transform()->position() += float2(0, -1) * time.delta_time;
+        printf("Down pressed\n");
+        transform()->position() += track_speed * float2(0, -1) * time.delta_time;
     }
 }

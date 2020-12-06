@@ -21,6 +21,5 @@ uniform TileData tileData;
 void main()
 {
     FragColor = texture(material.texture, TexCoords);
-//    float tileColour = 0.001f * tileData.tileType;
-//    FragColor = vec4(tileColour, tileColour, tileColour, 1.0f);
+//    FragColor = vec4(TexCoords, 0, 1);
 }

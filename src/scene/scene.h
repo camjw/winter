@@ -28,6 +28,7 @@ public:
 
     void update(const Time& time, const Input* input)
     {
+        entity_manager->process_new_entities();
         entity_manager->update(time, input);
     }
 

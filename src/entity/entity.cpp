@@ -10,7 +10,7 @@ Entity::Entity(std::string name)
 
 void Entity::awake()
 {
-    for (int i = components.size() - 1; i >= 0; i--)
+    for (int i = 0; i < components.size(); i++)
     {
         components[i]->awake();
     }
@@ -18,7 +18,7 @@ void Entity::awake()
 
 void Entity::start()
 {
-    for (int i = components.size() - 1; i >= 0; i--)
+    for (int i = 0; i < components.size(); i++)
     {
         components[i]->start();
     }
@@ -26,7 +26,7 @@ void Entity::start()
 
 void Entity::update(const Time& time, const Input* input)
 {
-    for (int i = components.size() - 1; i >= 0; i--)
+    for (int i = 0; i < components.size(); i++)
     {
         components[i]->update(time, input);
     }
@@ -34,7 +34,7 @@ void Entity::update(const Time& time, const Input* input)
 
 void Entity::late_update(const Time& time, const Input* input)
 {
-    for (int i = components.size() - 1; i >= 0; i--)
+    for (int i = 0; i < components.size(); i++)
     {
         components[i]->late_update(time, input);
     }

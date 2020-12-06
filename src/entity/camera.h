@@ -14,9 +14,11 @@ public:
     const float4x4 get_view_matrix() const;
 
     colour clear_colour = colour::black();
-    float orthographic_size = 50.0f;
+    float orthographic_size = 40.0f;
 
     virtual void update(const Time& time, const Input* input) override;
+
+    float track_speed = 0.1f;
 };
 
 #endif //WINTER_CAMERA_H

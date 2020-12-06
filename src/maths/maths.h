@@ -133,7 +133,7 @@ namespace maths
     {
         float4x4 output = float4x4::zero();
 
-        output[0][0] = aspect_ratio * 1.0f / orthographic_size;
+        output[0][0] = 1.0f / (aspect_ratio * orthographic_size);
 
         output[1][1] = 1.0f / orthographic_size;
 

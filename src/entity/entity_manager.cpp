@@ -18,7 +18,7 @@ std::shared_ptr<Entity> EntityManager::create_entity()
 {
     std::shared_ptr<Entity> new_entity = std::make_shared<Entity>(uuid::new_uuid());
     new_entity->transform->set_parent(root_entity->transform);
-    new_entities.push_back(new_entity);
+    new_entities.push(new_entity);
     return new_entity;
 }
 
@@ -26,7 +26,7 @@ std::shared_ptr<Entity> EntityManager::create_entity(const std::string& name)
 {
     std::shared_ptr<Entity> new_entity = std::make_shared<Entity>(name);
     new_entity->transform->set_parent(root_entity->transform);
-    new_entities.push_back(new_entity);
+    new_entities.push(new_entity);
     return new_entity;
 }
 
@@ -34,7 +34,7 @@ std::shared_ptr<Entity> EntityManager::create_entity(std::shared_ptr<Transform> 
 {
     std::shared_ptr<Entity> new_entity = std::make_shared<Entity>(uuid::new_uuid());
     new_entity->transform->set_parent(parent_transform);
-    new_entities.push_back(new_entity);
+    new_entities.push(new_entity);
     return new_entity;
 }
 
@@ -42,7 +42,7 @@ std::shared_ptr<Entity> EntityManager::create_entity(const std::string& name, st
 {
     std::shared_ptr<Entity> new_entity = std::make_shared<Entity>(name);
     new_entity->transform->set_parent(parent_transform);
-    new_entities.push_back(new_entity);
+    new_entities.push(new_entity);
     return new_entity;
 }
 
@@ -64,6 +64,14 @@ void EntityManager::late_update(const Time& time, const Input* input)
 
 void EntityManager::process_new_entities()
 {
+    while (!new_entities.empty())
+    {
+        std::shared_ptr<Entity> new_entity = new_entities.front();
+        new_entity->start();
+        entities.push_back(new_entity);
+
+        new_entities.pop();
+    }
 }
 
 const Entity* EntityManager::get_root() const
